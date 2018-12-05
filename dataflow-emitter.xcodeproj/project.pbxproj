@@ -7,21 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390C106421B734FA007BB462 /* EmitterStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C106321B734FA007BB462 /* EmitterStreamController.swift */; };
+		391F8D6521B6D08E00EC186A /* MultipeerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391F8D6421B6D08E00EC186A /* MultipeerSession.swift */; };
+		393F3B5121B37DB9008025AA /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B4F21B37DB9008025AA /* SpeechRecognizer.swift */; };
+		393F3B5221B37DB9008025AA /* SpeechRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B5021B37DB9008025AA /* SpeechRecognizerDelegate.swift */; };
+		393F3B5421B4A0B1008025AA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B5321B4A0B1008025AA /* SettingsController.swift */; };
+		393F3B5621B59E5E008025AA /* DataFlowDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B5521B59E5E008025AA /* DataFlowDefaults.swift */; };
+		393F3B5921B5EC3D008025AA /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B5821B5EC3D008025AA /* Socket.swift */; };
+		393F3B5B21B5ED3F008025AA /* MultipeerServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B5A21B5ED3F008025AA /* MultipeerServer.swift */; };
+		393F3B6321B5F0F9008025AA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B6221B5F0F9008025AA /* TabBarController.swift */; };
+		393F3B6521B5F487008025AA /* ReceiverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B6421B5F487008025AA /* ReceiverController.swift */; };
+		393F3B6721B5F4A3008025AA /* EmitterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B6621B5F4A2008025AA /* EmitterController.swift */; };
+		39432E9F21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39432E9E21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift */; };
+		39432EA121B74D0100DCDF6A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39432EA021B74D0100DCDF6A /* App.swift */; };
+		3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */; };
 		39929A7721AF3A1100CB306C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39929A7621AF3A1100CB306C /* AppDelegate.swift */; };
-		39929A7921AF3A1100CB306C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39929A7821AF3A1100CB306C /* ViewController.swift */; };
 		39929A7C21AF3A1100CB306C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7A21AF3A1100CB306C /* Main.storyboard */; };
 		39929A7E21AF3A1200CB306C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7D21AF3A1200CB306C /* Assets.xcassets */; };
 		39929A8121AF3A1200CB306C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7F21AF3A1200CB306C /* LaunchScreen.storyboard */; };
+		39BBE6E921AF9F60009052EF /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BBE6E821AF9F60009052EF /* Communicator.swift */; };
+		39E3D15521B340C900E80D56 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3D15421B340C900E80D56 /* Notifications.swift */; };
+		39E82A9B21AF54E40094E1E2 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E82A9A21AF54E40094E1E2 /* AudioKit.framework */; };
+		39E82A9F21AF5D630094E1E2 /* RecordingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E82A9E21AF5D630094E1E2 /* RecordingData.swift */; };
+		39E82AA121AF5DED0094E1E2 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E82AA021AF5DED0094E1E2 /* DataHolder.swift */; };
+		75F94A1DF08EE3E056359487 /* Pods_dataflow_emitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599132CCA35261F5DB52EFB4 /* Pods_dataflow_emitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39929A7321AF3A1100CB306C /* dataflow-emitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dataflow-emitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F027928874AF04C8EE1FA34 /* Pods-dataflow-emitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow-emitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow-emitter/Pods-dataflow-emitter.debug.xcconfig"; sourceTree = "<group>"; };
+		390C106321B734FA007BB462 /* EmitterStreamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterStreamController.swift; sourceTree = "<group>"; };
+		391F8D6421B6D08E00EC186A /* MultipeerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSession.swift; sourceTree = "<group>"; };
+		393F3B4F21B37DB9008025AA /* SpeechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		393F3B5021B37DB9008025AA /* SpeechRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerDelegate.swift; sourceTree = "<group>"; };
+		393F3B5321B4A0B1008025AA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		393F3B5521B59E5E008025AA /* DataFlowDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFlowDefaults.swift; sourceTree = "<group>"; };
+		393F3B5821B5EC3D008025AA /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		393F3B5A21B5ED3F008025AA /* MultipeerServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerServer.swift; sourceTree = "<group>"; };
+		393F3B6221B5F0F9008025AA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		393F3B6421B5F487008025AA /* ReceiverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverController.swift; sourceTree = "<group>"; };
+		393F3B6621B5F4A2008025AA /* EmitterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterController.swift; sourceTree = "<group>"; };
+		39432E9E21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverConnectedStreamController.swift; sourceTree = "<group>"; };
+		39432EA021B74D0100DCDF6A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverNotConnectedStreamController.swift; sourceTree = "<group>"; };
+		39929A7321AF3A1100CB306C /* dataflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dataflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39929A7621AF3A1100CB306C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39929A7821AF3A1100CB306C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39929A7B21AF3A1100CB306C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39929A7D21AF3A1200CB306C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39929A8021AF3A1200CB306C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39929A8221AF3A1200CB306C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39BBE6E821AF9F60009052EF /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		39E3D15421B340C900E80D56 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		39E82A9A21AF54E40094E1E2 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		39E82A9E21AF5D630094E1E2 /* RecordingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingData.swift; sourceTree = "<group>"; };
+		39E82AA021AF5DED0094E1E2 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
+		599132CCA35261F5DB52EFB4 /* Pods_dataflow_emitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dataflow_emitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50A920E3E19A43CFD01B546 /* Pods-dataflow-emitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow-emitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow-emitter/Pods-dataflow-emitter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,59 +69,180 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E82A9B21AF54E40094E1E2 /* AudioKit.framework in Frameworks */,
+				75F94A1DF08EE3E056359487 /* Pods_dataflow_emitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		393F3B5721B5DB2E008025AA /* CommunicationEngine */ = {
+			isa = PBXGroup;
+			children = (
+				39BBE6E821AF9F60009052EF /* Communicator.swift */,
+				393F3B5821B5EC3D008025AA /* Socket.swift */,
+				393F3B5A21B5ED3F008025AA /* MultipeerServer.swift */,
+				391F8D6421B6D08E00EC186A /* MultipeerSession.swift */,
+			);
+			path = CommunicationEngine;
+			sourceTree = "<group>";
+		};
+		393F3B5C21B5F047008025AA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				393F3B6B21B633BC008025AA /* Receiver */,
+				393F3B6A21B633B1008025AA /* Emiter */,
+				393F3B5321B4A0B1008025AA /* SettingsController.swift */,
+				393F3B6221B5F0F9008025AA /* TabBarController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		393F3B5D21B5F05B008025AA /* Engines */ = {
+			isa = PBXGroup;
+			children = (
+				393F3B6021B5F08E008025AA /* AudioEngine */,
+				393F3B5721B5DB2E008025AA /* CommunicationEngine */,
+			);
+			path = Engines;
+			sourceTree = "<group>";
+		};
+		393F3B5F21B5F076008025AA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				39929A7621AF3A1100CB306C /* AppDelegate.swift */,
+				39432EA021B74D0100DCDF6A /* App.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		393F3B6021B5F08E008025AA /* AudioEngine */ = {
+			isa = PBXGroup;
+			children = (
+				39E82A9E21AF5D630094E1E2 /* RecordingData.swift */,
+				39E82AA021AF5DED0094E1E2 /* DataHolder.swift */,
+				39929A8821AF3FAD00CB306C /* DataExtractors */,
+			);
+			path = AudioEngine;
+			sourceTree = "<group>";
+		};
+		393F3B6121B5F0B1008025AA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				39929A7F21AF3A1200CB306C /* LaunchScreen.storyboard */,
+				39929A7A21AF3A1100CB306C /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		393F3B6A21B633B1008025AA /* Emiter */ = {
+			isa = PBXGroup;
+			children = (
+				393F3B6621B5F4A2008025AA /* EmitterController.swift */,
+				390C106321B734FA007BB462 /* EmitterStreamController.swift */,
+			);
+			path = Emiter;
+			sourceTree = "<group>";
+		};
+		393F3B6B21B633BC008025AA /* Receiver */ = {
+			isa = PBXGroup;
+			children = (
+				39432E9E21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift */,
+				393F3B6421B5F487008025AA /* ReceiverController.swift */,
+				3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */,
+			);
+			path = Receiver;
+			sourceTree = "<group>";
+		};
 		39929A6A21AF3A1100CB306C = {
 			isa = PBXGroup;
 			children = (
-				39929A7521AF3A1100CB306C /* dataflow-emitter */,
+				39929A7521AF3A1100CB306C /* dataflow */,
 				39929A7421AF3A1100CB306C /* Products */,
+				39929A8921AF4AAF00CB306C /* Frameworks */,
+				78624FCA1D403EF210BD0EB5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		39929A7421AF3A1100CB306C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39929A7321AF3A1100CB306C /* dataflow-emitter.app */,
+				39929A7321AF3A1100CB306C /* dataflow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		39929A7521AF3A1100CB306C /* dataflow-emitter */ = {
+		39929A7521AF3A1100CB306C /* dataflow */ = {
 			isa = PBXGroup;
 			children = (
-				39929A7621AF3A1100CB306C /* AppDelegate.swift */,
-				39929A7821AF3A1100CB306C /* ViewController.swift */,
-				39929A7A21AF3A1100CB306C /* Main.storyboard */,
+				393F3B6121B5F0B1008025AA /* Storyboard */,
 				39929A7D21AF3A1200CB306C /* Assets.xcassets */,
-				39929A7F21AF3A1200CB306C /* LaunchScreen.storyboard */,
+				393F3B5F21B5F076008025AA /* Core */,
+				393F3B5D21B5F05B008025AA /* Engines */,
 				39929A8221AF3A1200CB306C /* Info.plist */,
+				393F3B5C21B5F047008025AA /* Scenes */,
+				39E3D15321B340BF00E80D56 /* Utils */,
 			);
-			path = "dataflow-emitter";
+			path = dataflow;
+			sourceTree = "<group>";
+		};
+		39929A8821AF3FAD00CB306C /* DataExtractors */ = {
+			isa = PBXGroup;
+			children = (
+				393F3B4F21B37DB9008025AA /* SpeechRecognizer.swift */,
+				393F3B5021B37DB9008025AA /* SpeechRecognizerDelegate.swift */,
+			);
+			path = DataExtractors;
+			sourceTree = "<group>";
+		};
+		39929A8921AF4AAF00CB306C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39E82A9A21AF54E40094E1E2 /* AudioKit.framework */,
+				599132CCA35261F5DB52EFB4 /* Pods_dataflow_emitter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39E3D15321B340BF00E80D56 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				39E3D15421B340C900E80D56 /* Notifications.swift */,
+				393F3B5521B59E5E008025AA /* DataFlowDefaults.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		78624FCA1D403EF210BD0EB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F027928874AF04C8EE1FA34 /* Pods-dataflow-emitter.debug.xcconfig */,
+				A50A920E3E19A43CFD01B546 /* Pods-dataflow-emitter.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		39929A7221AF3A1100CB306C /* dataflow-emitter */ = {
+		39929A7221AF3A1100CB306C /* dataflow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39929A8521AF3A1200CB306C /* Build configuration list for PBXNativeTarget "dataflow-emitter" */;
+			buildConfigurationList = 39929A8521AF3A1200CB306C /* Build configuration list for PBXNativeTarget "dataflow" */;
 			buildPhases = (
+				4E28EBFF219D236A06F11837 /* [CP] Check Pods Manifest.lock */,
 				39929A6F21AF3A1100CB306C /* Sources */,
 				39929A7021AF3A1100CB306C /* Frameworks */,
 				39929A7121AF3A1100CB306C /* Resources */,
+				74C30EBB44E82364AAFD5997 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "dataflow-emitter";
+			name = dataflow;
 			productName = "dataflow-emitter";
-			productReference = 39929A7321AF3A1100CB306C /* dataflow-emitter.app */;
+			productReference = 39929A7321AF3A1100CB306C /* dataflow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -112,7 +273,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39929A7221AF3A1100CB306C /* dataflow-emitter */,
+				39929A7221AF3A1100CB306C /* dataflow */,
 			);
 		};
 /* End PBXProject section */
@@ -130,13 +291,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E28EBFF219D236A06F11837 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dataflow-emitter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74C30EBB44E82364AAFD5997 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-dataflow-emitter/Pods-dataflow-emitter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-dataflow-emitter/Pods-dataflow-emitter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		39929A6F21AF3A1100CB306C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39929A7921AF3A1100CB306C /* ViewController.swift in Sources */,
+				390C106421B734FA007BB462 /* EmitterStreamController.swift in Sources */,
+				393F3B5121B37DB9008025AA /* SpeechRecognizer.swift in Sources */,
+				3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */,
+				393F3B6321B5F0F9008025AA /* TabBarController.swift in Sources */,
+				39BBE6E921AF9F60009052EF /* Communicator.swift in Sources */,
+				39E3D15521B340C900E80D56 /* Notifications.swift in Sources */,
+				393F3B5421B4A0B1008025AA /* SettingsController.swift in Sources */,
+				393F3B5B21B5ED3F008025AA /* MultipeerServer.swift in Sources */,
+				393F3B5221B37DB9008025AA /* SpeechRecognizerDelegate.swift in Sources */,
+				391F8D6521B6D08E00EC186A /* MultipeerSession.swift in Sources */,
+				393F3B5921B5EC3D008025AA /* Socket.swift in Sources */,
+				393F3B5621B59E5E008025AA /* DataFlowDefaults.swift in Sources */,
+				39432E9F21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift in Sources */,
+				39432EA121B74D0100DCDF6A /* App.swift in Sources */,
+				39E82AA121AF5DED0094E1E2 /* DataHolder.swift in Sources */,
 				39929A7721AF3A1100CB306C /* AppDelegate.swift in Sources */,
+				393F3B6521B5F487008025AA /* ReceiverController.swift in Sources */,
+				393F3B6721B5F4A3008025AA /* EmitterController.swift in Sources */,
+				39E82A9F21AF5D630094E1E2 /* RecordingData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,16 +505,22 @@
 		};
 		39929A8621AF3A1200CB306C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F027928874AF04C8EE1FA34 /* Pods-dataflow-emitter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJ993GM677;
-				INFOPLIST_FILE = "dataflow-emitter/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/dataflow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "prisme.dataflow-emitter";
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = prisme.dataflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,16 +529,22 @@
 		};
 		39929A8721AF3A1200CB306C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A50A920E3E19A43CFD01B546 /* Pods-dataflow-emitter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJ993GM677;
-				INFOPLIST_FILE = "dataflow-emitter/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/dataflow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "prisme.dataflow-emitter";
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = prisme.dataflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39929A8521AF3A1200CB306C /* Build configuration list for PBXNativeTarget "dataflow-emitter" */ = {
+		39929A8521AF3A1200CB306C /* Build configuration list for PBXNativeTarget "dataflow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39929A8621AF3A1200CB306C /* Debug */,
