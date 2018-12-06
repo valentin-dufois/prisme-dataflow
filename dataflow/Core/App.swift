@@ -11,5 +11,7 @@ import Foundation
 struct App {
 	static let dataHolder = DataHolder.instance
 
-	static let communicator = Communicator.instance
+	static var receiver:ReceiverConnectedStreamController?
+
+	static var audioAnalysisQueue = DispatchQueue(label: "prisme.dataflow.audioAnalysis", qos: DispatchQoS.utility)
 }

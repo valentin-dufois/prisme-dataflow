@@ -1,6 +1,7 @@
 platform :ios, '12.0'
-target 'dataflow-emitter' do
+target 'dataflow' do
 	use_frameworks!
 	pod 'SwiftSocket'
+	pod 'AudioKit/Core'
 end
-workspace 'project'
+workspace 'dataflow'

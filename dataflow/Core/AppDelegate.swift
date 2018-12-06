@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -49,14 +50,19 @@ extension AppDelegate {
 
 extension AppDelegate {
 	func checkUserDefaults() {
-		// Set default values only if they are missing
-		guard (DataFlowDefaults.version.integer ?? 0)  == 1 else { return }
+		
+		let defaultVersion = 2
 
-		DataFlowDefaults.version.set(value: 1)
+		// Set default values only if they are missing
+		guard (DataFlowDefaults.version.integer ?? 0) != defaultVersion else { return }
+
+		DataFlowDefaults.version.set(value: defaultVersion)
 		DataFlowDefaults.serverURL.set(value: URL(string: "valentindufois.fr")!)
 		DataFlowDefaults.serverPort.set(value: 1457)
 		DataFlowDefaults.appType.set(value: "emitter")
+		DataFlowDefaults.peerServiceName.set(value: "prisme-dataflow")
 
 		print("User defaults set to default values")
 	}
 }
+

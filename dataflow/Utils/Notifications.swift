@@ -9,18 +9,9 @@
 import Foundation
 
 enum Notifications: String {
-	case socketConnected
-	case socketDisconnected
-
 	case settingsUpdated
 	case switchToEmitter
 	case switchToReceiver
-
-	case connectedToEmitter
-	case disconnectedFromEmitter
-
-	case peerConnected
-	case peerDisconnected
 
 	var name:Notification.Name {
 		return Notification.Name(self.rawValue)

@@ -33,10 +33,10 @@ class DataHolder {
 
 // MARK: - Sending Data
 extension DataHolder {
-	func emmit() {
+	func asJSON() -> Data {
 		// Transform audio Data to JSON
 		let encoder = JSONEncoder()
 
-		App.communicator.emitToSocket(data: try! encoder.encode(App.dataHolder.audioData))
+		return try! encoder.encode(App.dataHolder.audioData)
 	}
 }

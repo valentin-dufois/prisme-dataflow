@@ -28,7 +28,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KJ-1S-n5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="-1227"/>
+            <point key="canvasLocation" x="-103" y="-1067"/>
         </scene>
         <!--Emitter-->
         <scene sceneID="tne-QT-ifu">
@@ -152,10 +152,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWM-l0-7tE">
                                                     <rect key="frame" x="20" y="5" width="100" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="Dy8-VD-8Je"/>
                                                         <constraint firstAttribute="height" constant="34" id="FEP-6Q-Sdj"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="MQZ-Te-vtT"/>
-                                                        <constraint firstAttribute="width" constant="100" id="Olt-jO-FWT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -268,7 +266,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVq-QU-uhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="-296"/>
+            <point key="canvasLocation" x="894" y="430"/>
+        </scene>
+        <!--Receiver-->
+        <scene sceneID="OGG-jE-Qus">
+            <objects>
+                <viewController storyboardIdentifier="ReceiverViewController" id="t1M-hh-cIe" customClass="ReceiverController" customModule="dataflow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sAa-2y-TZY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGY-zV-kRJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="zfW-cI-NwV" kind="embed" id="kVU-xi-R9T"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HGY-zV-kRJ" firstAttribute="trailing" secondItem="eZ6-3Z-bjW" secondAttribute="trailing" id="1WW-Tl-1vL"/>
+                            <constraint firstItem="HGY-zV-kRJ" firstAttribute="leading" secondItem="eZ6-3Z-bjW" secondAttribute="leading" id="WOa-Gf-dTK"/>
+                            <constraint firstItem="HGY-zV-kRJ" firstAttribute="top" secondItem="sAa-2y-TZY" secondAttribute="top" id="Yra-oe-gx5"/>
+                            <constraint firstItem="HGY-zV-kRJ" firstAttribute="bottom" secondItem="eZ6-3Z-bjW" secondAttribute="bottom" id="iGt-Ak-Ubf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eZ6-3Z-bjW"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Receiver" image="TabBarReceiver" id="5BW-BV-vfb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="insetView" destination="HGY-zV-kRJ" id="RK6-lz-bm2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3J-JQ-dfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-444" y="-296"/>
         </scene>
         <!--Settings Navigation -->
         <scene sceneID="yBe-GA-DyT">
@@ -285,14 +317,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bg-QX-Ld8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="-296"/>
+            <point key="canvasLocation" x="894" y="-296"/>
         </scene>
         <!--Stream-->
         <scene sceneID="ZE3-Gs-aqN">
             <objects>
                 <tableViewController storyboardIdentifier="streamEmitterViewController" id="F1b-Oa-oE7" customClass="EmitterStreamController" customModule="dataflow" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="cfB-zo-rwP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -311,18 +343,19 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Stream" image="TabBarStream" id="G2L-Za-yct"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3F-09-G2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-439" y="-296"/>
+            <point key="canvasLocation" x="228" y="-296"/>
         </scene>
-        <!--Stream-->
+        <!--Receiver Not Connected Stream Controller-->
         <scene sceneID="i0P-Xj-zGh">
             <objects>
-                <viewController storyboardIdentifier="streamReceiverNotConnectedViewController" id="zfW-cI-NwV" customClass="ReceiverNotConnectedStreamController" customModule="dataflow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="receiverNotConnectedView" id="zfW-cI-NwV" customClass="ReceiverNotConnectedStreamController" customModule="dataflow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R14-2t-sgO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLe-AB-7bG">
@@ -361,7 +394,7 @@ to any stream</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="openEmitterSelectionInterface" destination="zfW-cI-NwV" eventType="touchUpInside" id="aN7-AO-dt3"/>
+                                                    <action selector="openEmitterSelectionInterface" destination="zfW-cI-NwV" eventType="touchUpInside" id="tsF-J8-5le"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -383,26 +416,25 @@ to any stream</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="34d-F5-kFs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stream" image="TabBarStream" id="5BW-BV-vfb"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aES-9T-QkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-439" y="369"/>
+            <point key="canvasLocation" x="-774" y="452"/>
         </scene>
-        <!--Stream-->
+        <!--Receiver Connected Stream Controller-->
         <scene sceneID="prh-8X-OcN">
             <objects>
-                <viewController storyboardIdentifier="streamReceiverConnectedViewController" id="Emj-Mu-BR4" customClass="ReceiverConnectedStreamController" customModule="dataflow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="receiverConnectedView" id="Emj-Mu-BR4" customClass="ReceiverConnectedStreamController" customModule="dataflow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RfG-cq-8uo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gd5-yY-OR7">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="151" translatesAutoresizingMaskIntoConstraints="NO" id="Tzt-k7-kfg">
-                                        <rect key="frame" x="67.5" y="40" width="240" height="518"/>
+                                        <rect key="frame" x="67.5" y="64.5" width="240" height="518"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEz-rY-sHk">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="59"/>
@@ -453,8 +485,7 @@ to any stream</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="disconnectFromEmitter" destination="Emj-Mu-BR4" eventType="touchUpInside" id="tTi-9V-bjL"/>
-                                                    <action selector="openEmitterSelectionInterface" destination="zfW-cI-NwV" eventType="touchUpInside" id="pxT-dR-st8"/>
+                                                    <action selector="disconnect:" destination="Emj-Mu-BR4" eventType="touchUpInside" id="3Jb-NM-9Nj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -470,7 +501,6 @@ to any stream</string>
                                 <constraints>
                                     <constraint firstItem="Tzt-k7-kfg" firstAttribute="centerY" secondItem="Gd5-yY-OR7" secondAttribute="centerY" id="10b-OR-gt2"/>
                                     <constraint firstItem="Tzt-k7-kfg" firstAttribute="centerX" secondItem="Gd5-yY-OR7" secondAttribute="centerX" id="3WG-N2-xoa"/>
-                                    <constraint firstItem="Tzt-k7-kfg" firstAttribute="top" secondItem="Gd5-yY-OR7" secondAttribute="top" constant="40" id="WVD-Hx-gxG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -483,15 +513,14 @@ to any stream</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WPV-GN-SZL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stream" image="TabBarStream" id="89H-MD-QYm"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emitterLabel" destination="Ptw-q6-nyb" id="E9D-Jl-L21"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nw-13-UBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="368"/>
+            <point key="canvasLocation" x="-103" y="474"/>
         </scene>
     </scenes>
     <resources>

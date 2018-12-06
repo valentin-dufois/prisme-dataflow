@@ -11,8 +11,9 @@ import AudioKit
 
 class EmitterController: UIViewController {
 
-	// ////////
+	// ///////////////
 	// MARK : OUTLETS
+
 	@IBOutlet var startStopBtn: UIBarButtonItem!
 	
 	@IBOutlet var connectionStateLabel: UIBarButtonItem!
@@ -31,34 +32,29 @@ class EmitterController: UIViewController {
 
 	private var _recording: Bool = false
 	private var _tap: AKLazyTap!
-	private var _buffer: AVAudioPCMBuffer!
 
 	// Data extractors
-
 	private var _tracker: AKFrequencyTracker!
 	private var _speechRecognizer: SpeechRecognizer = SpeechRecognizer()
+
+	// Stream delegate
+	var emitterStream: streamEmitterDelegate?
+
+	// The socket for sending data
+	private var _socket:Socket!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		// Configure our audio session
-		do {
-			try initAudioSession()
-		} catch {
-			fatalError("Could not start recording : \(error.localizedDescription)")
-		}
+		initAudioSession()
 
-		NotificationCenter.default.addObserver(self, selector: #selector(onSocketConnected), name: Notifications.socketConnected.name, object: nil)
-
-		NotificationCenter.default.addObserver(self, selector: #selector(onSocketDisconnected), name: Notifications.socketDisconnected.name, object: nil)
-
-		App.communicator.start()
+		// Configure the socket
+		_socket = Socket()
+		_socket.delegate = self
+		_socket.connect(to: DataFlowDefaults.serverURL.url!.absoluteString,
+						port: Int32(DataFlowDefaults.serverPort.integer!))
 	}
-
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-	}
-
 
 	@IBAction func toggleRecording(_ sender: UIBarButtonItem) {
 		if(_recording) {
@@ -72,33 +68,52 @@ class EmitterController: UIViewController {
 		}
 	}
 
+	/// Stop and restart the socket connection
+	///
+	/// - Parameter sender: The ONLINE/OFFLINE button
 	@IBAction func reconnectToSocket(_ sender: Any) {
-		App.communicator.reconnectToSocket()
+		_socket.reconnect()
 	}
-	
+
+	/// Properly end any ongoing recording
+	deinit {
+		endRecording()
+		_socket?.disconnect()
+	}
+}
+
+
+// MARK: - Audio management methods
+extension EmitterController {
 
 	/// Initialize the audio session
 	///
 	/// - Throws: in case of errors while setting things up
-	private func initAudioSession() throws {
+	private func initAudioSession() {
 		AKSettings.audioInputEnabled = true
 		AKSettings.ioBufferDuration = 0.002
+
 		_mic = AKMicrophone()
 		_tracker = AKFrequencyTracker(_mic)
 		_silence = AKBooster(_tracker, gain: 0)
 
 		_tap = AKLazyTap(node: _mic.avAudioNode)
-		_buffer = AVAudioPCMBuffer(pcmFormat: _mic.avAudioNode.outputFormat(forBus: 0), frameCapacity: 44100)
 	}
 
+	/// Start the recording, create the loop and start the speech recognizer
 	private func startRecording() {
+		guard !_recording else {
+			print("[EmitterController.startRecording] A recording is already started")
+			return
+		}
+
 		AudioKit.output = _silence
 
 		// Start audiokit
 		do {
 			try AudioKit.start()
 		} catch {
-			fatalError("Could not start audio engine : \(error.localizedDescription)")
+			fatalError("[EmitterController.startRecording] Error while starting AudioKit : \(error.localizedDescription)")
 		}
 
 		// Add a timer for each buffer
@@ -114,65 +129,81 @@ class EmitterController: UIViewController {
 		_speechRecognizer.start()
 	}
 
+	/// Called on every audio buffer, extract informations and emit data
+	@objc func audioObserver() {
+		// Get the audio buffer
+		let buffer = AVAudioPCMBuffer(pcmFormat: _mic.avAudioNode.outputFormat(forBus: 0), frameCapacity: 44100)!
+		_tap.fillNextBuffer(buffer, timeStamp: nil)
+
+		// Make sure there is audio data to work with
+		guard buffer.frameLength > 0 else { return }
+
+		// Execute audio analysis queue asynchronously to improve performances
+		App.audioAnalysisQueue.async {
+			// Frequency
+			App.dataHolder.audioData.frequency = self._tracker.frequency
+
+			// Amplitude
+			App.dataHolder.audioData.amplitude = self._tracker.amplitude
+
+			// Speech
+			self._speechRecognizer.analyze(buffer)
+
+			// Finally, send the data to the socket
+			self._socket.emit(data: App.dataHolder.asJSON())
+
+			// And send to the stream
+			self.emitterStream?.emit(data: buffer.toData())
+		}
+
+		// Update the UI on the main thread. Latency is't important as these labels
+		// serves only as low precision indicators
+		audioFrequencyLabel.text = "\((App.dataHolder.audioData.frequency * 100).rounded() / 100) hz"
+		audioAmplitudeLabel.text = "\((App.dataHolder.audioData.amplitude * 100).rounded() / 100)"
+		decodedWordLabel.text = App.dataHolder.audioData.phrase ?? "-"
+	}
+
+	/// Properly ends the recording and links systems
 	private func endRecording() {
+		guard _recording else {
+			print("[EmitterController.endRecording] There is no recording to end")
+			return
+		}
+
 		// Stop the engine
 		_speechRecognizer.stop()
 
 		do {
 			try AudioKit.stop()
 		} catch {
-			fatalError("Error while stopping AudioKit : \(error.localizedDescription)")
+			fatalError("[EmitterController.endRecording] Error while stopping AudioKit : \(error.localizedDescription)")
 		}
 
 		_recording = false
 	}
-
-	deinit {
-		if(_recording) {
-			endRecording()
-		}
-
-		App.communicator.deconnectFromSocket()
-	}
-}
-
-// MARK: - Information extraction from the audio feed
-extension EmitterController {
-	@objc func audioObserver() {
-		// Get audio buffer
-		_tap.fillNextBuffer(_buffer, timeStamp: nil)
-
-		// Make sure there is audio data to work with
-		guard _buffer.frameLength > 0 else { return }
-
-		// Frequency
-		audioFrequencyLabel.text = "\((_tracker.frequency * 100).rounded() / 100) hz"
-		App.dataHolder.audioData.frequency = _tracker.frequency
-
-		// Amplitude
-		audioAmplitudeLabel.text = "\((_tracker.amplitude * 100).rounded() / 100)"
-		App.dataHolder.audioData.amplitude = _tracker.amplitude
-
-		// Speech
-		_speechRecognizer.analyze(_buffer)
-		decodedWordLabel.text = App.dataHolder.audioData.phrase ?? "-"
-
-		App.dataHolder.emmit()
-
-		// Finally, send the buffer to any receiver
-		// Array(UnsafeBufferPointer(start: _buffer.floatChannelData![0], count: Int(_buffer.frameLength))
-
-	}
 }
 
 
-// MARK: - Observers
-extension EmitterController {
-	@objc func onSocketConnected() {
+// MARK: - Socket delegate
+extension EmitterController: SocketDelegate {
+
+	/// Called when the socket succesfully connect
+	///
+	/// - Parameter _: The socket
+	func socketDidConnect(_ socket: Socket) {
 		connectionStateLabel.title = "ONLINE"
 	}
 
-	@objc func onSocketDisconnected() {
+	/// Called when the socked gets disconnected, either by a call to `Socket.disconnect`
+	/// or 'Socket.reconnect()` or if the connection gets lost.
+	///
+	/// - Parameters:
+	///   - socket: The current socket
+	///   - error: The error if any
+	func socketDidDisconnect(_ socket: Socket, error: Error?) {
+		if let error = error {
+			print("Socket error: \(error.localizedDescription)")
+		}
 		connectionStateLabel.title = "OFFLINE"
 	}
 }

@@ -9,21 +9,18 @@
 import Foundation
 import UIKit
 import MultipeerConnectivity
-import QuartzCore
+import AVFoundation
 
 class ReceiverConnectedStreamController: UIViewController {
 	@IBOutlet weak var emitterLabel: UILabel!
 
 	override func viewDidLoad() {
-		NotificationCenter.default.addObserver(self, selector: #selector(disconnectFromEmitter), name: Notifications.peerDisconnected.name, object: nil)
+		super.viewDidLoad()
+
+		emitterLabel.text = (self.parent! as! ReceiverController)._multipeerClient?.serverPeer?.displayName
 	}
 
-	override func viewDidAppear(_ animated: Bool) {
-		emitterLabel.text = App.communicator.session.connectedPeers.first!.displayName
-	}
-
-	@IBAction func disconnectFromEmitter() {
-		App.communicator.session.disconnect()
-		NotificationCenter.default.post(name: Notifications.disconnectedFromEmitter.name, object: nil)
+	@IBAction func disconnect(_ sender: Any) {
+		(self.parent! as! ReceiverController).disconnectFromServer()
 	}
 }

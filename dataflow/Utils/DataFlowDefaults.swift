@@ -13,6 +13,7 @@ enum DataFlowDefaults:String {
 	case serverURL
 	case serverPort
 	case appType
+	case peerServiceName
 }
 
 extension DataFlowDefaults {
