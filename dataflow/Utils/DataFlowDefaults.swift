@@ -17,7 +17,6 @@ enum DataFlowDefaults:String {
 }
 
 extension DataFlowDefaults {
-
 	var url: URL? {
 		return UserDefaults.standard.url(forKey: self.rawValue)
 	}
@@ -41,4 +40,19 @@ extension DataFlowDefaults {
 	func set(value: String) -> Void {
 		UserDefaults.standard.set(value, forKey: self.rawValue)
 	}
+    
+    static func check() {
+        let defaultVersion = Bundle.version()
+        
+        // Set default values only if they are missing
+        guard (DataFlowDefaults.version.integer ?? 0) != defaultVersion else { return }
+        
+        DataFlowDefaults.version.set(value: defaultVersion)
+        DataFlowDefaults.serverURL.set(value: URL(string: "valentindufois.fr")!)
+        DataFlowDefaults.serverPort.set(value: 1457)
+        DataFlowDefaults.appType.set(value: "emitter")
+        DataFlowDefaults.peerServiceName.set(value: "prisme-dataflow")
+        
+        print("User defaults set to default values")
+    }
 }

@@ -20,7 +20,11 @@ extension AppDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 
-		checkUserDefaults()
+        // Prevent the app from going to sleep mode
+        UIApplication.shared.isIdleTimerDisabled = true
+        
+        // Make sure User defaults are Up to date
+		DataFlowDefaults.check()
 
 		return true
 	}
@@ -45,24 +49,6 @@ extension AppDelegate {
 
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-	}
-}
-
-extension AppDelegate {
-	func checkUserDefaults() {
-		
-		let defaultVersion = 2
-
-		// Set default values only if they are missing
-		guard (DataFlowDefaults.version.integer ?? 0) != defaultVersion else { return }
-
-		DataFlowDefaults.version.set(value: defaultVersion)
-		DataFlowDefaults.serverURL.set(value: URL(string: "valentindufois.fr")!)
-		DataFlowDefaults.serverPort.set(value: 1457)
-		DataFlowDefaults.appType.set(value: "emitter")
-		DataFlowDefaults.peerServiceName.set(value: "prisme-dataflow")
-
-		print("User defaults set to default values")
 	}
 }
 
