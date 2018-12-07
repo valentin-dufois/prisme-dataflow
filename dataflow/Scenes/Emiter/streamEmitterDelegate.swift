@@ -1,5 +1,5 @@
 //
-//  EmitterStreamDelegate.swift
+//  streamEmitterDelegate.swift
 //  dataflow
 //
 //  Created by Valentin Dufois on 06/12/2018.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol streamEmitterDelegate {
+protocol streamEmitterDelegate: AnyObject {
 	func emit(data: Data)
 }

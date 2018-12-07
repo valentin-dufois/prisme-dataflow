@@ -36,7 +36,7 @@ class MultipeerDevice: NSObject {
 	private func initSession() -> MCSession {
 		let session =  MCSession(peer: _devicePeerID,
 								 securityIdentity: nil,
-								 encryptionPreference: .required)
+								 encryptionPreference: .none)
 		session.delegate = self
 		return session
 	}

@@ -20,6 +20,8 @@ class EmitterStreamController: UITableViewController {
 		_multipeerServer = MultipeerServer(serviceName: DataFlowDefaults.peerServiceName.string!)
 		_multipeerServer.delegate = self
 		_multipeerServer.open()
+        
+        App.emitterStream = self
 	}
 
 	// Make sure to properly close the server
@@ -41,7 +43,7 @@ extension EmitterStreamController {
 
 		// Try to open the stream to the client
 		do {
-			outputStream = try _multipeerServer.createStream(forPeer: peerID)
+			outputStream = try _multipeerServer.makeStream(forPeer: peerID)
 		} catch {
 			fatalError("[EmitterStreamController.clientConnected] Could not create a stream for client \(peerID.displayName) : \(error.localizedDescription)")
 		}
@@ -72,6 +74,7 @@ extension EmitterStreamController {
 // MARK: Sending Data
 extension EmitterStreamController: streamEmitterDelegate {
 	func emit(data: Data) {
+//        print("[streamEmitterDelegate.emit] Emitting to \(_clientStreams.count) clients")
 		_clientStreams.forEach { (arg) in
 			let (_, outputStream) = arg
 

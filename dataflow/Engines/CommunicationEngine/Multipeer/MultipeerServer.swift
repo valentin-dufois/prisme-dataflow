@@ -50,7 +50,7 @@ extension MultipeerServer {
 		return _session.connectedPeers
 	}
 
-	func createStream(forPeer peer: MCPeerID) throws -> OutputStream {
+	func makeStream(forPeer peer: MCPeerID) throws -> OutputStream {
 		return try _session.startStream(withName: peer.displayName, toPeer: peer)
 	}
 }

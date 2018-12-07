@@ -26,7 +26,7 @@ class Socket {
 	}
 
 	/// The socket delegate
-	public var delegate:SocketDelegate?
+	weak public var delegate:SocketDelegate?
 
 	/// The socket url
 	private var _url:String!

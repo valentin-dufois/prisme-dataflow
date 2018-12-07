@@ -12,6 +12,8 @@ enum Notifications: String {
 	case settingsUpdated
 	case switchToEmitter
 	case switchToReceiver
+    
+    case debug
 
 	var name:Notification.Name {
 		return Notification.Name(self.rawValue)

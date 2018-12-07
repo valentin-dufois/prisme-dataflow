@@ -10,7 +10,7 @@ import Foundation
 import Speech
 
 class SpeechRecognizerTaskDelegate: NSObject, SFSpeechRecognitionTaskDelegate {
-	var recognizer: SpeechRecognizer!
+	weak var recognizer: SpeechRecognizer!
 
 	/// Called when a hypothesized transcription is available.
 	///

@@ -23,7 +23,8 @@ class ReceiverController: UIViewController {
 
 	internal var _multipeerClient: MultipeerClient?
 
-	internal var _inputStream: InputStream?
+	internal var _audioStreamReader = AudioStreamReader()
+    internal var _timer: Timer?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -76,15 +77,10 @@ extension ReceiverController {
 	func disconnectFromServer() {
 		_multipeerClient?.close()
 		_multipeerClient = nil
-
-		closeStream()
+        
+        _audioStreamReader.end()
 
 		displayNotConnectedView()
-	}
-
-	func closeStream() {
-		_inputStream?.close()
-		_inputStream = nil
 	}
 }
 
@@ -104,32 +100,8 @@ extension ReceiverController: MultipeerDelegate {
 	}
 
 	func mpDevice(_ device: MultipeerDevice, receivedStream stream: InputStream, withName streamName: String, fromPeer peer: MCPeerID) {
-		_inputStream = stream
-		_inputStream?.delegate = self
-		_inputStream?.schedule(in: .current, forMode: .common)
-	}
-}
-
-extension ReceiverController: StreamDelegate {
-	func stream(_ stream: Stream, handle event: Stream.Event) {
-		switch event {
-		case .hasBytesAvailable:
-			pollStream()
-		case .endEncountered:
-			closeStream()
-		default: break
-		}
-	}
-
-	func pollStream() {
-		guard let inputStream = _inputStream else {
-			print("[ReceiverController.pollStream] There is no stream to poll")
-			return
-		}
-
-		let inputData = Data(reading: inputStream)
-		let audioBuffer = AVAudioPCMBuffer(data: inputData, audioFormat: AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: false)!)!
-
-		print(audioBuffer.frameLength)
+        print("Received stream `\(streamName)` from \(peer.displayName)")
+        _audioStreamReader.end()
+		_audioStreamReader.read(stream: stream)
 	}
 }

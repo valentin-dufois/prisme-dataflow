@@ -31,10 +31,8 @@ class TabBarController:UITabBarController {
 		// Stream tab
 		let streamViewController = storyboard.instantiateViewController(withIdentifier: "streamEmitterViewController")
 
-		(emitterViewController as! EmitterController).emitterStream = (streamViewController as! streamEmitterDelegate)
-
 		DispatchQueue.main.async {
-			self.viewControllers = [emitterViewController, streamViewController, self.viewControllers![1]]
+            self.setViewControllers([emitterViewController, streamViewController, self.viewControllers![1]], animated: true)
 		}
 	}
 
@@ -45,7 +43,7 @@ class TabBarController:UITabBarController {
 		let receiverViewController = storyboard.instantiateViewController(withIdentifier: "ReceiverViewController")
 
 		DispatchQueue.main.async {
-			self.viewControllers = [receiverViewController, self.viewControllers![2]]
+            self.setViewControllers([receiverViewController, self.viewControllers![2]], animated: true)
 		}
 	}
 }

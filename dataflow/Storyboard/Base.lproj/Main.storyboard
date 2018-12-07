@@ -42,22 +42,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="BSR-wp-lwR">
-                                        <rect key="frame" x="157" y="168" width="100" height="243.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="168" width="414" height="243.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Av8-PH-cSY">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="31.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="31.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutral" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpz-nA-qBb">
-                                                <rect key="frame" x="0.0" y="70.333333333333343" width="100" height="32.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="70.333333333333343" width="414" height="32.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0Hz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xw-xe-xyx">
-                                                <rect key="frame" x="0.0" y="141.66666666666669" width="100" height="31.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="141.66666666666669" width="414" height="31.333333333333343"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Z7Z-zV-a2G"/>
                                                 </constraints>
@@ -66,13 +66,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xw-i0-CRn">
-                                                <rect key="frame" x="0.0" y="212" width="100" height="31.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="212" width="414" height="31.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Av8-PH-cSY" firstAttribute="leading" secondItem="BSR-wp-lwR" secondAttribute="leading" id="9T0-qU-mTZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Av8-PH-cSY" secondAttribute="trailing" id="Eku-vO-2aq"/>
                                             <constraint firstAttribute="trailing" secondItem="Av8-PH-cSY" secondAttribute="trailing" id="r9g-ja-4DB"/>
                                             <constraint firstItem="Av8-PH-cSY" firstAttribute="leading" secondItem="BSR-wp-lwR" secondAttribute="leading" id="xOg-5p-Jjr"/>
                                         </constraints>
@@ -82,6 +84,8 @@
                                 <constraints>
                                     <constraint firstItem="BSR-wp-lwR" firstAttribute="centerX" secondItem="B3S-sX-Tv3" secondAttribute="centerX" id="7DF-Ke-EDw"/>
                                     <constraint firstItem="BSR-wp-lwR" firstAttribute="centerY" secondItem="B3S-sX-Tv3" secondAttribute="centerY" id="RKy-tp-d4P"/>
+                                    <constraint firstItem="BSR-wp-lwR" firstAttribute="leading" secondItem="B3S-sX-Tv3" secondAttribute="leading" id="YrS-nr-dr5"/>
+                                    <constraint firstAttribute="trailing" secondItem="BSR-wp-lwR" secondAttribute="trailing" id="bjC-Z9-yai"/>
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="Ynd-zf-6Nl">
@@ -278,9 +282,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGY-zV-kRJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
-                                <connections>
-                                    <segue destination="zfW-cI-NwV" kind="embed" id="kVU-xi-R9T"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -355,14 +356,14 @@
             <objects>
                 <viewController storyboardIdentifier="receiverNotConnectedView" id="zfW-cI-NwV" customClass="ReceiverNotConnectedStreamController" customModule="dataflow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R14-2t-sgO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLe-AB-7bG">
-                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="87" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-ia-HUz">
-                                        <rect key="frame" x="41.666666666666657" y="239.66666666666669" width="330.66666666666674" height="187.66666666666669"/>
+                                        <rect key="frame" x="41.666666666666657" y="264.33333333333331" width="330.66666666666674" height="187.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX7-dT-OcH">
                                                 <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="71.666666666666671"/>
@@ -373,7 +374,7 @@ to any stream</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-SJ-EPN">
-                                                <rect key="frame" x="120.33333333333334" y="158.66666666666663" width="90" height="29"/>
+                                                <rect key="frame" x="120.33333333333334" y="158.66666666666669" width="90" height="29"/>
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="contentEdgeInsets" minX="15" minY="5" maxX="16" maxY="6"/>
                                                 <state key="normal" title="Connect" backgroundImage="BorderButtonTemplate">
@@ -420,7 +421,7 @@ to any stream</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aES-9T-QkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-774" y="452"/>
+            <point key="canvasLocation" x="-777" y="474"/>
         </scene>
         <!--Receiver Connected Stream Controller-->
         <scene sceneID="prh-8X-OcN">
@@ -496,6 +497,32 @@ to any stream</string>
                                             <constraint firstAttribute="bottom" secondItem="bEz-rY-sHk" secondAttribute="bottom" constant="459" id="wHm-D8-4jJ"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYM-LO-tho">
+                                        <rect key="frame" x="167" y="625" width="82" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="15" minY="5" maxX="16" maxY="6"/>
+                                        <state key="normal" title="DEBUG" backgroundImage="BorderButtonTemplate">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="PlainButtonTemplate">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="debugWith_sender:" destination="Emj-Mu-BR4" eventType="touchUpInside" id="yHU-ao-Lp3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

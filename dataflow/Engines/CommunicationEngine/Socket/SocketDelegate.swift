@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SocketDelegate {
+protocol SocketDelegate: AnyObject {
 
 	/// Called when the socket succesfully connect
 	///

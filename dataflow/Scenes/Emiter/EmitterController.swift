@@ -37,9 +37,6 @@ class EmitterController: UIViewController {
 	private var _tracker: AKFrequencyTracker!
 	private var _speechRecognizer: SpeechRecognizer = SpeechRecognizer()
 
-	// Stream delegate
-	var emitterStream: streamEmitterDelegate?
-
 	// The socket for sending data
 	private var _socket:Socket!
 	
@@ -77,8 +74,13 @@ class EmitterController: UIViewController {
 
 	/// Properly end any ongoing recording
 	deinit {
+        print("[EmitterController.deinit]")
 		endRecording()
 		_socket?.disconnect()
+        
+        // Make sure AudioKit elements are properly free-ed
+        _silence.detach()
+        _tracker.detach()
 	}
 }
 
@@ -153,7 +155,8 @@ extension EmitterController {
 			self._socket.emit(data: App.dataHolder.asJSON())
 
 			// And send to the stream
-			self.emitterStream?.emit(data: buffer.toData())
+//            print("Emitting to stream")
+			App.emitterStream?.emit(data: buffer.toData())
 		}
 
 		// Update the UI on the main thread. Latency is't important as these labels

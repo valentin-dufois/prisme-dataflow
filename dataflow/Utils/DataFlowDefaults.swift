@@ -42,7 +42,7 @@ extension DataFlowDefaults {
 	}
     
     static func check() {
-        let defaultVersion = Bundle.version()
+        let defaultVersion = 1
         
         // Set default values only if they are missing
         guard (DataFlowDefaults.version.integer ?? 0) != defaultVersion else { return }
