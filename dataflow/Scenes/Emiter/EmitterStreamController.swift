@@ -48,7 +48,7 @@ extension EmitterStreamController {
 			fatalError("[EmitterStreamController.clientConnected] Could not create a stream for client \(peerID.displayName) : \(error.localizedDescription)")
 		}
 
-		// Schedule and open the stream
+		// Schedule and open the streamq<
 		outputStream.schedule(in: .current, forMode: .common)
 		outputStream.open()
 

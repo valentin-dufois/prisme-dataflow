@@ -550,7 +550,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 698VWU6WBP;
+				DEVELOPMENT_TEAM = KJ993GM677;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -561,7 +561,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_BUNDLE_IDENTIFIER = e0l.dataflow;
+				PRODUCT_BUNDLE_IDENTIFIER = prisme.dataflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "dataflow/dataflow-Bridging-Header.h";
@@ -579,7 +579,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 698VWU6WBP;
+				DEVELOPMENT_TEAM = KJ993GM677;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -590,7 +590,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_BUNDLE_IDENTIFIER = e0l.dataflow;
+				PRODUCT_BUNDLE_IDENTIFIER = prisme.dataflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "dataflow/dataflow-Bridging-Header.h";
