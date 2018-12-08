@@ -19,6 +19,7 @@ class EmitterController: UIViewController {
 	@IBOutlet var connectionStateLabel: UIBarButtonItem!
 	
 	@IBOutlet var decodedWordLabel: UILabel!
+	@IBOutlet var numberOfLetterLabel :UILabel!
 	@IBOutlet var audioFrequencyLabel: UILabel!
 	@IBOutlet var decodedEmotionLabel: UILabel!
 	@IBOutlet var audioAmplitudeLabel: UILabel!
@@ -35,7 +36,7 @@ class EmitterController: UIViewController {
 
 	// Data extractors
 	private var _tracker: AKFrequencyTracker!
-	private var _speechRecognizer: SpeechRecognizer = SpeechRecognizer()
+	private var _speechRecognizer = SpeechRecognizer()
 
 	// The socket for sending data
 	private var _socket:Socket!
@@ -164,6 +165,8 @@ extension EmitterController {
 		audioFrequencyLabel.text = "\((App.dataHolder.audioData.frequency * 100).rounded() / 100) hz"
 		audioAmplitudeLabel.text = "\((App.dataHolder.audioData.amplitude * 100).rounded() / 100)"
 		decodedWordLabel.text = App.dataHolder.audioData.phrase ?? "-"
+		numberOfLetterLabel.text = "\(App.dataHolder.audioData.caracterCount)"
+		decodedEmotionLabel.text = App.dataHolder.audioData.emotion ?? "neutral"
 	}
 
 	/// Properly ends the recording and links systems

@@ -96,7 +96,7 @@ extension AudioStreamReader {
 
 		// Does the stream holds informations ?
         guard inputStream.hasBytesAvailable else {
-//            print("[AudioStreamReader.pollStream] Stream has nothing to read")
+            print("[AudioStreamReader.pollStream] Stream has nothing to read")
 			_playerNode.pause()
             return
         }

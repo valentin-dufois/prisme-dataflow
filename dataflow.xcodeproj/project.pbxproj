@@ -21,6 +21,8 @@
 		39432EA121B74D0100DCDF6A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39432EA021B74D0100DCDF6A /* App.swift */; };
 		3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */; };
 		398021A121B798C400DFD3D0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398021A021B798C400DFD3D0 /* Data.swift */; };
+		398088C321BB4412003AB6EB /* EmotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398088C221BB4412003AB6EB /* EmotionClassifier.swift */; };
+		398088C821BB448C003AB6EB /* EmotionClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */; };
 		39929A7721AF3A1100CB306C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39929A7621AF3A1100CB306C /* AppDelegate.swift */; };
 		39929A7C21AF3A1100CB306C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7A21AF3A1100CB306C /* Main.storyboard */; };
 		39929A7E21AF3A1200CB306C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7D21AF3A1200CB306C /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		39432EA021B74D0100DCDF6A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverNotConnectedStreamController.swift; sourceTree = "<group>"; };
 		398021A021B798C400DFD3D0 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		398088C221BB4412003AB6EB /* EmotionClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmotionClassifier.swift; path = /Users/val/Projects/PRISME/dataflow/dataflow/Engines/AudioEngine/DataExtractors/EmotionClassifier.swift; sourceTree = "<absolute>"; };
+		398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EmotionClassifierModel.mlmodel; sourceTree = "<group>"; };
 		39929A7321AF3A1100CB306C /* dataflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dataflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39929A7621AF3A1100CB306C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39929A7B21AF3A1100CB306C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 			children = (
 				393F3B4F21B37DB9008025AA /* SpeechRecognizer.swift */,
 				393F3B5021B37DB9008025AA /* SpeechRecognizerDelegate.swift */,
+				398088C221BB4412003AB6EB /* EmotionClassifier.swift */,
+				398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */,
 			);
 			path = DataExtractors;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 				393F3B5921B5EC3D008025AA /* Socket.swift in Sources */,
 				39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */,
 				39F2527A21B884FF00B065F6 /* SocketDelegate.swift in Sources */,
+				398088C821BB448C003AB6EB /* EmotionClassifierModel.mlmodel in Sources */,
 				398021A121B798C400DFD3D0 /* Data.swift in Sources */,
 				393F3B5621B59E5E008025AA /* DataFlowDefaults.swift in Sources */,
 				39432E9F21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift in Sources */,
@@ -398,6 +405,7 @@
 				39929A7721AF3A1100CB306C /* AppDelegate.swift in Sources */,
 				D7D0902D21BA0BE50061FCA8 /* AudioStreamReader.swift in Sources */,
 				393F3B6521B5F487008025AA /* ReceiverController.swift in Sources */,
+				398088C321BB4412003AB6EB /* EmotionClassifier.swift in Sources */,
 				393F3B6721B5F4A3008025AA /* EmitterController.swift in Sources */,
 				39E82A9F21AF5D630094E1E2 /* RecordingData.swift in Sources */,
 				39F2528121B89F4400B065F6 /* MultipeerDevice.swift in Sources */,
@@ -556,6 +564,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/dataflow/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,6 +594,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/dataflow/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

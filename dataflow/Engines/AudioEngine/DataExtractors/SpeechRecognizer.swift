@@ -54,6 +54,8 @@ extension SpeechRecognizer {
 		_recognitionRequest.shouldReportPartialResults = true
 
 		App.dataHolder.audioData.phrase = nil
+		App.dataHolder.audioData.caracterCount = 0
+		App.dataHolder.audioData.emotion = nil
 
 		// Create a recognition task for the speech recognition session.
 		// Keep a reference to the task so that it can be canceled.

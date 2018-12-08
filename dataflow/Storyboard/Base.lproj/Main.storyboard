@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="BSR-wp-lwR">
-                                        <rect key="frame" x="0.0" y="133" width="375" height="244"/>
+                                        <rect key="frame" x="0.0" y="97.5" width="375" height="315.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Av8-PH-cSY">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="31.5"/>
@@ -50,14 +50,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutral" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpz-nA-qBb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vh-MQ-dpu">
                                                 <rect key="frame" x="0.0" y="70.5" width="375" height="32.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutral" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpz-nA-qBb">
+                                                <rect key="frame" x="0.0" y="142" width="375" height="32.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0Hz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xw-xe-xyx">
-                                                <rect key="frame" x="0.0" y="142" width="375" height="31.5"/>
+                                                <rect key="frame" x="0.0" y="213.5" width="375" height="31.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Z7Z-zV-a2G"/>
                                                 </constraints>
@@ -66,7 +72,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xw-i0-CRn">
-                                                <rect key="frame" x="0.0" y="212.5" width="375" height="31.5"/>
+                                                <rect key="frame" x="0.0" y="284" width="375" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -128,6 +134,7 @@
                         <outlet property="connectionStateLabel" destination="e0W-jh-Vqo" id="Zcu-J9-uPK"/>
                         <outlet property="decodedEmotionLabel" destination="Fpz-nA-qBb" id="XT0-qy-wDa"/>
                         <outlet property="decodedWordLabel" destination="Av8-PH-cSY" id="XHW-W1-7Ag"/>
+                        <outlet property="numberOfLetterLabel" destination="4Vh-MQ-dpu" id="0zr-xo-OoF"/>
                         <outlet property="startStopBtn" destination="UXD-Eo-7TN" id="RDd-nf-fVp"/>
                     </connections>
                 </viewController>

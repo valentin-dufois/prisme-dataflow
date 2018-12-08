@@ -72,7 +72,6 @@ class Socket {
 	func emit(data: Data) {
 		guard self.connected else {
 			print("[Socket.emit] Socket is not connected")
-			reconnect()
 			return
 		}
 

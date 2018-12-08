@@ -10,7 +10,8 @@ import Foundation
 
 struct RecordingData: Codable {
 	var phrase:String?
-	var emotion:Int?
+	var caracterCount: Int = 0
+	var emotion:String?
 	var frequency:Double = 0
 	var amplitude:Double = 0
 }
