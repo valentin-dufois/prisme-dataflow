@@ -14,6 +14,8 @@ class EmitterStreamController: UITableViewController {
 
 	private var _multipeerServer: MultipeerServer!
 	private var _clientStreams = [String:OutputStream]()
+    
+    private var _audioStreamReader: AudioStreamReader?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +66,7 @@ extension EmitterStreamController {
 			fatalError("[EmitterStreamController.clientConnected] Could not create a stream for client \(peerID.displayName) : \(error.localizedDescription)")
 		}
 
-		// Schedule and open the streamq<
+		// Schedule and open the stream
 		outputStream.schedule(in: .current, forMode: .common)
 		outputStream.open()
 
@@ -127,6 +129,15 @@ extension EmitterStreamController: MultipeerDelegate {
 		default: break;
 		}
 	}
+    
+    /// Called when our client send us its audio stream
+    func mpDevice(_ device: MultipeerDevice, receivedStream stream: InputStream, withName streamName: String, fromPeer peer: MCPeerID) {
+        // End the current stream if there is one
+        _audioStreamReader?.end()
+        
+        // Create and start the audio stream reader with the received stream
+        _audioStreamReader = AudioStreamReader(stream: stream)
+    }
 }
 
 
