@@ -23,8 +23,4 @@ class ReceiverConnectedStreamController: UIViewController {
 	@IBAction func disconnect(_ sender: Any) {
 		(self.parent! as! ReceiverController).disconnectFromServer()
 	}
-    
-    @IBAction func debug( _sender: Any) {
-        NotificationCenter.default.post(name: Notifications.debug.name, object: nil)
-    }
 }

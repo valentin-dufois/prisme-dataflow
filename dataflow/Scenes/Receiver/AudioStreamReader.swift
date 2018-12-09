@@ -105,7 +105,7 @@ class AudioStreamReader: NSObject {
 extension AudioStreamReader {
     func pollStream() {
         guard _playerNode.isPlaying else {
-//            print("[AudioStreamReader.pollStream] Cannot schedule buffer if the player isn't running")
+            print("[AudioStreamReader.pollStream] Cannot schedule buffer if the player isn't running")
             return
         }
         

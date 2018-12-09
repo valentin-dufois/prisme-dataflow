@@ -121,7 +121,7 @@ extension ReceiverController {
 
 		_outputStream?.close()
 
-		switchToConnected()
+		switchToDisconnected()
 	}
 }
 
@@ -153,8 +153,8 @@ extension ReceiverController: MultipeerDelegate {
 //        _outputStream!.schedule(in: .current, forMode: .common)
 //        _outputStream!.open()
 //
-//        // Create and start the audio stream reader with the received stream
-//        _audioStreamReader = AudioStreamReader(stream: stream)
+        // Create and start the audio stream reader with the received stream
+        _audioStreamReader = AudioStreamReader(stream: stream)
 	}
 }
 
