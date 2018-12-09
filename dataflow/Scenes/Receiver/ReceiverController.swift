@@ -57,7 +57,7 @@ class ReceiverController: UIViewController {
 
 		displayChild(controller: connectedViewController)
 
-		startAudioEmition()
+//        startAudioEmition()
 	}
 
 	/// Display the not connected view
@@ -135,9 +135,9 @@ extension ReceiverController: MultipeerDelegate {
 	func mpDevice(_ device: MultipeerDevice, peerStateChanged peer: MCPeerID, to state: MCSessionState) {
 		switch state {
 		case .connected:
-			connectToServer()
+			switchToConnected()
 		case .notConnected:
-			disconnectFromServer()
+			switchToDisconnected()
 		default: break
 		}
 	}
@@ -147,19 +147,20 @@ extension ReceiverController: MultipeerDelegate {
         // End the current stream if there is one
         _audioStreamReader?.end()
 
-		// Create and start the audio stream reader with the received stream
-		_audioStreamReader = AudioStreamReader(stream: stream)
-
-		// Create our own stream to the server
-		_outputStream = try! device.makeStream(forPeer: peer)
-		_outputStream!.schedule(in: .current, forMode: .common)
-		_outputStream!.open()
+//        // Create our own stream to the server
+//        _outputStream = try! device.makeStream(forPeer: peer)
+//
+//        _outputStream!.schedule(in: .current, forMode: .common)
+//        _outputStream!.open()
+//
+//        // Create and start the audio stream reader with the received stream
+//        _audioStreamReader = AudioStreamReader(stream: stream)
 	}
 }
 
 
 
-// MARK: - Audio Emition
+// MARK: - Audio Emission
 extension ReceiverController: AudioListeningEngineDelegate {
 
 	private func startAudioEmition() {
@@ -168,12 +169,12 @@ extension ReceiverController: AudioListeningEngineDelegate {
 		_listeningEngine?.start()
 	}
 
-	func audioEngine(_ listeningAudioEngine: AudioListeningEngine, hasBuffer buffer: AVAudioPCMBuffer) {
+    func audioEngine(_ listeningAudioEngine: AudioListeningEngine, hasBuffer buffer: AVAudioPCMBuffer) {
 		guard let outputStream = _outputStream else { return }
 
 		let audioData = buffer.toData()
 
-		_ = audioData.withUnsafeBytes { dataPointer in
+        _ = audioData.withUnsafeBytes { dataPointer in
 			outputStream.write(dataPointer, maxLength: audioData.count)
 		}
 	}
