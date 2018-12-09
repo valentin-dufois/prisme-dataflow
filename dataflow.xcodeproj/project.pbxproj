@@ -24,8 +24,11 @@
 		398088C821BB448C003AB6EB /* EmotionClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */; };
 		39929A7721AF3A1100CB306C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39929A7621AF3A1100CB306C /* AppDelegate.swift */; };
 		39929A7C21AF3A1100CB306C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7A21AF3A1100CB306C /* Main.storyboard */; };
-		39929A7E21AF3A1200CB306C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7D21AF3A1200CB306C /* Assets.xcassets */; };
 		39929A8121AF3A1200CB306C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7F21AF3A1200CB306C /* LaunchScreen.storyboard */; };
+		39C17DF021BD855D003730CE /* DFBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C17DEF21BD855D003730CE /* DFBorderedButton.swift */; };
+		39C17DF221BD9311003730CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C17DF121BD9311003730CE /* Assets.xcassets */; };
+		39C17DF421BD935E003730CE /* ListeningAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C17DF321BD935E003730CE /* ListeningAudioEngine.swift */; };
+		39C17DF621BD978B003730CE /* ListeningAudioEngineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C17DF521BD978B003730CE /* ListeningAudioEngineDelegate.swift */; };
 		39E3D15521B340C900E80D56 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3D15421B340C900E80D56 /* Notifications.swift */; };
 		39E82A9F21AF5D630094E1E2 /* RecordingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E82A9E21AF5D630094E1E2 /* RecordingData.swift */; };
 		39E82AA121AF5DED0094E1E2 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E82AA021AF5DED0094E1E2 /* DataHolder.swift */; };
@@ -36,7 +39,7 @@
 		39F2528321B97DF500B065F6 /* streamEmitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528221B97DF500B065F6 /* streamEmitterDelegate.swift */; };
 		39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528421B9D00900B065F6 /* AVAudioPCMBuffer.swift */; };
 		6275D96ADB2CF51D999B6C93 /* Pods_dataflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC48E3EC7444B50AED8356 /* Pods_dataflow.framework */; };
-		D73E9CAA21BCA9D500039B11 /* ExtractedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E9CA921BCA9D500039B11 /* ExtractedDataView.swift */; };
+		D73E9CAA21BCA9D500039B11 /* DFExtractedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E9CA921BCA9D500039B11 /* DFExtractedDataView.swift */; };
 		D77224AD21BC74C5007E3059 /* EmotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */; };
 		D7D0902D21BA0BE50061FCA8 /* AudioStreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */; };
 /* End PBXBuildFile section */
@@ -61,9 +64,12 @@
 		39929A7321AF3A1100CB306C /* dataflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dataflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39929A7621AF3A1100CB306C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39929A7B21AF3A1100CB306C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		39929A7D21AF3A1200CB306C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39929A8021AF3A1200CB306C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39929A8221AF3A1200CB306C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39C17DEF21BD855D003730CE /* DFBorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DFBorderedButton.swift; path = /Users/val/Projects/PRISME/dataflow/dataflow/Utils/UI/DFBorderedButton.swift; sourceTree = "<absolute>"; };
+		39C17DF121BD9311003730CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39C17DF321BD935E003730CE /* ListeningAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningAudioEngine.swift; sourceTree = "<group>"; };
+		39C17DF521BD978B003730CE /* ListeningAudioEngineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningAudioEngineDelegate.swift; sourceTree = "<group>"; };
 		39E3D15421B340C900E80D56 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		39E82A9E21AF5D630094E1E2 /* RecordingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingData.swift; sourceTree = "<group>"; };
 		39E82AA021AF5DED0094E1E2 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
@@ -75,7 +81,7 @@
 		39F2528421B9D00900B065F6 /* AVAudioPCMBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPCMBuffer.swift; sourceTree = "<group>"; };
 		96FC48E3EC7444B50AED8356 /* Pods_dataflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dataflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4DC7F9E183BE92969FF5BC /* Pods-dataflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow.release.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow/Pods-dataflow.release.xcconfig"; sourceTree = "<group>"; };
-		D73E9CA921BCA9D500039B11 /* ExtractedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractedDataView.swift; sourceTree = "<group>"; };
+		D73E9CA921BCA9D500039B11 /* DFExtractedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFExtractedDataView.swift; sourceTree = "<group>"; };
 		D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionClassifier.swift; sourceTree = "<group>"; };
 		D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamReader.swift; sourceTree = "<group>"; };
 		EFFAEC75A692EAF3F1B633C5 /* Pods-dataflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow/Pods-dataflow.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +143,8 @@
 				39E82A9E21AF5D630094E1E2 /* RecordingData.swift */,
 				39E82AA021AF5DED0094E1E2 /* DataHolder.swift */,
 				39929A8821AF3FAD00CB306C /* DataExtractors */,
+				39C17DF321BD935E003730CE /* ListeningAudioEngine.swift */,
+				39C17DF521BD978B003730CE /* ListeningAudioEngineDelegate.swift */,
 			);
 			path = AudioEngine;
 			sourceTree = "<group>";
@@ -192,9 +200,9 @@
 		39929A7521AF3A1100CB306C /* dataflow */ = {
 			isa = PBXGroup;
 			children = (
+				39C17DF121BD9311003730CE /* Assets.xcassets */,
 				3906004421B8661F006240C5 /* dataflow-Bridging-Header.h */,
 				393F3B6121B5F0B1008025AA /* Storyboard */,
-				39929A7D21AF3A1200CB306C /* Assets.xcassets */,
 				393F3B5F21B5F076008025AA /* Core */,
 				393F3B5D21B5F05B008025AA /* Engines */,
 				39929A8221AF3A1200CB306C /* Info.plist */,
@@ -267,7 +275,8 @@
 		D796A73921BCA9B300EEE335 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D73E9CA921BCA9D500039B11 /* ExtractedDataView.swift */,
+				39C17DEF21BD855D003730CE /* DFBorderedButton.swift */,
+				D73E9CA921BCA9D500039B11 /* DFExtractedDataView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -339,7 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39929A8121AF3A1200CB306C /* LaunchScreen.storyboard in Resources */,
-				39929A7E21AF3A1200CB306C /* Assets.xcassets in Resources */,
+				39C17DF221BD9311003730CE /* Assets.xcassets in Resources */,
 				39929A7C21AF3A1100CB306C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,20 +411,23 @@
 			files = (
 				390C106421B734FA007BB462 /* EmitterStreamController.swift in Sources */,
 				39F2528321B97DF500B065F6 /* streamEmitterDelegate.swift in Sources */,
-				D73E9CAA21BCA9D500039B11 /* ExtractedDataView.swift in Sources */,
+				D73E9CAA21BCA9D500039B11 /* DFExtractedDataView.swift in Sources */,
 				39F2527D21B8977500B065F6 /* MultipeerDelegate.swift in Sources */,
 				39F2527F21B89EAD00B065F6 /* MultipeerClient.swift in Sources */,
 				393F3B5121B37DB9008025AA /* SpeechRecognizer.swift in Sources */,
 				3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */,
 				393F3B6321B5F0F9008025AA /* TabBarController.swift in Sources */,
 				39E3D15521B340C900E80D56 /* Notifications.swift in Sources */,
+				39C17DF621BD978B003730CE /* ListeningAudioEngineDelegate.swift in Sources */,
 				393F3B5421B4A0B1008025AA /* SettingsController.swift in Sources */,
 				393F3B5B21B5ED3F008025AA /* MultipeerServer.swift in Sources */,
 				D77224AD21BC74C5007E3059 /* EmotionClassifier.swift in Sources */,
+				39C17DF421BD935E003730CE /* ListeningAudioEngine.swift in Sources */,
 				393F3B5221B37DB9008025AA /* SpeechRecognizerDelegate.swift in Sources */,
 				393F3B5921B5EC3D008025AA /* Socket.swift in Sources */,
 				39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */,
 				39F2527A21B884FF00B065F6 /* SocketDelegate.swift in Sources */,
+				39C17DF021BD855D003730CE /* DFBorderedButton.swift in Sources */,
 				398088C821BB448C003AB6EB /* EmotionClassifierModel.mlmodel in Sources */,
 				398021A121B798C400DFD3D0 /* Data.swift in Sources */,
 				393F3B5621B59E5E008025AA /* DataFlowDefaults.swift in Sources */,

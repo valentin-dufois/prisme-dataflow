@@ -12,6 +12,7 @@ struct App {
 	static let dataHolder = DataHolder.instance
 
 	static var audioAnalysisQueue = DispatchQueue(label: "prisme.dataflow.audioAnalysis", qos: DispatchQoS.utility)
-    
-    weak static var emitterStream: streamEmitterDelegate?
+
+	/// The current emitter stream, if any
+    weak static var emitterStream: EmitterStreamController?
 }

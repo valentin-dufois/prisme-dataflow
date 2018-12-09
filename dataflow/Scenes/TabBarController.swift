@@ -10,44 +10,65 @@ import Foundation
 import UIKit
 
 class TabBarController:UITabBarController {
+
+	private var _storyboard: UIStoryboard!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		NotificationCenter.default.addObserver(self, selector: #selector(switchToReceiver), name: Notifications.switchToReceiver.name, object: nil)
+		// Store a reference to the storyboard
+		_storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-		NotificationCenter.default.addObserver(self, selector: #selector(switchToEmitter), name: Notifications.switchToEmitter.name, object: nil)
-
-		if(DataFlowDefaults.appType.string! == "receiver") {
-			switchToReceiver()
+		if(DataFlowDefaults.appType.string! == "emitter") {
+			self.setViewControllers(emitterControllersSet, animated: false)
+			App.emitterStream = (self.viewControllers![1] as! EmitterStreamController)
+		} else {
+			self.setViewControllers(receiverControllersSet, animated: false)
 		}
-        
-        (self.viewControllers![1] as! EmitterStreamController).initMultipeer()
+
+
+		/// Add Observers
+		NotificationCenter.default.addObserver(self, selector: #selector(switchToReceiver), name: Notifications.switchToReceiver.name, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(switchToEmitter), name: Notifications.switchToEmitter.name, object: nil)
 	}
 
 	@objc func switchToEmitter() {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-		// Emitter tab
-		let emitterViewController = storyboard.instantiateViewController(withIdentifier: "emitterViewController")
-
-		// Stream tab
-		let streamViewController = storyboard.instantiateViewController(withIdentifier: "streamEmitterViewController")
-
 		DispatchQueue.main.async {
-            self.setViewControllers([emitterViewController, streamViewController, self.viewControllers![1]], animated: true)
-            
-            (self.viewControllers![1] as! EmitterStreamController).initMultipeer()
+			self.setViewControllers([self.emitterViewController, self.streamViewController, self.viewControllers![1]], animated: false)
+			App.emitterStream = (self.viewControllers![1] as! EmitterStreamController)
 		}
 	}
 
 	@objc func switchToReceiver() {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-		// Stream tab
-		let receiverViewController = storyboard.instantiateViewController(withIdentifier: "ReceiverViewController")
-
 		DispatchQueue.main.async {
-            self.setViewControllers([receiverViewController, self.viewControllers![2]], animated: true)
+            self.setViewControllers([self.receiverViewController, self.viewControllers![2]], animated: false)
 		}
+	}
+}
+
+// MARK: - ViewControllers getters
+extension TabBarController {
+	private var emitterViewController: UIViewController {
+		return _storyboard.instantiateViewController(withIdentifier: "emitterViewController")
+	}
+
+	private var streamViewController: UIViewController {
+		return _storyboard.instantiateViewController(withIdentifier: "streamViewController")
+	}
+
+	private var receiverViewController: UIViewController {
+		return _storyboard.instantiateViewController(withIdentifier: "receiverViewController")
+	}
+
+	private var settingsViewController: UIViewController {
+		return _storyboard.instantiateViewController(withIdentifier: "settingsViewController")
+	}
+
+	private var emitterControllersSet: [UIViewController] {
+		return [emitterViewController, streamViewController, settingsViewController]
+	}
+
+	private var receiverControllersSet: [UIViewController] {
+		return [receiverViewController, settingsViewController]
 	}
 }

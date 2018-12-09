@@ -17,9 +17,15 @@ class EmitterStreamController: UITableViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+
+		initMultipeer()
 	}
     
     func initMultipeer() {
+		if(_multipeerServer?.isRunning ?? false) {
+			return()
+		}
+
         // Create and start the server
         _multipeerServer = MultipeerServer(serviceName: DataFlowDefaults.peerServiceName.string!)
         _multipeerServer.delegate = self
@@ -29,9 +35,14 @@ class EmitterStreamController: UITableViewController {
         print("[EmitterStreamController.initMultipeer] Multipeer server started")
     }
 
+	/// Properly close the server
+	func closeMultipeer() {
+		_multipeerServer?.close()
+	}
+
 	// Make sure to properly close the server
 	deinit {
-		_multipeerServer?.close()
+		closeMultipeer()
 	}
 }
 
@@ -136,7 +147,7 @@ extension EmitterStreamController /*: UITableViewDelegate*/ {
 	///   - section: The current section
 	/// - Returns: The number of rows in the current section
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return _multipeerServer.connectedPeers.count
+		return _multipeerServer?.connectedPeers.count ?? 0
 	}
 
 	/// Gives the View for the cell

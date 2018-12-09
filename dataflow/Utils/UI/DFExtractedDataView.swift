@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-@IBDesignable class ExtractedDataView: UIView {
+/// Represent a extracted data view, used for styling
+@IBDesignable class DFExtractedDataView: UIView {
     @IBInspectable var borderWidth: CGFloat = 0.0 {
-        didSet{
+        didSet {
             self.layer.borderWidth = borderWidth
         }
     }

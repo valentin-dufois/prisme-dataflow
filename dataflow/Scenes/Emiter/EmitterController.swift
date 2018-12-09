@@ -28,16 +28,11 @@ class EmitterController: UIViewController {
 	// //////////////////
 	// MARK : PROPERTIES
 
-	private var _mic: AKMicrophone!
-	private var _silence: AKBooster!
-
-	private var _recording: Bool = false
-	private var _tap: AKLazyTap!
+	// The listening engine
+	private var _listeningEngine: ListeningAudioEngine!
 
 	// Data extractors
-    private var _timer: Timer?
-	private var _tracker: AKFrequencyTracker!
-	private var _speechRecognizer = SpeechRecognizer()
+	private var _speechRecognizer: SpeechRecognizer!
 
 	// The socket for sending data
 	private var _socket:Socket!
@@ -46,19 +41,33 @@ class EmitterController: UIViewController {
 		super.viewDidLoad()
 
 		// Configure our audio session
-		initAudioSession()
+		_listeningEngine = ListeningAudioEngine()
+		_listeningEngine.delegate = self
+
+		// Get a speech recognizer
+		_speechRecognizer = SpeechRecognizer()
 
 		// Configure the socket
 		_socket = Socket()
 		_socket.delegate = self
 		_socket.connect(to: DataFlowDefaults.serverURL.url!.absoluteString,
 						port: Int32(DataFlowDefaults.serverPort.integer!))
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(onSettingsUpdate), name: Notifications.settingsUpdated.name, object: nil)
 	}
 
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+
+		// Make sur the emitter is started
+		App.emitterStream!.initMultipeer()
+	}
+
+	/// Starts or stop the recording
+	///
+	/// Does not affect the socket nor the streams
+	///
+	/// - Parameter sender: The start/Stop button
 	@IBAction func toggleRecording(_ sender: UIBarButtonItem) {
-		if(_recording) {
+		if(_listeningEngine.isRunning) {
 			// Stop audio session
 			endRecording()
 			startStopBtn.title = "Start"
@@ -75,86 +84,64 @@ class EmitterController: UIViewController {
 	@IBAction func reconnectToSocket(_ sender: Any) {
 		_socket.reconnect()
 	}
-    
-    @objc func onSettingsUpdate(_ obj: Notification) {
-        _silence?.gain = DataFlowDefaults.audioGain.double!
-    }
 
 	/// Properly end any ongoing recording
 	deinit {
         print("[EmitterController.deinit]")
 		endRecording()
 		_socket?.disconnect()
-        
-        // Make sure AudioKit elements are properly free-ed
-        _silence.detach()
-        _tracker.detach()
 	}
 }
 
 
-// MARK: - Audio management methods
+// MARK: - Recording lifecycle
 extension EmitterController {
 
-	/// Initialize the audio session
-	///
-	/// - Throws: in case of errors while setting things up
-	private func initAudioSession() {
-		AKSettings.audioInputEnabled = true
-		AKSettings.ioBufferDuration = 0.002
-
-		_mic = AKMicrophone()
-		_tracker = AKFrequencyTracker(_mic)
-		_silence = AKBooster(_tracker, gain: DataFlowDefaults.audioGain.double!)
-
-		_tap = AKLazyTap(node: _mic.avAudioNode)
-	}
-
-	/// Start the recording, create the loop and start the speech recognizer
+	/// Start listening and start the speech recognizer
 	private func startRecording() {
-		guard !_recording else {
+		guard !_listeningEngine.isRunning else {
 			print("[EmitterController.startRecording] A recording is already started")
 			return
 		}
 
-		AudioKit.output = _silence
-
-		// Start audiokit
-		do {
-			try AudioKit.start()
-		} catch {
-			fatalError("[EmitterController.startRecording] Error while starting AudioKit : \(error.localizedDescription)")
-		}
-
-		// Add a timer for each buffer
-		Timer.scheduledTimer(timeInterval: AKSettings.ioBufferDuration / 2,
-							 target: self,
-							 selector: #selector(audioObserver),
-							 userInfo: nil,
-							 repeats: true)
-
-		_recording = true
+		_listeningEngine.start()
 
 		// Start the speech recognizer
 		_speechRecognizer.start()
 	}
 
+	/// Properly ends the recording and links systems
+	private func endRecording() {
+		guard (_listeningEngine?.isRunning ?? false) else {
+			print("[EmitterController.endRecording] There is no recording to end")
+			return
+		}
+
+		// Stop the speech recognizer
+		_speechRecognizer.stop()
+
+		// Stop the listening engine
+		_listeningEngine?.stop()
+	}
+}
+
+
+
+// MARK: - ListeningAudioEngineDelegate
+extension EmitterController: ListeningAudioEngineDelegate {
 	/// Called on every audio buffer, extract informations and emit data
-	@objc func audioObserver() {
-		// Get the audio buffer
-		let buffer = AVAudioPCMBuffer(pcmFormat: _mic.avAudioNode.outputFormat(forBus: 0), frameCapacity: 44100)!
-		_tap.fillNextBuffer(buffer, timeStamp: nil)
-
-		// Make sure there is audio data to work with
-		guard buffer.frameLength > 0 else { return }
-
+	///
+	/// - Parameters:
+	///   - listeningAudioEngine: The listening engine sending the event
+	///   - buffer: The audio buffer
+	func audioEngine(_ listeningAudioEngine: ListeningAudioEngine, hasBuffer buffer: AVAudioPCMBuffer) {
 		// Execute audio analysis queue asynchronously to improve performances
 		App.audioAnalysisQueue.async {
 			// Frequency
-			App.dataHolder.audioData.frequency = self._tracker.frequency
+			App.dataHolder.audioData.frequency = self._listeningEngine.frequency!
 
 			// Amplitude
-			App.dataHolder.audioData.amplitude = self._tracker.amplitude
+			App.dataHolder.audioData.amplitude = self._listeningEngine.amplitude!
 
 			// Speech
 			self._speechRecognizer.analyze(buffer)
@@ -163,7 +150,7 @@ extension EmitterController {
 			self._socket.emit(data: App.dataHolder.asJSON())
 
 			// And send to the stream
-//            print("Emitting to stream")
+			//            print("Emitting to stream")
 			App.emitterStream?.emit(data: buffer.toData())
 		}
 
@@ -175,30 +162,10 @@ extension EmitterController {
 		numberOfLetterLabel.text = "\(App.dataHolder.audioData.caracterCount)"
 		decodedEmotionLabel.text = App.dataHolder.audioData.emotion ?? "neutral"
 	}
-
-	/// Properly ends the recording and links systems
-	private func endRecording() {
-		guard _recording else {
-			print("[EmitterController.endRecording] There is no recording to end")
-			return
-		}
-
-		// Stop the engine
-		_speechRecognizer.stop()
-        _timer?.invalidate()
-
-		do {
-			try AudioKit.stop()
-		} catch {
-			fatalError("[EmitterController.endRecording] Error while stopping AudioKit : \(error.localizedDescription)")
-		}
-
-		_recording = false
-	}
 }
 
 
-// MARK: - Socket delegate
+// MARK: - SocketDelegate
 extension EmitterController: SocketDelegate {
 
 	/// Called when the socket succesfully connect
