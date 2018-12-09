@@ -58,6 +58,6 @@ extension MultipeerClient: MCBrowserViewControllerDelegate {
 // MARK: - Convenient session methods
 extension MultipeerClient {
 	var serverPeer: MCPeerID? {
-		return _session.connectedPeers.first
+		return _session.connectedPeers.last
 	}
 }

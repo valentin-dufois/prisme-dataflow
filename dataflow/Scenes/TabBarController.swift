@@ -20,6 +20,8 @@ class TabBarController:UITabBarController {
 		if(DataFlowDefaults.appType.string! == "receiver") {
 			switchToReceiver()
 		}
+        
+        (self.viewControllers![1] as! EmitterStreamController).initMultipeer()
 	}
 
 	@objc func switchToEmitter() {
@@ -33,6 +35,8 @@ class TabBarController:UITabBarController {
 
 		DispatchQueue.main.async {
             self.setViewControllers([emitterViewController, streamViewController, self.viewControllers![1]], animated: true)
+            
+            (self.viewControllers![1] as! EmitterStreamController).initMultipeer()
 		}
 	}
 

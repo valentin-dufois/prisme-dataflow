@@ -30,10 +30,7 @@ class AudioStreamReader: NSObject {
 	internal var _audioInput: AVAudioInputNode!
 	internal var _audioFormat: AVAudioFormat!
     
-    // DEBUG
-    
-    internal var _lastRead = Date.timeIntervalSinceReferenceDate
-    
+    internal var _allowedBufferSize:[UInt32] = [22528, 21504, 22579, 21638, 21639]
 
 	/// Init the audio engine to allow for playing audio comming from the stream
 	override init() {
@@ -118,17 +115,13 @@ extension AudioStreamReader {
         let inputData = Data(reading: inputStream)
         let audioBuffer = AVAudioPCMBuffer(data: inputData, audioFormat: AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: false)!)!
         
-        var _shouldRead = true
-        
-        if(audioBuffer.frameLength != 22528 && audioBuffer.frameLength != 21504) {
-            _shouldRead = false
+        // If the buffer has an unknown size, skip it
+        guard _allowedBufferSize.contains(audioBuffer.frameLength) else {
+//            print("Buffer skipped. Size : \(audioBuffer.frameLength)")
+            return;
         }
         
-        let currentTime = Date.timeIntervalSinceReferenceDate
-        print(audioBuffer.frameLength, currentTime - _lastRead, _shouldRead)
-        _lastRead = currentTime
-        
-        guard _shouldRead else { return }
+//        print("Scheduling buffer of size : \(audioBuffer.frameLength)")
         
 		// Play the buffer
         App.audioAnalysisQueue.async {

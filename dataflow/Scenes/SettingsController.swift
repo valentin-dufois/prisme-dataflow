@@ -17,18 +17,21 @@ class SettingsTableController:UITableViewController {
 	@IBOutlet var serverURLField: UITextField!
 	@IBOutlet var serverPortField: UITextField!
 	@IBOutlet var appTypeControl: UISegmentedControl!
-
+    @IBOutlet weak var audioGainLabel: UITextField!
+    
 	override func viewDidLoad() {
 		serverURLField.text = DataFlowDefaults.serverURL.url!.absoluteString
 		serverPortField.text = "\(DataFlowDefaults.serverPort.integer!)"
 		if(DataFlowDefaults.appType.string! == "receiver") {
 			appTypeControl.selectedSegmentIndex = 1
 		}
+        audioGainLabel.text = "\(DataFlowDefaults.audioGain.double!)"
 	}
 
 	override func viewDidDisappear(_ animated: Bool) {
 		DataFlowDefaults.serverURL.set(value: URL(string: serverURLField.text!)!)
 		DataFlowDefaults.serverPort.set(value: Int(serverPortField.text!)!)
+        DataFlowDefaults.audioGain.set(value: Double(audioGainLabel.text!)!)
 
 		NotificationCenter.default.post(name: Notifications.settingsUpdated.name, object: nil)
 	}

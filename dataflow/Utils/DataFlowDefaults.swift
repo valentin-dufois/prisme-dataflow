@@ -14,6 +14,7 @@ enum DataFlowDefaults:String {
 	case serverPort
 	case appType
 	case peerServiceName
+    case audioGain
 }
 
 extension DataFlowDefaults {
@@ -25,6 +26,10 @@ extension DataFlowDefaults {
 		return UserDefaults.standard.integer(forKey: self.rawValue)
 	}
 
+    var double: Double? {
+        return UserDefaults.standard.double(forKey: self.rawValue)
+    }
+    
 	var string: String? {
 		return UserDefaults.standard.string(forKey: self.rawValue)
 	}
@@ -41,8 +46,12 @@ extension DataFlowDefaults {
 		UserDefaults.standard.set(value, forKey: self.rawValue)
 	}
     
+    func set(value: Double) -> Void {
+        UserDefaults.standard.set(value, forKey: self.rawValue)
+    }
+    
     static func check() {
-        let defaultVersion = 1
+        let defaultVersion = 2
         
         // Set default values only if they are missing
         guard (DataFlowDefaults.version.integer ?? 0) != defaultVersion else { return }
@@ -52,6 +61,7 @@ extension DataFlowDefaults {
         DataFlowDefaults.serverPort.set(value: 1457)
         DataFlowDefaults.appType.set(value: "emitter")
         DataFlowDefaults.peerServiceName.set(value: "prisme-dataflow")
+        DataFlowDefaults.audioGain.set(value: 1.0)
         
         print("User defaults set to default values")
     }

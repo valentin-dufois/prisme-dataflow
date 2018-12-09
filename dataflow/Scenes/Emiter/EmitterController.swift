@@ -18,7 +18,7 @@ class EmitterController: UIViewController {
 	
 	@IBOutlet var connectionStateLabel: UIBarButtonItem!
 	
-	@IBOutlet var decodedWordLabel: UILabel!
+	@IBOutlet var decodedWordLabel: UITextView!
 	@IBOutlet var numberOfLetterLabel :UILabel!
 	@IBOutlet var audioFrequencyLabel: UILabel!
 	@IBOutlet var decodedEmotionLabel: UILabel!
@@ -35,6 +35,7 @@ class EmitterController: UIViewController {
 	private var _tap: AKLazyTap!
 
 	// Data extractors
+    private var _timer: Timer?
 	private var _tracker: AKFrequencyTracker!
 	private var _speechRecognizer = SpeechRecognizer()
 
@@ -52,6 +53,8 @@ class EmitterController: UIViewController {
 		_socket.delegate = self
 		_socket.connect(to: DataFlowDefaults.serverURL.url!.absoluteString,
 						port: Int32(DataFlowDefaults.serverPort.integer!))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onSettingsUpdate), name: Notifications.settingsUpdated.name, object: nil)
 	}
 
 	@IBAction func toggleRecording(_ sender: UIBarButtonItem) {
@@ -72,6 +75,10 @@ class EmitterController: UIViewController {
 	@IBAction func reconnectToSocket(_ sender: Any) {
 		_socket.reconnect()
 	}
+    
+    @objc func onSettingsUpdate(_ obj: Notification) {
+        _silence?.gain = DataFlowDefaults.audioGain.double!
+    }
 
 	/// Properly end any ongoing recording
 	deinit {
@@ -98,7 +105,7 @@ extension EmitterController {
 
 		_mic = AKMicrophone()
 		_tracker = AKFrequencyTracker(_mic)
-		_silence = AKBooster(_tracker, gain: 0)
+		_silence = AKBooster(_tracker, gain: DataFlowDefaults.audioGain.double!)
 
 		_tap = AKLazyTap(node: _mic.avAudioNode)
 	}
@@ -120,7 +127,7 @@ extension EmitterController {
 		}
 
 		// Add a timer for each buffer
-		Timer.scheduledTimer(timeInterval: AKSettings.ioBufferDuration,
+		Timer.scheduledTimer(timeInterval: AKSettings.ioBufferDuration / 2,
 							 target: self,
 							 selector: #selector(audioObserver),
 							 userInfo: nil,
@@ -137,8 +144,6 @@ extension EmitterController {
 		// Get the audio buffer
 		let buffer = AVAudioPCMBuffer(pcmFormat: _mic.avAudioNode.outputFormat(forBus: 0), frameCapacity: 44100)!
 		_tap.fillNextBuffer(buffer, timeStamp: nil)
-        
-        
 
 		// Make sure there is audio data to work with
 		guard buffer.frameLength > 0 else { return }
@@ -166,7 +171,7 @@ extension EmitterController {
 		// serves only as low precision indicators
 		audioFrequencyLabel.text = "\((App.dataHolder.audioData.frequency * 100).rounded() / 100) hz"
 		audioAmplitudeLabel.text = "\((App.dataHolder.audioData.amplitude * 100).rounded() / 100)"
-		decodedWordLabel.text = App.dataHolder.audioData.phrase ?? "-"
+		decodedWordLabel.text = App.dataHolder.audioData.phrase ?? ""
 		numberOfLetterLabel.text = "\(App.dataHolder.audioData.caracterCount)"
 		decodedEmotionLabel.text = App.dataHolder.audioData.emotion ?? "neutral"
 	}
@@ -180,6 +185,7 @@ extension EmitterController {
 
 		// Stop the engine
 		_speechRecognizer.stop()
+        _timer?.invalidate()
 
 		do {
 			try AudioKit.stop()

@@ -16,13 +16,18 @@ class EmitterStreamController: UITableViewController {
 	private var _clientStreams = [String:OutputStream]()
 
 	override func viewDidLoad() {
-		// Create and start the server
-		_multipeerServer = MultipeerServer(serviceName: DataFlowDefaults.peerServiceName.string!)
-		_multipeerServer.delegate = self
-		_multipeerServer.open()
+        super.viewDidLoad()
+	}
+    
+    func initMultipeer() {
+        // Create and start the server
+        _multipeerServer = MultipeerServer(serviceName: DataFlowDefaults.peerServiceName.string!)
+        _multipeerServer.delegate = self
+        _multipeerServer.open()
         
         App.emitterStream = self
-	}
+        print("[EmitterStreamController.initMultipeer] Multipeer server started")
+    }
 
 	// Make sure to properly close the server
 	deinit {

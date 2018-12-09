@@ -36,6 +36,7 @@
 		39F2528321B97DF500B065F6 /* streamEmitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528221B97DF500B065F6 /* streamEmitterDelegate.swift */; };
 		39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528421B9D00900B065F6 /* AVAudioPCMBuffer.swift */; };
 		6275D96ADB2CF51D999B6C93 /* Pods_dataflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC48E3EC7444B50AED8356 /* Pods_dataflow.framework */; };
+		D73E9CAA21BCA9D500039B11 /* ExtractedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E9CA921BCA9D500039B11 /* ExtractedDataView.swift */; };
 		D77224AD21BC74C5007E3059 /* EmotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */; };
 		D7D0902D21BA0BE50061FCA8 /* AudioStreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		39F2528421B9D00900B065F6 /* AVAudioPCMBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPCMBuffer.swift; sourceTree = "<group>"; };
 		96FC48E3EC7444B50AED8356 /* Pods_dataflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dataflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4DC7F9E183BE92969FF5BC /* Pods-dataflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow.release.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow/Pods-dataflow.release.xcconfig"; sourceTree = "<group>"; };
+		D73E9CA921BCA9D500039B11 /* ExtractedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractedDataView.swift; sourceTree = "<group>"; };
 		D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionClassifier.swift; sourceTree = "<group>"; };
 		D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamReader.swift; sourceTree = "<group>"; };
 		EFFAEC75A692EAF3F1B633C5 /* Pods-dataflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow/Pods-dataflow.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		39E3D15321B340BF00E80D56 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D796A73921BCA9B300EEE335 /* UI */,
 				39E3D15421B340C900E80D56 /* Notifications.swift */,
 				393F3B5521B59E5E008025AA /* DataFlowDefaults.swift */,
 				398021A021B798C400DFD3D0 /* Data.swift */,
@@ -259,6 +262,14 @@
 				BD4DC7F9E183BE92969FF5BC /* Pods-dataflow.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D796A73921BCA9B300EEE335 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D73E9CA921BCA9D500039B11 /* ExtractedDataView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 			files = (
 				390C106421B734FA007BB462 /* EmitterStreamController.swift in Sources */,
 				39F2528321B97DF500B065F6 /* streamEmitterDelegate.swift in Sources */,
+				D73E9CAA21BCA9D500039B11 /* ExtractedDataView.swift in Sources */,
 				39F2527D21B8977500B065F6 /* MultipeerDelegate.swift in Sources */,
 				39F2527F21B89EAD00B065F6 /* MultipeerClient.swift in Sources */,
 				393F3B5121B37DB9008025AA /* SpeechRecognizer.swift in Sources */,
