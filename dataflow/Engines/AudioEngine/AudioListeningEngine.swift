@@ -32,11 +32,11 @@ class AudioListeningEngine:NSObject {
 		// Set AudioKit settings
 		AKSettings.audioInputEnabled = true
 		AKSettings.ioBufferDuration = 0.002
-
+        
 		// Create the chain
 		_mic = AKMicrophone()
 		_frequencyTracker = AKFrequencyTracker(_mic)
-		_booster = AKBooster(_frequencyTracker, gain: DataFlowDefaults.audioGain.double!)
+		_booster = AKBooster(_frequencyTracker, gain: 0)
 		_tap = AKLazyTap(node: _mic.avAudioNode)
 
 		// ~ Send the end of the chain to the output of AudioKit
@@ -99,7 +99,7 @@ class AudioListeningEngine:NSObject {
 		do {
 			try AudioKit.stop()
 		} catch {
-			fatalError("[ListeningAudioEngine.stop] Couln't stop AudioKit : \(error.localizedDescription)")
+			fatalError("[ListeningAudioEngine.stop] Couldn't stop AudioKit : \(error.localizedDescription)")
 		}
 
 		_running = false
