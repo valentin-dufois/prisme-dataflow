@@ -9,7 +9,7 @@
 import Foundation
 import AudioKit
 
-class ListeningAudioEngine:NSObject {
+class AudioListeningEngine:NSObject {
 
 	// ///////////////////
 	// MARK: AUDIO PROPERTIES
@@ -22,7 +22,7 @@ class ListeningAudioEngine:NSObject {
 	private var _listeningTimer: Timer?
 	private var _running: Bool = false
 
-	weak var delegate: ListeningAudioEngineDelegate?
+	weak var delegate: AudioListeningEngineDelegate?
 
 	var isRunning: Bool { return _running }
 

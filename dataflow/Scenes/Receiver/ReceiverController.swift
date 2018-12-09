@@ -22,33 +22,55 @@ class ReceiverController: UIViewController {
 	/// The children view currently displayed
 	internal var _childrenView: UIViewController?
 
+	// ///////////////////////
+	// MARK: Multipeer Client
+
 	/// The client used to talk with our emitter
 	internal var _multipeerClient: MultipeerClient?
 
 	/// The stream reader to play incoming streams
 	internal var _audioStreamReader: AudioStreamReader?
 
+	// ////////////////////
+	// MARK: Audio emition
+
+	/// The listening engine to send our audio to the server
+	internal var _listeningEngine: AudioListeningEngine?
+
+	/// The output stream to the server
+	internal var _outputStream: OutputStream?
+
+
+
 	/// When the view is loaded, display the `not connected`view
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		displayNotConnectedView()
-	}
-
-	/// Display the not connected view
-	func displayNotConnectedView() {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let notConnectedViewController = storyboard.instantiateViewController(withIdentifier: "receiverNotConnectedView")
-
-		displayChild(controller: notConnectedViewController)
+		switchToDisconnected()
 	}
 
 	/// Display the connected view
-	func displayConnectedView() {
+	func switchToConnected() {
+		// Update the current view
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let connectedViewController = storyboard.instantiateViewController(withIdentifier: "receiverConnectedView")
 
 		displayChild(controller: connectedViewController)
+
+		startAudioEmition()
+	}
+
+	/// Display the not connected view
+	func switchToDisconnected() {
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		let notConnectedViewController = storyboard.instantiateViewController(withIdentifier: "receiverNotConnectedView")
+
+		displayChild(controller: notConnectedViewController)
+
+		// Erase the listening engine and the output stream
+		_listeningEngine = nil
+		_outputStream?.close()
+		_outputStream = nil
 	}
 
 
@@ -95,7 +117,11 @@ extension ReceiverController {
         
         _audioStreamReader?.end()
 
-		displayNotConnectedView()
+		endAudioEmition()
+
+		_outputStream?.close()
+
+		switchToConnected()
 	}
 }
 
@@ -109,7 +135,7 @@ extension ReceiverController: MultipeerDelegate {
 	func mpDevice(_ device: MultipeerDevice, peerStateChanged peer: MCPeerID, to state: MCSessionState) {
 		switch state {
 		case .connected:
-			displayConnectedView()
+			connwectToServer()
 		case .notConnected:
 			disconnectFromServer()
 		default: break
@@ -123,5 +149,37 @@ extension ReceiverController: MultipeerDelegate {
 
 		// Create and start the audio stream reader with the received stream
 		_audioStreamReader = AudioStreamReader(stream: stream)
+
+		// Create our own stream to the server
+		_outputStream = try! device.makeStream(forPeer: peer)
+		_outputStream!.schedule(in: .current, forMode: .common)
+		_outputStream!.open()
+	}
+}
+
+
+
+// MARK: - Audio Emition
+extension ReceiverController: AudioListeningEngineDelegate {
+
+	private func startAudioEmition() {
+		_listeningEngine = AudioListeningEngine()
+		_listeningEngine?.delegate = self
+		_listeningEngine?.start()
+	}
+
+	func audioEngine(_ listeningAudioEngine: AudioListeningEngine, hasBuffer buffer: AVAudioPCMBuffer) {
+		guard let outputStream = _outputStream else { return }
+
+		let audioData = buffer.toData()
+
+		_ = audioData.withUnsafeBytes { dataPointer in
+			outputStream.write(dataPointer, maxLength: audioData.count)
+		}
+	}
+
+	private func endAudioEmition() {
+		_listeningEngine?.stop()
+		_listeningEngine = nil
 	}
 }

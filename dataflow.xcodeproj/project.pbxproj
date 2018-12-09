@@ -27,8 +27,8 @@
 		39929A8121AF3A1200CB306C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7F21AF3A1200CB306C /* LaunchScreen.storyboard */; };
 		39C17DF021BD855D003730CE /* DFBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C17DEF21BD855D003730CE /* DFBorderedButton.swift */; };
 		39C17DF221BD9311003730CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C17DF121BD9311003730CE /* Assets.xcassets */; };
-		39C17DF421BD935E003730CE /* ListeningAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C17DF321BD935E003730CE /* ListeningAudioEngine.swift */; };
-		39C17DF621BD978B003730CE /* ListeningAudioEngineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C17DF521BD978B003730CE /* ListeningAudioEngineDelegate.swift */; };
+		39C17DF421BD935E003730CE /* AudioListeningEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C17DF321BD935E003730CE /* AudioListeningEngine.swift */; };
+		39C17DF621BD978B003730CE /* AudioListeningEngineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C17DF521BD978B003730CE /* AudioListeningEngineDelegate.swift */; };
 		39E3D15521B340C900E80D56 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3D15421B340C900E80D56 /* Notifications.swift */; };
 		39E82A9F21AF5D630094E1E2 /* RecordingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E82A9E21AF5D630094E1E2 /* RecordingData.swift */; };
 		39E82AA121AF5DED0094E1E2 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E82AA021AF5DED0094E1E2 /* DataHolder.swift */; };
@@ -68,8 +68,8 @@
 		39929A8221AF3A1200CB306C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39C17DEF21BD855D003730CE /* DFBorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DFBorderedButton.swift; path = /Users/val/Projects/PRISME/dataflow/dataflow/Utils/UI/DFBorderedButton.swift; sourceTree = "<absolute>"; };
 		39C17DF121BD9311003730CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		39C17DF321BD935E003730CE /* ListeningAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningAudioEngine.swift; sourceTree = "<group>"; };
-		39C17DF521BD978B003730CE /* ListeningAudioEngineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningAudioEngineDelegate.swift; sourceTree = "<group>"; };
+		39C17DF321BD935E003730CE /* AudioListeningEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListeningEngine.swift; sourceTree = "<group>"; };
+		39C17DF521BD978B003730CE /* AudioListeningEngineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListeningEngineDelegate.swift; sourceTree = "<group>"; };
 		39E3D15421B340C900E80D56 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		39E82A9E21AF5D630094E1E2 /* RecordingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingData.swift; sourceTree = "<group>"; };
 		39E82AA021AF5DED0094E1E2 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 				39E82A9E21AF5D630094E1E2 /* RecordingData.swift */,
 				39E82AA021AF5DED0094E1E2 /* DataHolder.swift */,
 				39929A8821AF3FAD00CB306C /* DataExtractors */,
-				39C17DF321BD935E003730CE /* ListeningAudioEngine.swift */,
-				39C17DF521BD978B003730CE /* ListeningAudioEngineDelegate.swift */,
+				39C17DF321BD935E003730CE /* AudioListeningEngine.swift */,
+				39C17DF521BD978B003730CE /* AudioListeningEngineDelegate.swift */,
 			);
 			path = AudioEngine;
 			sourceTree = "<group>";
@@ -418,11 +418,11 @@
 				3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */,
 				393F3B6321B5F0F9008025AA /* TabBarController.swift in Sources */,
 				39E3D15521B340C900E80D56 /* Notifications.swift in Sources */,
-				39C17DF621BD978B003730CE /* ListeningAudioEngineDelegate.swift in Sources */,
+				39C17DF621BD978B003730CE /* AudioListeningEngineDelegate.swift in Sources */,
 				393F3B5421B4A0B1008025AA /* SettingsController.swift in Sources */,
 				393F3B5B21B5ED3F008025AA /* MultipeerServer.swift in Sources */,
 				D77224AD21BC74C5007E3059 /* EmotionClassifier.swift in Sources */,
-				39C17DF421BD935E003730CE /* ListeningAudioEngine.swift in Sources */,
+				39C17DF421BD935E003730CE /* AudioListeningEngine.swift in Sources */,
 				393F3B5221B37DB9008025AA /* SpeechRecognizerDelegate.swift in Sources */,
 				393F3B5921B5EC3D008025AA /* Socket.swift in Sources */,
 				39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */,

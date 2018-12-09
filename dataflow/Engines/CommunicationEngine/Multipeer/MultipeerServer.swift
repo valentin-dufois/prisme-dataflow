@@ -59,16 +59,4 @@ extension MultipeerServer {
 	var connectedPeers: [MCPeerID] {
 		return _session.connectedPeers
 	}
-
-	/// Use this method to open a stream between yourself and the specified peer.
-	///
-	/// This method returns an OutputStream that can be used to stream data
-	/// to the peer
-	///
-	/// - Parameter peer: The peer to open a stream with
-	/// - Returns: An output stream linked to the peer
-	/// - Throws: 
-	func makeStream(forPeer peer: MCPeerID) throws -> OutputStream {
-		return try _session.startStream(withName: peer.displayName, toPeer: peer)
-	}
 }

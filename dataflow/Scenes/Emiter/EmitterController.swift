@@ -29,7 +29,7 @@ class EmitterController: UIViewController {
 	// MARK : PROPERTIES
 
 	// The listening engine
-	private var _listeningEngine: ListeningAudioEngine!
+	private var _listeningEngine: AudioListeningEngine!
 
 	// Data extractors
 	private var _speechRecognizer: SpeechRecognizer!
@@ -41,7 +41,7 @@ class EmitterController: UIViewController {
 		super.viewDidLoad()
 
 		// Configure our audio session
-		_listeningEngine = ListeningAudioEngine()
+		_listeningEngine = AudioListeningEngine()
 		_listeningEngine.delegate = self
 
 		// Get a speech recognizer
@@ -128,13 +128,13 @@ extension EmitterController {
 
 
 // MARK: - ListeningAudioEngineDelegate
-extension EmitterController: ListeningAudioEngineDelegate {
+extension EmitterController: AudioListeningEngineDelegate {
 	/// Called on every audio buffer, extract informations and emit data
 	///
 	/// - Parameters:
 	///   - listeningAudioEngine: The listening engine sending the event
 	///   - buffer: The audio buffer
-	func audioEngine(_ listeningAudioEngine: ListeningAudioEngine, hasBuffer buffer: AVAudioPCMBuffer) {
+	func audioEngine(_ listeningAudioEngine: AudioListeningEngine, hasBuffer buffer: AVAudioPCMBuffer) {
 		// Execute audio analysis queue asynchronously to improve performances
 		App.audioAnalysisQueue.async {
 			// Frequency
