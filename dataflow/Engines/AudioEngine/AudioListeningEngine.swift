@@ -8,6 +8,7 @@
 
 import Foundation
 import AudioKit
+import Repeat
 
 class AudioListeningEngine:NSObject {
 
@@ -19,7 +20,7 @@ class AudioListeningEngine:NSObject {
 	private var _frequencyTracker: AKFrequencyTracker!
 	private var _tap: AKLazyTap!
 
-	private var _listeningTimer: Timer?
+	private var _listeningTimer: Repeater?
 	private var _running: Bool = false
 
 	weak var delegate: AudioListeningEngineDelegate?
@@ -56,13 +57,16 @@ class AudioListeningEngine:NSObject {
 		} catch {
 			fatalError("[ListeningAudioEngine.start] Couldn't start AudioKit  \(error.localizedDescription)")
 		}
-
-		// Create a timer for the tap
-		_listeningTimer = Timer.scheduledTimer(timeInterval: AKSettings.ioBufferDuration / 2,
-							 target: self,
-							 selector: #selector(listeningTap),
-							 userInfo: nil,
-							 repeats: true)
+        
+        if(_listeningTimer == nil) {
+            // Create a timer for the tap
+            _listeningTimer = Repeater(interval: .seconds(AKSettings.ioBufferDuration / 2)) { [weak self] timer in
+                guard let `self` = self else { return }
+                self.listeningTap()
+            }
+        }
+        
+        _listeningTimer?.start()
 
 		_running = true
 	}
@@ -89,7 +93,7 @@ class AudioListeningEngine:NSObject {
 		}
 
 		// Stop the listening timer
-		_listeningTimer?.invalidate()
+		_listeningTimer?.pause()
 
 		// Stop Audiokit
 		do {
@@ -105,6 +109,9 @@ class AudioListeningEngine:NSObject {
 	deinit {
 		// Stop the engine if its running
 		stop()
+        
+        // Clean the repeater
+        _listeningTimer?.removeAllObservers()
 
 		// Detach audio chain components
 		_booster?.detach()

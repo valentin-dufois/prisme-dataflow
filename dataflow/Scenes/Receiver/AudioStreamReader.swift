@@ -9,6 +9,7 @@
 import Foundation
 import AVFoundation
 import MultipeerConnectivity
+import Repeat
 
 /// An AudioStreamReader takes an InputStream receiving AVAudioPCMBuffer buffers encoded
 /// into data, decodes them, and plays it
@@ -18,8 +19,8 @@ class AudioStreamReader: NSObject {
     // MARK: Input stream properties
 
     internal var _inputStream: InputStream?
-    internal var _timerInterval: TimeInterval = 0.5
-	internal var _timer: Timer?
+    internal var _timerInterval: Repeater.Interval = .seconds(0.5)
+	internal var _timer: Repeater?
 
 	// //////////////////////////////
 	// MARK: Audio player properties
@@ -34,9 +35,6 @@ class AudioStreamReader: NSObject {
 
 	/// Init the audio engine to allow for playing audio comming from the stream
 	override init() {
-       try! _audioSession.setCategory(.playAndRecord, mode: .voiceChat, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
-        try! _audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-        
 		_audioInput = _audioEngine.inputNode
 		_audioEngine.attach(_playerNode)
 		_audioFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: false)
@@ -67,12 +65,19 @@ class AudioStreamReader: NSObject {
 		// Start the audio Engine
 		try! _audioEngine.start()
 
+        if _timer == nil {
+            _timer = Repeater(interval: self._timerInterval) { [weak self] timer in
+                guard let `self` = self else { return }
+                self.pollStream()
+            }
+        }
+        
+        _playerNode.play()
+        
 		DispatchQueue.main.async {
-            self._timer = Timer.scheduledTimer(timeInterval: self._timerInterval, target: self, selector: #selector(self.pollStream), userInfo: nil, repeats: true)
-            
+            self._timer?.start()
             self._inputStream!.schedule(in: .current, forMode: .common)
             self._inputStream!.open()
-            self._playerNode.play()
 		}
     }
     
@@ -81,7 +86,7 @@ class AudioStreamReader: NSObject {
 	/// A new AudioStreamReader must be created to play another stream
     func end() {
         _inputStream?.close()
-		_timer?.invalidate()
+		_timer?.pause()
 
 		_audioEngine.stop()
 		_playerNode.stop()
@@ -90,13 +95,20 @@ class AudioStreamReader: NSObject {
 	/// Make sure we properly stops all our elements
     deinit {
 		end()
+        
+        _timer?.removeAllObservers()
     }
 }
 
 
 /// MARK: - Polling the stream
 extension AudioStreamReader {
-    @objc func pollStream(_ timer: Timer) {
+    func pollStream() {
+        guard _playerNode.isPlaying else {
+//            print("[AudioStreamReader.pollStream] Cannot schedule buffer if the player isn't running")
+            return
+        }
+        
 		// Make sure we have a stream in the first place
         guard let inputStream = _inputStream else {
             print("[AudioStreamReader.pollStream] There is no stream to poll")
@@ -117,11 +129,8 @@ extension AudioStreamReader {
         
         // If the buffer has an unknown size, skip it
         guard _allowedBufferSize.contains(audioBuffer.frameLength) else {
-//            print("Buffer skipped. Size : \(audioBuffer.frameLength)")
             return;
         }
-        
-//        print("Scheduling buffer of size : \(audioBuffer.frameLength)")
         
 		// Play the buffer
         App.audioAnalysisQueue.async {
