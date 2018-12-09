@@ -156,11 +156,13 @@ extension EmitterController: AudioListeningEngineDelegate {
 
 		// Update the UI on the main thread. Latency is't important as these labels
 		// serves only as low precision indicators
-		audioFrequencyLabel.text = "\((App.dataHolder.audioData.frequency * 100).rounded() / 100) hz"
-		audioAmplitudeLabel.text = "\((App.dataHolder.audioData.amplitude * 100).rounded() / 100)"
-		decodedWordLabel.text = App.dataHolder.audioData.phrase ?? ""
-		numberOfLetterLabel.text = "\(App.dataHolder.audioData.caracterCount)"
-		decodedEmotionLabel.text = App.dataHolder.audioData.emotion ?? "neutral"
+        DispatchQueue.main.async {
+            self.audioFrequencyLabel.text = "\((App.dataHolder.audioData.frequency * 100).rounded() / 100) hz"
+            self.audioAmplitudeLabel.text = "\((App.dataHolder.audioData.amplitude * 100).rounded() / 100)"
+            self.decodedWordLabel.text = App.dataHolder.audioData.phrase ?? ""
+            self.numberOfLetterLabel.text = "\(App.dataHolder.audioData.caracterCount)"
+            self.decodedEmotionLabel.text = App.dataHolder.audioData.emotion ?? "neutral"
+        }
 	}
 }
 
