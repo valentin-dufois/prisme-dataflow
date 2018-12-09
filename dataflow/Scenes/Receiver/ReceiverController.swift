@@ -135,7 +135,7 @@ extension ReceiverController: MultipeerDelegate {
 	func mpDevice(_ device: MultipeerDevice, peerStateChanged peer: MCPeerID, to state: MCSessionState) {
 		switch state {
 		case .connected:
-			connwectToServer()
+			connectToServer()
 		case .notConnected:
 			disconnectFromServer()
 		default: break
