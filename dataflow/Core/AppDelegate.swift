@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MultipeerConnectivity
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +25,8 @@ extension AppDelegate {
         
         // Make sure User defaults are Up to date
 		DataFlowDefaults.check()
+        
+        setupAudioSession()
 
 		return true
 	}
@@ -50,5 +52,15 @@ extension AppDelegate {
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
+}
+
+extension AppDelegate {
+    func setupAudioSession() {
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        try! audioSession.setCategory(.playAndRecord, mode: .voiceChat, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+        
+        try! audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+    }
 }
 
