@@ -18,23 +18,35 @@ class AudioStreamReader: NSObject {
     // MARK: Input stream properties
 
     internal var _inputStream: InputStream?
+    internal var _timerInterval: TimeInterval = 0.5
 	internal var _timer: Timer?
 
 	// //////////////////////////////
 	// MARK: Audio player properties
 
+    internal var _audioSession = AVAudioSession.sharedInstance()
 	internal var _audioEngine = AVAudioEngine()
 	internal var _playerNode = AVAudioPlayerNode()
 	internal var _audioInput: AVAudioInputNode!
 	internal var _audioFormat: AVAudioFormat!
+    
+    // DEBUG
+    
+    internal var _lastRead = Date.timeIntervalSinceReferenceDate
+    
 
 	/// Init the audio engine to allow for playing audio comming from the stream
 	override init() {
+       try! _audioSession.setCategory(.playAndRecord, mode: .voiceChat, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+        try! _audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        
 		_audioInput = _audioEngine.inputNode
 		_audioEngine.attach(_playerNode)
 		_audioFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: false)
 
 		_audioEngine.connect(_playerNode, to: _audioEngine.mainMixerNode, format: _audioFormat)
+        
+        _playerNode.volume = 1
 
 		_audioEngine.prepare()
 	}
@@ -52,18 +64,18 @@ class AudioStreamReader: NSObject {
     ///
     /// - Parameter stream: The stream to play
     func read(stream: InputStream) {
-		// Store and schedule the stream
+		// Store the stream
         _inputStream = stream
-		self._inputStream!.schedule(in: .current, forMode: .common)
 
 		// Start the audio Engine
 		try! _audioEngine.start()
 
 		DispatchQueue.main.async {
-			dispatchPrecondition(condition: .onQueue(.main))
-			self._timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.pollStream), userInfo: nil, repeats: true)
-
-			self._inputStream!.open()
+            self._timer = Timer.scheduledTimer(timeInterval: self._timerInterval, target: self, selector: #selector(self.pollStream), userInfo: nil, repeats: true)
+            
+            self._inputStream!.schedule(in: .current, forMode: .common)
+            self._inputStream!.open()
+            self._playerNode.play()
 		}
     }
     
@@ -84,9 +96,10 @@ class AudioStreamReader: NSObject {
     }
 }
 
+
 /// MARK: - Polling the stream
 extension AudioStreamReader {
-    @objc func pollStream() {
+    @objc func pollStream(_ timer: Timer) {
 		// Make sure we have a stream in the first place
         guard let inputStream = _inputStream else {
             print("[AudioStreamReader.pollStream] There is no stream to poll")
@@ -104,9 +117,23 @@ extension AudioStreamReader {
 		// Extract and convert the stream informations to an audio buffer
         let inputData = Data(reading: inputStream)
         let audioBuffer = AVAudioPCMBuffer(data: inputData, audioFormat: AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: false)!)!
-
+        
+        var _shouldRead = true
+        
+        if(audioBuffer.frameLength != 22528 && audioBuffer.frameLength != 21504) {
+            _shouldRead = false
+        }
+        
+        let currentTime = Date.timeIntervalSinceReferenceDate
+        print(audioBuffer.frameLength, currentTime - _lastRead, _shouldRead)
+        _lastRead = currentTime
+        
+        guard _shouldRead else { return }
+        
 		// Play the buffer
-		_playerNode.scheduleBuffer(audioBuffer, completionHandler: nil)
-		_playerNode.play()
+        App.audioAnalysisQueue.async {
+            self._playerNode.scheduleBuffer(audioBuffer, completionHandler: nil)
+            self._playerNode.play()
+        }
     }
 }

@@ -3,5 +3,6 @@ target 'dataflow' do
 	use_frameworks!
 	pod 'SwiftSocket'
 	pod 'AudioKit/Core'
+    pod 'TPCircularBuffer', '~> 1.6'
 end
 workspace 'dataflow'

@@ -1,20 +1,24 @@
 PODS:
   - AudioKit/Core (4.5.4)
   - SwiftSocket (2.0.2)
+  - TPCircularBuffer (1.6.1)
 
 DEPENDENCIES:
   - AudioKit/Core
   - SwiftSocket
+  - TPCircularBuffer (~> 1.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AudioKit
     - SwiftSocket
+    - TPCircularBuffer
 
 SPEC CHECKSUMS:
   AudioKit: af3f5b73e22f85f3cd03076fea8afbb9658f0938
   SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
+  TPCircularBuffer: c13243556527551c4d320709c7b14a6d20cdc30a
 
-PODFILE CHECKSUM: 921c37402c4acdca21cbff753882824ef2c73c2e
+PODFILE CHECKSUM: 53c2a047d885f748a1cf957df44fbeeec4bc4f7a
 
 COCOAPODS: 1.5.3

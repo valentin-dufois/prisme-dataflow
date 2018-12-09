@@ -120,7 +120,7 @@ extension EmitterController {
 		}
 
 		// Add a timer for each buffer
-		Timer.scheduledTimer(timeInterval: AKSettings.ioBufferDuration / 2,
+		Timer.scheduledTimer(timeInterval: AKSettings.ioBufferDuration,
 							 target: self,
 							 selector: #selector(audioObserver),
 							 userInfo: nil,
@@ -137,6 +137,8 @@ extension EmitterController {
 		// Get the audio buffer
 		let buffer = AVAudioPCMBuffer(pcmFormat: _mic.avAudioNode.outputFormat(forBus: 0), frameCapacity: 44100)!
 		_tap.fillNextBuffer(buffer, timeStamp: nil)
+        
+        
 
 		// Make sure there is audio data to work with
 		guard buffer.frameLength > 0 else { return }

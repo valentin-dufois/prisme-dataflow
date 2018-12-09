@@ -21,7 +21,6 @@
 		39432EA121B74D0100DCDF6A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39432EA021B74D0100DCDF6A /* App.swift */; };
 		3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */; };
 		398021A121B798C400DFD3D0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398021A021B798C400DFD3D0 /* Data.swift */; };
-		398088C321BB4412003AB6EB /* EmotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398088C221BB4412003AB6EB /* EmotionClassifier.swift */; };
 		398088C821BB448C003AB6EB /* EmotionClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */; };
 		39929A7721AF3A1100CB306C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39929A7621AF3A1100CB306C /* AppDelegate.swift */; };
 		39929A7C21AF3A1100CB306C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7A21AF3A1100CB306C /* Main.storyboard */; };
@@ -37,6 +36,7 @@
 		39F2528321B97DF500B065F6 /* streamEmitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528221B97DF500B065F6 /* streamEmitterDelegate.swift */; };
 		39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528421B9D00900B065F6 /* AVAudioPCMBuffer.swift */; };
 		6275D96ADB2CF51D999B6C93 /* Pods_dataflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC48E3EC7444B50AED8356 /* Pods_dataflow.framework */; };
+		D77224AD21BC74C5007E3059 /* EmotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */; };
 		D7D0902D21BA0BE50061FCA8 /* AudioStreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,6 @@
 		39432EA021B74D0100DCDF6A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverNotConnectedStreamController.swift; sourceTree = "<group>"; };
 		398021A021B798C400DFD3D0 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		398088C221BB4412003AB6EB /* EmotionClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmotionClassifier.swift; path = /Users/val/Projects/PRISME/dataflow/dataflow/Engines/AudioEngine/DataExtractors/EmotionClassifier.swift; sourceTree = "<absolute>"; };
 		398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EmotionClassifierModel.mlmodel; sourceTree = "<group>"; };
 		39929A7321AF3A1100CB306C /* dataflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dataflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39929A7621AF3A1100CB306C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		39F2528421B9D00900B065F6 /* AVAudioPCMBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPCMBuffer.swift; sourceTree = "<group>"; };
 		96FC48E3EC7444B50AED8356 /* Pods_dataflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dataflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4DC7F9E183BE92969FF5BC /* Pods-dataflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow.release.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow/Pods-dataflow.release.xcconfig"; sourceTree = "<group>"; };
+		D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionClassifier.swift; sourceTree = "<group>"; };
 		D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamReader.swift; sourceTree = "<group>"; };
 		EFFAEC75A692EAF3F1B633C5 /* Pods-dataflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow/Pods-dataflow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +207,7 @@
 			children = (
 				393F3B4F21B37DB9008025AA /* SpeechRecognizer.swift */,
 				393F3B5021B37DB9008025AA /* SpeechRecognizerDelegate.swift */,
-				398088C221BB4412003AB6EB /* EmotionClassifier.swift */,
+				D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */,
 				398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */,
 			);
 			path = DataExtractors;
@@ -296,6 +296,11 @@
 					39929A7221AF3A1100CB306C = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -363,12 +368,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-dataflow/Pods-dataflow-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -392,6 +399,7 @@
 				39E3D15521B340C900E80D56 /* Notifications.swift in Sources */,
 				393F3B5421B4A0B1008025AA /* SettingsController.swift in Sources */,
 				393F3B5B21B5ED3F008025AA /* MultipeerServer.swift in Sources */,
+				D77224AD21BC74C5007E3059 /* EmotionClassifier.swift in Sources */,
 				393F3B5221B37DB9008025AA /* SpeechRecognizerDelegate.swift in Sources */,
 				393F3B5921B5EC3D008025AA /* Socket.swift in Sources */,
 				39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */,
@@ -405,7 +413,6 @@
 				39929A7721AF3A1100CB306C /* AppDelegate.swift in Sources */,
 				D7D0902D21BA0BE50061FCA8 /* AudioStreamReader.swift in Sources */,
 				393F3B6521B5F487008025AA /* ReceiverController.swift in Sources */,
-				398088C321BB4412003AB6EB /* EmotionClassifier.swift in Sources */,
 				393F3B6721B5F4A3008025AA /* EmitterController.swift in Sources */,
 				39E82A9F21AF5D630094E1E2 /* RecordingData.swift in Sources */,
 				39F2528121B89F4400B065F6 /* MultipeerDevice.swift in Sources */,
