@@ -56,6 +56,7 @@ class AudioEngine: NSObject {
 		AKSettings.audioInputEnabled = true
 		AKSettings.ioBufferDuration = 0.002
 		AKSettings.defaultToSpeaker = true
+		AKSettings.bluetoothOptions = .allowBluetooth
 
 		// Create the chain
 		_mic = AKMicrophone()

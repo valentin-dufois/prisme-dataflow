@@ -151,10 +151,6 @@ extension EmitterStreamController: MultipeerDelegate {
 //
 //         Create and start the audio stream reader with the received stream
         _audioStreamReader = AudioStreamReader(stream: stream)
-
-		if !App.audioEngine.isRunning {
-			_audioStreamReader?.mute()
-		}
     }
 }
 
