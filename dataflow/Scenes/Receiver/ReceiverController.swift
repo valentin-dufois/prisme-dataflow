@@ -45,17 +45,16 @@ class ReceiverController: UIViewController {
 	/// When the view is loaded, display the `not connected`view
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
-        App.audioEngine = NativeAudioEngine()
-        App.audioEngine?.delegate = self
-        App.audioEngine?.start()
+
+        App.audioEngine.delegate = self
+        App.audioEngine.start()
 
 		switchToDisconnected()
 	}
     
     deinit {
-        App.audioEngine?.end()
-        App.audioEngine = nil
+        App.audioEngine.stop()
+		App.audioEngine.delegate = nil
     }
 
 	/// Display the connected view
@@ -166,8 +165,8 @@ extension ReceiverController: MultipeerDelegate {
 
 
 // MARK: - Audio Emission
-extension ReceiverController: NativeAudioEngineDelegate {
-    func audioEngine(_ engine: NativeAudioEngine, inputBuffer buffer: AVAudioPCMBuffer) {
+extension ReceiverController: AudioEngineDelegate {
+	func audioEngine(_ engine: AudioEngine, hasRecordedBuffer buffer: AVAudioPCMBuffer) {
 		guard let outputStream = _outputStream else { return }
 
 		let audioData = buffer.toData()

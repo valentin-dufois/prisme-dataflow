@@ -17,5 +17,5 @@ struct App {
     weak static var emitterStream: EmitterStreamController?
     
     
-    static var audioEngine: NativeAudioEngine?
+    static var audioEngine: AudioEngine = AudioEngine()
 }

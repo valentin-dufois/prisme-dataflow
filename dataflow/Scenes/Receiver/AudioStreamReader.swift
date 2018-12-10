@@ -29,10 +29,7 @@ class AudioStreamReader: NSObject {
 
 	/// Init the audio engine to allow for playing audio comming from the stream
 	override init() {
-        guard App.audioEngine == nil else { return }
-        
-        App.audioEngine = NativeAudioEngine()
-        App.audioEngine?.start()
+        App.audioEngine.start()
 	}
 
 	/// Init the AudioStreamReader and directly start pmlaying the given stream
@@ -103,7 +100,7 @@ extension AudioStreamReader {
 
 		// Extract and convert the stream informations to an audio buffer
         let inputData = Data(reading: inputStream)
-        let audioBuffer = AVAudioPCMBuffer(data: inputData, audioFormat: AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: false)!)!
+        let audioBuffer = AVAudioPCMBuffer(data: inputData, audioFormat: App.audioEngine.audioFormat)!
         
         // If the buffer has an unknown size, skip it
         guard _allowedBufferSize.contains(audioBuffer.frameLength) else {
@@ -113,7 +110,7 @@ extension AudioStreamReader {
         
 		// Play the buffer
         App.audioAnalysisQueue.async {
-            App.audioEngine?.play(buffer: audioBuffer)
+            App.audioEngine.play(buffer: audioBuffer)
         }
     }
 }

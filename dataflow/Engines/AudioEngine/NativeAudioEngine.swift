@@ -16,7 +16,7 @@ class NativeAudioEngine: NSObject {
     internal var _audioFormat: AVAudioFormat!
     
     private var _inputNode: AVAudioInputNode!
-    internal var _playerNode: AVAudioPlayerNode
+    internal var _playerNode: AVAudioPlayerNode!
     
     weak var delegate: NativeAudioEngineDelegate?
     

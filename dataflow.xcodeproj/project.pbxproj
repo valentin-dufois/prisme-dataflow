@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		390C106421B734FA007BB462 /* EmitterStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C106321B734FA007BB462 /* EmitterStreamController.swift */; };
+		391414B121BEC9630011E03C /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391414B021BEC9630011E03C /* AudioEngine.swift */; };
+		391414B321BED1720011E03C /* AudioEngineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391414B221BED1720011E03C /* AudioEngineDelegate.swift */; };
 		393F3B5121B37DB9008025AA /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B4F21B37DB9008025AA /* SpeechRecognizer.swift */; };
 		393F3B5221B37DB9008025AA /* SpeechRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B5021B37DB9008025AA /* SpeechRecognizerDelegate.swift */; };
 		393F3B5421B4A0B1008025AA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B5321B4A0B1008025AA /* SettingsController.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		3906004421B8661F006240C5 /* dataflow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dataflow-Bridging-Header.h"; sourceTree = "<group>"; };
 		390C106321B734FA007BB462 /* EmitterStreamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterStreamController.swift; sourceTree = "<group>"; };
+		391414B021BEC9630011E03C /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		391414B221BED1720011E03C /* AudioEngineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineDelegate.swift; sourceTree = "<group>"; };
 		393F3B4F21B37DB9008025AA /* SpeechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		393F3B5021B37DB9008025AA /* SpeechRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerDelegate.swift; sourceTree = "<group>"; };
 		393F3B5321B4A0B1008025AA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				39C17DF521BD978B003730CE /* AudioListeningEngineDelegate.swift */,
 				D7BF963E21BDE88500EA60D9 /* NativeAudioEngine.swift */,
 				D7BF964021BDEB0C00EA60D9 /* NativeAudioEngineDelegate.swift */,
+				391414B021BEC9630011E03C /* AudioEngine.swift */,
+				391414B221BED1720011E03C /* AudioEngineDelegate.swift */,
 			);
 			path = AudioEngine;
 			sourceTree = "<group>";
@@ -420,7 +426,9 @@
 				D73E9CAA21BCA9D500039B11 /* DFExtractedDataView.swift in Sources */,
 				39F2527D21B8977500B065F6 /* MultipeerDelegate.swift in Sources */,
 				39F2527F21B89EAD00B065F6 /* MultipeerClient.swift in Sources */,
+				391414B321BED1720011E03C /* AudioEngineDelegate.swift in Sources */,
 				393F3B5121B37DB9008025AA /* SpeechRecognizer.swift in Sources */,
+				391414B121BEC9630011E03C /* AudioEngine.swift in Sources */,
 				3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */,
 				393F3B6321B5F0F9008025AA /* TabBarController.swift in Sources */,
 				39E3D15521B340C900E80D56 /* Notifications.swift in Sources */,

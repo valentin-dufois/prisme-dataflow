@@ -28,9 +28,6 @@ class EmitterController: UIViewController {
 	// //////////////////
 	// MARK : PROPERTIES
 
-	// The listening engine
-	private var _listeningEngine: AudioListeningEngine!
-
 	// Data extractors
 	private var _speechRecognizer: SpeechRecognizer!
 
@@ -41,8 +38,7 @@ class EmitterController: UIViewController {
 		super.viewDidLoad()
 
 		// Configure our audio session
-		_listeningEngine = AudioListeningEngine()
-		_listeningEngine.delegate = self
+		App.audioEngine.delegate = self
 
 		// Get a speech recognizer
 		_speechRecognizer = SpeechRecognizer()
@@ -67,15 +63,16 @@ class EmitterController: UIViewController {
 	///
 	/// - Parameter sender: The start/Stop button
 	@IBAction func toggleRecording(_ sender: UIBarButtonItem) {
-		if(_listeningEngine.isRunning) {
+		if(App.audioEngine.isRunning) {
 			// Stop audio session
 			endRecording()
 			startStopBtn.title = "Start"
-		} else {
-			// Start audio session
-			startRecording()
-			startStopBtn.title = "Stop"
+			return
 		}
+
+		// Start audio session
+		startRecording()
+		startStopBtn.title = "Stop"
 	}
 
 	/// Stop and restart the socket connection
@@ -99,12 +96,12 @@ extension EmitterController {
 
 	/// Start listening and start the speech recognizer
 	private func startRecording() {
-		guard !_listeningEngine.isRunning else {
+		guard !App.audioEngine.isRunning else {
 			print("[EmitterController.startRecording] A recording is already started")
 			return
 		}
 
-		_listeningEngine.start()
+		App.audioEngine.start()
 
 		// Start the speech recognizer
 		_speechRecognizer.start()
@@ -112,7 +109,7 @@ extension EmitterController {
 
 	/// Properly ends the recording and links systems
 	private func endRecording() {
-		guard (_listeningEngine?.isRunning ?? false) else {
+		guard (App.audioEngine.isRunning) else {
 			print("[EmitterController.endRecording] There is no recording to end")
 			return
 		}
@@ -121,27 +118,27 @@ extension EmitterController {
 		_speechRecognizer.stop()
 
 		// Stop the listening engine
-		_listeningEngine?.stop()
+		App.audioEngine.stop()
 	}
 }
 
 
 
 // MARK: - ListeningAudioEngineDelegate
-extension EmitterController: AudioListeningEngineDelegate {
+extension EmitterController: AudioEngineDelegate {
 	/// Called on every audio buffer, extract informations and emit data
 	///
 	/// - Parameters:
 	///   - listeningAudioEngine: The listening engine sending the event
 	///   - buffer: The audio buffer
-	func audioEngine(_ listeningAudioEngine: AudioListeningEngine, hasBuffer buffer: AVAudioPCMBuffer) {
+	func audioEngine(_ engine: AudioEngine, hasRecordedBuffer buffer: AVAudioPCMBuffer) {
 		// Execute audio analysis queue asynchronously to improve performances
 		App.audioAnalysisQueue.async {
 			// Frequency
-			App.dataHolder.audioData.frequency = self._listeningEngine.frequency!
+			App.dataHolder.audioData.frequency = App.audioEngine.frequency!
 
 			// Amplitude
-			App.dataHolder.audioData.amplitude = self._listeningEngine.amplitude!
+			App.dataHolder.audioData.amplitude = App.audioEngine.amplitude!
 
 			// Speech
 			self._speechRecognizer.analyze(buffer)
