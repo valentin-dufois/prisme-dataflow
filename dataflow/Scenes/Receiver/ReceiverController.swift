@@ -32,10 +32,7 @@ class ReceiverController: UIViewController {
 	internal var _audioStreamReader: AudioStreamReader?
 
 	// ////////////////////
-	// MARK: Audio emition
-
-	/// The listening engine to send our audio to the server
-	internal var _listeningEngine: AudioListeningEngine?
+	// MARK: Audio emission
 
 	/// The output stream to the server
 	internal var _outputStream: OutputStream?
@@ -74,7 +71,6 @@ class ReceiverController: UIViewController {
 		displayChild(controller: notConnectedViewController)
 
 		// Erase the listening engine and the output stream
-		_listeningEngine = nil
 		_outputStream?.close()
 		_outputStream = nil
 	}

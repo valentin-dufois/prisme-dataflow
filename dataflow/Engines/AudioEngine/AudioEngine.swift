@@ -16,7 +16,7 @@ class AudioEngine: NSObject {
 	// MARK: AudioKit & AVAudioEngine properties
 
 	private var _mic: AKMicrophone!
-	private var _booster: AKBooster!
+	private var _silence: AKBooster!
 	private var _frequencyTracker: AKFrequencyTracker!
 	private var _inputTap: AKLazyTap!
 
@@ -46,7 +46,7 @@ class AudioEngine: NSObject {
 		// Create the chain
 		_mic = AKMicrophone()
 		_frequencyTracker = AKFrequencyTracker(_mic)
-		_booster = AKBooster(_frequencyTracker, gain: 0)
+		_silence = AKBooster(_frequencyTracker, gain: 0)
 
 		_inputTap = AKLazyTap(node: _mic.avAudioNode)
 
@@ -58,7 +58,7 @@ class AudioEngine: NSObject {
 
 		_audioFormat = _engine.inputNode.inputFormat(forBus: 0)
 
-		AudioKit.output = AKMixer(AKNode(avAudioNode: _player), _booster)
+		AudioKit.output = AKMixer(AKNode(avAudioNode: _player), _silence)
 	}
 
 
@@ -117,7 +117,7 @@ class AudioEngine: NSObject {
 		_inputTapTimer?.removeAllObservers()
 
 		// Detach audio chain components
-		_booster?.detach()
+		_silence?.detach()
 		_frequencyTracker?.detach()
 		AudioKit.output = nil
 	}
@@ -145,7 +145,6 @@ extension AudioEngine {
 // MARK: - Buffer input (to play)
 extension AudioEngine {
 	func play(buffer: AVAudioPCMBuffer) {
-		print("PlAYING")
 		_player.scheduleBuffer(buffer, completionHandler: nil)
 	}
 }
