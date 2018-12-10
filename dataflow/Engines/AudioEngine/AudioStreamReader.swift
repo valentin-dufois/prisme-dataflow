@@ -27,10 +27,8 @@ class AudioStreamReader: NSObject {
     
     internal var _allowedBufferSize:[UInt32] = [21504, 21638, 21639, 22016, 22528, 22579]
 
-	/// Init the audio engine to allow for playing audio comming from the stream
-	override init() {
-        App.audioEngine.start()
-	}
+	private var _muted: Bool = false
+	var muted: Bool { return _muted }
 
 	/// Init the AudioStreamReader and directly start pmlaying the given stream
 	///
@@ -64,6 +62,14 @@ class AudioStreamReader: NSObject {
             self._inputStream!.open()
 		}
     }
+
+	func mute() {
+		_muted = true
+	}
+
+	func unMute() {
+		_muted = false
+	}
     
 	/// End playing the stream: Close the incoming stream and the audioEngine.
 	///
@@ -85,7 +91,6 @@ class AudioStreamReader: NSObject {
 /// MARK: - Polling the stream
 extension AudioStreamReader {
     func pollStream() {
-        
 		// Make sure we have a stream in the first place
         guard let inputStream = _inputStream else {
             print("[AudioStreamReader.pollStream] There is no stream to poll")
@@ -94,14 +99,19 @@ extension AudioStreamReader {
 
 		// Does the stream holds informations ?
         guard inputStream.hasBytesAvailable else {
-            print("[AudioStreamReader.pollStream] Stream has nothing to read")
+//            print("[AudioStreamReader.pollStream] Stream has nothing to read")
             return
         }
 
 		// Extract and convert the stream informations to an audio buffer
         let inputData = Data(reading: inputStream)
         let audioBuffer = AVAudioPCMBuffer(data: inputData, audioFormat: App.audioEngine.audioFormat)!
-        
+
+		// Do not play the buffer we are muted
+		if self.muted {
+			return
+		}
+
         // If the buffer has an unknown size, skip it
         guard _allowedBufferSize.contains(audioBuffer.frameLength) else {
             print("Skipped buffer of size \(audioBuffer.frameLength)")

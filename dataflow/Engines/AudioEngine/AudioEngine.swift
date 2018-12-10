@@ -55,6 +55,7 @@ class AudioEngine: NSObject {
 		// Set AudioKit settings
 		AKSettings.audioInputEnabled = true
 		AKSettings.ioBufferDuration = 0.002
+		AKSettings.defaultToSpeaker = true
 
 		// Create the chain
 		_mic = AKMicrophone()

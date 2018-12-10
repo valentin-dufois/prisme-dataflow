@@ -140,6 +140,7 @@
 		393F3B6021B5F08E008025AA /* AudioEngine */ = {
 			isa = PBXGroup;
 			children = (
+				D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */,
 				39E82A9E21AF5D630094E1E2 /* RecordingData.swift */,
 				39E82AA021AF5DED0094E1E2 /* DataHolder.swift */,
 				39929A8821AF3FAD00CB306C /* DataExtractors */,
@@ -174,7 +175,6 @@
 				39432E9E21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift */,
 				393F3B6421B5F487008025AA /* ReceiverController.swift */,
 				3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */,
-				D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */,
 			);
 			path = Receiver;
 			sourceTree = "<group>";

@@ -21,6 +21,10 @@ class EmitterStreamController: UITableViewController {
         super.viewDidLoad()
 
 		initMultipeer()
+
+		// Add Observers
+		NotificationCenter.default.addObserver(self, selector: #selector(onStartedPlaying), name: Notifications.startedPlaying.name, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(onStoppedPlaying), name: Notifications.stoppedPlaying.name, object: nil)
 	}
     
     func initMultipeer() {
@@ -40,6 +44,14 @@ class EmitterStreamController: UITableViewController {
 	/// Properly close the server
 	func closeMultipeer() {
 		_multipeerServer?.close()
+	}
+
+	@objc func onStartedPlaying(_ obj: Notification) {
+		_audioStreamReader?.unMute()
+	}
+
+	@objc func onStoppedPlaying(_ obj: Notification) {
+		_audioStreamReader?.mute()
 	}
 
 	// Make sure to properly close the server
@@ -82,6 +94,8 @@ extension EmitterStreamController {
 
 		// Close the stream
 		outputStream.close()
+		_audioStreamReader?.end()
+		_audioStreamReader = nil
 
 		// And remove it
 		_clientStreams.removeValue(forKey: peerID.displayName)
@@ -137,6 +151,10 @@ extension EmitterStreamController: MultipeerDelegate {
 //
 //         Create and start the audio stream reader with the received stream
         _audioStreamReader = AudioStreamReader(stream: stream)
+
+		if !App.audioEngine.isRunning {
+			_audioStreamReader?.mute()
+		}
     }
 }
 

@@ -67,12 +67,14 @@ class EmitterController: UIViewController {
 			// Stop audio session
 			endRecording()
 			startStopBtn.title = "Start"
+			NotificationCenter.default.post(name: Notifications.stoppedPlaying.name, object: nil)
 			return
 		}
 
 		// Start audio session
 		startRecording()
 		startStopBtn.title = "Stop"
+		NotificationCenter.default.post(name: Notifications.startedPlaying.name, object: nil)
 	}
 
 	/// Stop and restart the socket connection

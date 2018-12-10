@@ -12,6 +12,9 @@ enum Notifications: String {
 	case settingsUpdated
 	case switchToEmitter
 	case switchToReceiver
+
+	case startedPlaying
+	case stoppedPlaying
     
     case debug
 
