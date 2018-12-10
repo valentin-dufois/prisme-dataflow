@@ -15,29 +15,42 @@ class AudioEngine: NSObject {
 	// //////////////////////////
 	// MARK: AudioKit & AVAudioEngine properties
 
-	private var _mic: AKMicrophone!
-	private var _silence: AKBooster!
-	private var _frequencyTracker: AKFrequencyTracker!
-	private var _inputTap: AKLazyTap!
+	/// The microphone
+	internal let _mic: AKMicrophone
 
-	private var _engine: AVAudioEngine!
-	private var _player: AVAudioPlayerNode!
+	/// Silence to prevent the mic from outputing to the speakers
+	internal let _silence: AKBooster
 
-	private var _audioFormat: AVAudioFormat
+	/// Frequencty tracker for the mic
+	internal let _frequencyTracker: AKFrequencyTracker
 
-	var audioFormat: AVAudioFormat { return _audioFormat }
+	/// Input tap attached to the mic
+	internal let _inputTap: AKLazyTap
+
+	/// Reference to the audio engine — Managed by AudioKit
+	internal let _engine: AVAudioEngine
+
+	/// The player node used to send audio data to the speakers
+	internal let _player: AVAudioPlayerNode
+
+	/// The audio format used by the engine
+	var audioFormat: AVAudioFormat { return AudioKit.format }
 
 	// //////////////////////////
 	// MARK: General porperties
 
+	/// Timer used to trigger the input tap
 	private var _inputTapTimer: Repeater!
 
+	/// Tell if the engine is currently running
 	var isRunning: Bool { return _running }
 	private var _running: Bool = false
 
+	/// The AudioEngine delegate
 	weak var delegate: AudioEngineDelegate?
 
 
+	/// Create the Input and Output chain without starting it
 	override init () {
 		// Set AudioKit settings
 		AKSettings.audioInputEnabled = true
@@ -48,7 +61,7 @@ class AudioEngine: NSObject {
 		_frequencyTracker = AKFrequencyTracker(_mic)
 		_silence = AKBooster(_frequencyTracker, gain: 0)
 
-		_inputTap = AKLazyTap(node: _mic.avAudioNode)
+		_inputTap = AKLazyTap(node: _mic.avAudioNode)!
 
 		// ~ Send the end of the chain to the output of AudioKit
 
@@ -56,12 +69,11 @@ class AudioEngine: NSObject {
 		_engine = AudioKit.engine
 		_player = AVAudioPlayerNode()
 
-		_audioFormat = _engine.inputNode.inputFormat(forBus: 0)
-
 		AudioKit.output = AKMixer(AKNode(avAudioNode: _player), _silence)
 	}
 
 
+	/// Start the engine, effectively recording from the mic and playing on the speaker
 	func start() {
 		// Make sure the engine isn't already running
 		if isRunning {
@@ -72,7 +84,7 @@ class AudioEngine: NSObject {
 		// Start AudioKit and the player
 		do {
 			try AudioKit.start()
-			_player?.play()
+			_player.play()
 		} catch {
 			fatalError("[AudioEngine.start] Couldn't start AudioKit : \(error.localizedDescription)")
 		}
@@ -91,6 +103,7 @@ class AudioEngine: NSObject {
 		_running = true
 	}
 
+	/// Stop the engine
 	func stop() {
 		guard isRunning else {
 			print(")[AudioEngine.stop] Engine isn't running")
@@ -101,7 +114,7 @@ class AudioEngine: NSObject {
 
 		do {
 			try AudioKit.stop()
-			_player?.stop()
+			_player.stop()
 		} catch {
 			fatalError("[AudioEngine.stop] Could not properly stop AudioKit : \(error.localizedDescription)")
 		}
@@ -109,6 +122,7 @@ class AudioEngine: NSObject {
 		_running = false
 	}
 
+	/// Properly free used resources
 	deinit {
 		// Stop the engine if its running
 		stop()
@@ -117,15 +131,18 @@ class AudioEngine: NSObject {
 		_inputTapTimer?.removeAllObservers()
 
 		// Detach audio chain components
-		_silence?.detach()
-		_frequencyTracker?.detach()
+		_silence.detach()
+		_frequencyTracker.detach()
 		AudioKit.output = nil
 	}
 }
 
 // MARK: - Informations and buffers inputs (from the mic)
 extension AudioEngine {
-	private func inputTapObserver() {
+	/// Called continuously while the engine is running.
+	///
+	/// Gets the current buffer and send it to the delegate
+	internal func inputTapObserver() {
 		// Get the audio buffer
 		let audioBuffer = AVAudioPCMBuffer(pcmFormat: _mic.avAudioNode.outputFormat(forBus: 0), frameCapacity: 44100)!
 		_inputTap.fillNextBuffer(audioBuffer, timeStamp: nil)
@@ -137,13 +154,19 @@ extension AudioEngine {
 		delegate?.audioEngine(self, hasRecordedBuffer: audioBuffer)
 	}
 
-	var frequency: Double? { return _frequencyTracker?.frequency }
-	var amplitude: Double? { return _frequencyTracker?.amplitude }
+	/// The current input frequency
+	var frequency: Double { return _frequencyTracker.frequency }
+
+	/// The current input amplitude
+	var amplitude: Double { return _frequencyTracker.amplitude }
 }
 
 
 // MARK: - Buffer input (to play)
 extension AudioEngine {
+	/// Schedule the given audio buffer to play
+	///
+	/// - Parameter buffer: Audio buffer to play
 	func play(buffer: AVAudioPCMBuffer) {
 		_player.scheduleBuffer(buffer, completionHandler: nil)
 	}

@@ -25,7 +25,7 @@ class AudioStreamReader: NSObject {
 	internal var _audioFormat: AVAudioFormat!
     internal var _tempTimer: Repeater?
     
-    internal var _allowedBufferSize:[UInt32] = [22528, 21504, 22579, 21638, 21639]
+    internal var _allowedBufferSize:[UInt32] = [21504, 21638, 21639, 22016, 22528, 22579]
 
 	/// Init the audio engine to allow for playing audio comming from the stream
 	override init() {

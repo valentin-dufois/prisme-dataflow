@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AudioKit
+import AVFoundation
 
 class EmitterController: UIViewController {
 
@@ -135,10 +135,10 @@ extension EmitterController: AudioEngineDelegate {
 		// Execute audio analysis queue asynchronously to improve performances
 		App.audioAnalysisQueue.async {
 			// Frequency
-			App.dataHolder.audioData.frequency = App.audioEngine.frequency!
+			App.dataHolder.audioData.frequency = App.audioEngine.frequency
 
 			// Amplitude
-			App.dataHolder.audioData.amplitude = App.audioEngine.amplitude!
+			App.dataHolder.audioData.amplitude = App.audioEngine.amplitude
 
 			// Speech
 			self._speechRecognizer.analyze(buffer)

@@ -7,8 +7,15 @@
 //
 
 import Foundation
-import AudioKit
+import AVFoundation
 
 protocol AudioEngineDelegate: AnyObject {
+	/// Called continuously while the engine is running
+	///
+	/// Any computing heavy done in this method should be sent to another queue
+	///
+	/// - Parameters:
+	///   - engine: The audio engine
+	///   - buffer: Input audio buffer
 	func audioEngine(_ engine: AudioEngine, hasRecordedBuffer buffer: AVAudioPCMBuffer)
 }

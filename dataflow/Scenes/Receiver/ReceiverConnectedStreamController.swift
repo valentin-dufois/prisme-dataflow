@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import MultipeerConnectivity
-import AVFoundation
 
 class ReceiverConnectedStreamController: UIViewController {
 	@IBOutlet weak var emitterLabel: UILabel!
