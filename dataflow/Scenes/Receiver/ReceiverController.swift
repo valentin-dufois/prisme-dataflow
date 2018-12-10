@@ -45,9 +45,18 @@ class ReceiverController: UIViewController {
 	/// When the view is loaded, display the `not connected`view
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
+        App.audioEngine = NativeAudioEngine()
+        App.audioEngine?.delegate = self
+        App.audioEngine?.start()
 
 		switchToDisconnected()
 	}
+    
+    deinit {
+        App.audioEngine?.end()
+        App.audioEngine = nil
+    }
 
 	/// Display the connected view
 	func switchToConnected() {
@@ -56,8 +65,6 @@ class ReceiverController: UIViewController {
 		let connectedViewController = storyboard.instantiateViewController(withIdentifier: "receiverConnectedView")
 
 		displayChild(controller: connectedViewController)
-
-//        startAudioEmition()
 	}
 
 	/// Display the not connected view
@@ -117,8 +124,6 @@ extension ReceiverController {
         
         _audioStreamReader?.end()
 
-		endAudioEmition()
-
 		_outputStream?.close()
 
 		switchToDisconnected()
@@ -147,11 +152,11 @@ extension ReceiverController: MultipeerDelegate {
         // End the current stream if there is one
         _audioStreamReader?.end()
 
-//        // Create our own stream to the server
-//        _outputStream = try! device.makeStream(forPeer: peer)
-//
-//        _outputStream!.schedule(in: .current, forMode: .common)
-//        _outputStream!.open()
+        // Create our own stream to the server
+        _outputStream = try! device.makeStream(forPeer: peer)
+
+        _outputStream!.schedule(in: .current, forMode: .common)
+        _outputStream!.open()
 
         // Create and start the audio stream reader with the received stream
         _audioStreamReader = AudioStreamReader(stream: stream)
@@ -161,15 +166,8 @@ extension ReceiverController: MultipeerDelegate {
 
 
 // MARK: - Audio Emission
-extension ReceiverController: AudioListeningEngineDelegate {
-
-	private func startAudioEmition() {
-		_listeningEngine = AudioListeningEngine()
-		_listeningEngine?.delegate = self
-		_listeningEngine?.start()
-	}
-
-    func audioEngine(_ listeningAudioEngine: AudioListeningEngine, hasBuffer buffer: AVAudioPCMBuffer) {
+extension ReceiverController: NativeAudioEngineDelegate {
+    func audioEngine(_ engine: NativeAudioEngine, inputBuffer buffer: AVAudioPCMBuffer) {
 		guard let outputStream = _outputStream else { return }
 
 		let audioData = buffer.toData()
@@ -177,10 +175,5 @@ extension ReceiverController: AudioListeningEngineDelegate {
         _ = audioData.withUnsafeBytes { dataPointer in
 			outputStream.write(dataPointer, maxLength: audioData.count)
 		}
-	}
-
-	private func endAudioEmition() {
-		_listeningEngine?.stop()
-		_listeningEngine = nil
 	}
 }

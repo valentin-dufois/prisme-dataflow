@@ -133,10 +133,10 @@ extension EmitterStreamController: MultipeerDelegate {
     /// Called when our client send us its audio stream
     func mpDevice(_ device: MultipeerDevice, receivedStream stream: InputStream, withName streamName: String, fromPeer peer: MCPeerID) {
         // End the current stream if there is one
-        _audioStreamReader?.end()
+//        _audioStreamReader?.end()
         
         // Create and start the audio stream reader with the received stream
-        _audioStreamReader = AudioStreamReader(stream: stream)
+//        _audioStreamReader = AudioStreamReader(stream: stream)
     }
 }
 

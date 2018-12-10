@@ -41,6 +41,8 @@
 		D73E9CAA21BCA9D500039B11 /* DFExtractedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E9CA921BCA9D500039B11 /* DFExtractedDataView.swift */; };
 		D77224AD21BC74C5007E3059 /* EmotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */; };
 		D7BF963D21BDC22700EA60D9 /* DFBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF963C21BDC22700EA60D9 /* DFBorderedButton.swift */; };
+		D7BF963F21BDE88500EA60D9 /* NativeAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF963E21BDE88500EA60D9 /* NativeAudioEngine.swift */; };
+		D7BF964121BDEB0C00EA60D9 /* NativeAudioEngineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF964021BDEB0C00EA60D9 /* NativeAudioEngineDelegate.swift */; };
 		D7D0902D21BA0BE50061FCA8 /* AudioStreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		D73E9CA921BCA9D500039B11 /* DFExtractedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFExtractedDataView.swift; sourceTree = "<group>"; };
 		D77224AC21BC74C5007E3059 /* EmotionClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionClassifier.swift; sourceTree = "<group>"; };
 		D7BF963C21BDC22700EA60D9 /* DFBorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFBorderedButton.swift; sourceTree = "<group>"; };
+		D7BF963E21BDE88500EA60D9 /* NativeAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAudioEngine.swift; sourceTree = "<group>"; };
+		D7BF964021BDEB0C00EA60D9 /* NativeAudioEngineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAudioEngineDelegate.swift; sourceTree = "<group>"; };
 		D7D0902C21BA0BE50061FCA8 /* AudioStreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamReader.swift; sourceTree = "<group>"; };
 		EFFAEC75A692EAF3F1B633C5 /* Pods-dataflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow/Pods-dataflow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +149,8 @@
 				39929A8821AF3FAD00CB306C /* DataExtractors */,
 				39C17DF321BD935E003730CE /* AudioListeningEngine.swift */,
 				39C17DF521BD978B003730CE /* AudioListeningEngineDelegate.swift */,
+				D7BF963E21BDE88500EA60D9 /* NativeAudioEngine.swift */,
+				D7BF964021BDEB0C00EA60D9 /* NativeAudioEngineDelegate.swift */,
 			);
 			path = AudioEngine;
 			sourceTree = "<group>";
@@ -423,7 +429,9 @@
 				393F3B5B21B5ED3F008025AA /* MultipeerServer.swift in Sources */,
 				D77224AD21BC74C5007E3059 /* EmotionClassifier.swift in Sources */,
 				39C17DF421BD935E003730CE /* AudioListeningEngine.swift in Sources */,
+				D7BF963F21BDE88500EA60D9 /* NativeAudioEngine.swift in Sources */,
 				393F3B5221B37DB9008025AA /* SpeechRecognizerDelegate.swift in Sources */,
+				D7BF964121BDEB0C00EA60D9 /* NativeAudioEngineDelegate.swift in Sources */,
 				393F3B5921B5EC3D008025AA /* Socket.swift in Sources */,
 				39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */,
 				39F2527A21B884FF00B065F6 /* SocketDelegate.swift in Sources */,

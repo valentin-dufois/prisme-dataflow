@@ -37,7 +37,11 @@ class AudioListeningEngine:NSObject {
 		_mic = AKMicrophone()
 		_frequencyTracker = AKFrequencyTracker(_mic)
 		_booster = AKBooster(_frequencyTracker, gain: 0)
+        
 		_tap = AKLazyTap(node: _mic.avAudioNode)
+        
+        
+        
 
 		// ~ Send the end of the chain to the output of AudioKit
 		AudioKit.output = _booster

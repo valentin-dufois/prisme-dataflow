@@ -15,4 +15,7 @@ struct App {
 
 	/// The current emitter stream, if any
     weak static var emitterStream: EmitterStreamController?
+    
+    
+    static var audioEngine: NativeAudioEngine?
 }
