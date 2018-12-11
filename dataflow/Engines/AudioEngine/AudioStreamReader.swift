@@ -25,7 +25,17 @@ class AudioStreamReader: NSObject {
 	internal var _audioFormat: AVAudioFormat!
     internal var _tempTimer: Repeater?
     
-	internal var _allowedBufferSize:[UInt32] = [21504, 21638, 21639, 22016, 22528, 22579, 23040, 23520]
+	internal var _allowedBufferSize:[UInt32] = [21504,
+												21638,
+												21639,
+												22016,
+												22186,
+//												22305, bad
+												22528,
+												22579,
+												22580,
+												23040,
+												23520,]
 
 	private var _muted: Bool = false
 	var muted: Bool { return _muted }

@@ -35,10 +35,22 @@ import UIKit
 
 		self.titleLabel?.font = UIFont.systemFont(ofSize: 15)
 
-		self.setBackgroundImage(UIImage(named: "BorderButtonTemplate"), for: .normal)
-		self.setBackgroundImage(UIImage(named: "PlainButtonTemplate"), for: .highlighted)
+		self.layer.borderColor = tint.cgColor
+		self.layer.cornerRadius = 5
+		self.layer.borderWidth = 1
 
 		self.contentEdgeInsets = UIEdgeInsets(top: 5, left: 15, bottom: 6, right: 15)
+	}
+
+	override var isHighlighted: Bool {
+		didSet {
+			if(isHighlighted) {
+				self.layer.borderWidth = 0
+				return
+			}
+
+			self.layer.borderWidth = 1
+		}
 	}
 
 	override func prepareForInterfaceBuilder() {

@@ -21,4 +21,8 @@ class ReceiverConnectedStreamController: UIViewController {
 	@IBAction func disconnect(_ sender: Any) {
 		(self.parent! as! ReceiverController).disconnectFromServer()
 	}
+	@IBAction func restartAudio(_ sender: Any) {
+		App.audioEngine.stop()
+		App.audioEngine.start()
+	}
 }

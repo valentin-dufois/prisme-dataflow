@@ -523,23 +523,12 @@ to any stream</string>
                                                 <rect key="frame" x="120" y="159" width="90" height="29"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="contentEdgeInsets" minX="15" minY="5" maxX="16" maxY="6"/>
-                                                <state key="normal" title="Connect" backgroundImage="BorderButtonTemplate">
+                                                <state key="normal" title="Connect">
                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="highlighted" backgroundImage="PlainButtonTemplate">
                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <integer key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="disconnect:" destination="Emj-Mu-BR4" eventType="touchUpInside" id="Seu-He-fuJ"/>
                                                     <action selector="openEmitterSelectionInterface" destination="zfW-cI-NwV" eventType="touchUpInside" id="I9f-KB-kdE"/>
@@ -582,20 +571,20 @@ to any stream</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gd5-yY-OR7">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="151" translatesAutoresizingMaskIntoConstraints="NO" id="Tzt-k7-kfg">
-                                        <rect key="frame" x="67.5" y="64.5" width="240" height="518"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tzt-k7-kfg">
+                                        <rect key="frame" x="-16.5" y="25" width="408" height="597"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEz-rY-sHk">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="408" height="101"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptw-q6-nyb">
-                                                        <rect key="frame" x="120" y="44" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="204" y="44" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcn-av-Nbx">
-                                                        <rect key="frame" x="39.5" y="0.0" width="161" height="36"/>
+                                                        <rect key="frame" x="123.5" y="0.0" width="161" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -609,47 +598,64 @@ to any stream</string>
                                                     <constraint firstItem="Gcn-av-Nbx" firstAttribute="centerX" secondItem="bEz-rY-sHk" secondAttribute="centerX" id="qbA-KG-sCm"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TabBarReceiver" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yOd-9l-e3Q">
-                                                <rect key="frame" x="105" y="252" width="30" height="30"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKP-Eb-VrS" customClass="DFBorderedButton" customModule="dataflow" customModuleProvider="target">
-                                                <rect key="frame" x="65.5" y="489" width="109" height="29"/>
-                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="contentEdgeInsets" minX="15" minY="5" maxX="16" maxY="6"/>
-                                                <state key="normal" title="Disconnect" backgroundImage="BorderButtonTemplate">
-                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="PlainButtonTemplate">
-                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <integer key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="disconnect:" destination="Emj-Mu-BR4" eventType="touchUpInside" id="3Jb-NM-9Nj"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Tz-0Y-dwu">
+                                                <rect key="frame" x="83" y="568" width="242" height="29"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKP-Eb-VrS" customClass="DFBorderedButton" customModule="dataflow" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="29"/>
+                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="contentEdgeInsets" minX="15" minY="5" maxX="16" maxY="6"/>
+                                                        <state key="normal" title="Disconnect" backgroundImage="BorderButtonTemplate">
+                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="highlighted" backgroundImage="PlainButtonTemplate">
+                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="disconnect:" destination="Emj-Mu-BR4" eventType="touchUpInside" id="3Jb-NM-9Nj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x7-XK-d2W" customClass="DFBorderedButton" customModule="dataflow" customModuleProvider="target">
+                                                        <rect key="frame" x="119" y="0.0" width="123" height="29"/>
+                                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="contentEdgeInsets" minX="15" minY="5" maxX="16" maxY="6"/>
+                                                        <state key="normal" title="Restart audio">
+                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="highlighted" backgroundImage="PlainButtonTemplate">
+                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="restartAudio:" destination="Emj-Mu-BR4" eventType="touchUpInside" id="Jhq-Yf-Vot"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="yOd-9l-e3Q" firstAttribute="leading" secondItem="Tzt-k7-kfg" secondAttribute="leading" constant="105" id="Htf-ue-zwh"/>
+                                            <constraint firstAttribute="bottom" secondItem="bEz-rY-sHk" secondAttribute="bottom" constant="496" id="0bF-ld-QBU"/>
                                             <constraint firstItem="bEz-rY-sHk" firstAttribute="leading" secondItem="Tzt-k7-kfg" secondAttribute="leading" id="Y8C-BD-TkO"/>
-                                            <constraint firstItem="yOd-9l-e3Q" firstAttribute="top" secondItem="Tzt-k7-kfg" secondAttribute="top" constant="252" id="mMx-eU-CpW"/>
-                                            <constraint firstAttribute="bottom" secondItem="bEz-rY-sHk" secondAttribute="bottom" constant="459" id="wHm-D8-4jJ"/>
+                                            <constraint firstItem="2Tz-0Y-dwu" firstAttribute="centerX" secondItem="Tzt-k7-kfg" secondAttribute="centerX" id="fVb-mh-C3F"/>
+                                            <constraint firstAttribute="trailing" secondItem="bEz-rY-sHk" secondAttribute="trailing" id="rkk-kv-a6K"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Tzt-k7-kfg" firstAttribute="centerY" secondItem="Gd5-yY-OR7" secondAttribute="centerY" id="10b-OR-gt2"/>
                                     <constraint firstItem="Tzt-k7-kfg" firstAttribute="centerX" secondItem="Gd5-yY-OR7" secondAttribute="centerX" id="3WG-N2-xoa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tzt-k7-kfg" secondAttribute="bottom" constant="25" id="Ww5-yf-xhT"/>
+                                    <constraint firstItem="Tzt-k7-kfg" firstAttribute="top" secondItem="Gd5-yY-OR7" secondAttribute="top" constant="25" id="bGw-NX-hGn"/>
                                 </constraints>
                             </view>
                         </subviews>
