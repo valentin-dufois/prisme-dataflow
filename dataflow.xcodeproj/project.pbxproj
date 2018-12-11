@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		390C106421B734FA007BB462 /* EmitterStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C106321B734FA007BB462 /* EmitterStreamController.swift */; };
 		391414B121BEC9630011E03C /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391414B021BEC9630011E03C /* AudioEngine.swift */; };
 		391414B321BED1720011E03C /* AudioEngineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391414B221BED1720011E03C /* AudioEngineDelegate.swift */; };
 		393F3B5121B37DB9008025AA /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B4F21B37DB9008025AA /* SpeechRecognizer.swift */; };
@@ -21,6 +20,7 @@
 		393F3B6721B5F4A3008025AA /* EmitterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F3B6621B5F4A2008025AA /* EmitterController.swift */; };
 		39432E9F21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39432E9E21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift */; };
 		39432EA121B74D0100DCDF6A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39432EA021B74D0100DCDF6A /* App.swift */; };
+		396F01BB21C0744300D7FA9B /* EmitterStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C106321B734FA007BB462 /* EmitterStreamController.swift */; };
 		3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */; };
 		398021A121B798C400DFD3D0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398021A021B798C400DFD3D0 /* Data.swift */; };
 		398088C821BB448C003AB6EB /* EmotionClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */; };
@@ -60,6 +60,7 @@
 		393F3B6621B5F4A2008025AA /* EmitterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterController.swift; sourceTree = "<group>"; };
 		39432E9E21B7479A00DCDF6A /* ReceiverConnectedStreamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverConnectedStreamController.swift; sourceTree = "<group>"; };
 		39432EA021B74D0100DCDF6A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		396F01B921C073E300D7FA9B /* emotionclassifier-playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "emotionclassifier-playground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3980219E21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverNotConnectedStreamController.swift; sourceTree = "<group>"; };
 		398021A021B798C400DFD3D0 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		398088C721BB448C003AB6EB /* EmotionClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EmotionClassifierModel.mlmodel; sourceTree = "<group>"; };
@@ -200,6 +201,7 @@
 		39929A7521AF3A1100CB306C /* dataflow */ = {
 			isa = PBXGroup;
 			children = (
+				396F01B921C073E300D7FA9B /* emotionclassifier-playground.playground */,
 				39C17DF121BD9311003730CE /* Assets.xcassets */,
 				3906004421B8661F006240C5 /* dataflow-Bridging-Header.h */,
 				393F3B6121B5F0B1008025AA /* Storyboard */,
@@ -409,12 +411,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				390C106421B734FA007BB462 /* EmitterStreamController.swift in Sources */,
 				39F2528321B97DF500B065F6 /* streamEmitterDelegate.swift in Sources */,
 				D73E9CAA21BCA9D500039B11 /* DFExtractedDataView.swift in Sources */,
 				39F2527D21B8977500B065F6 /* MultipeerDelegate.swift in Sources */,
 				39F2527F21B89EAD00B065F6 /* MultipeerClient.swift in Sources */,
 				391414B321BED1720011E03C /* AudioEngineDelegate.swift in Sources */,
+				396F01BB21C0744300D7FA9B /* EmitterStreamController.swift in Sources */,
 				393F3B5121B37DB9008025AA /* SpeechRecognizer.swift in Sources */,
 				391414B121BEC9630011E03C /* AudioEngine.swift in Sources */,
 				3980219F21B7862C00DFD3D0 /* ReceiverNotConnectedStreamController.swift in Sources */,

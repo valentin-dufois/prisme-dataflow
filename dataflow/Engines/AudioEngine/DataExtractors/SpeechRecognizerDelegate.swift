@@ -20,7 +20,7 @@ class SpeechRecognizerTaskDelegate: NSObject, SFSpeechRecognitionTaskDelegate {
 	///   - transcription: The transcription inferred
 	func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didHypothesizeTranscription transcription: SFTranscription) {
 		App.dataHolder.audioData.phrase = transcription.formattedString
-		App.dataHolder.audioData.caracterCount = transcription.formattedString.count
+		App.dataHolder.audioData.charactersCount = transcription.formattedString.count
 		App.dataHolder.audioData.emotion = _emotionClassifier.analyze(phrase: App.dataHolder.audioData.phrase!)
 
 		recognizer?.setWaitForEndOfPhrase()

@@ -159,8 +159,24 @@ extension EmitterController: AudioEngineDelegate {
             self.audioFrequencyLabel.text = "\((App.dataHolder.audioData.frequency * 100).rounded() / 100) hz"
             self.audioAmplitudeLabel.text = "\((App.dataHolder.audioData.amplitude * 100).rounded() / 100)"
             self.decodedWordLabel.text = App.dataHolder.audioData.phrase ?? ""
-            self.numberOfLetterLabel.text = "\(App.dataHolder.audioData.caracterCount)"
-            self.decodedEmotionLabel.text = App.dataHolder.audioData.emotion ?? "neutral"
+            self.numberOfLetterLabel.text = "\(App.dataHolder.audioData.charactersCount)"
+
+			let emotionID = Int(App.dataHolder.audioData.emotion ?? "0")
+			let emotionLabel:String!
+
+			switch emotionID {
+			case 1: emotionLabel = "Interest"
+			case 2: emotionLabel = "Contrariety"
+			case 3: emotionLabel = "Boredom"
+			case 4: emotionLabel = "Reverie"
+			case 5: emotionLabel = "Distraction"
+			case 6: emotionLabel = "Apprehension"
+			case 7: emotionLabel = "Resignation"
+			case 8: emotionLabel = "Serenity"
+			default: emotionLabel = "Neutral"
+			}
+
+            self.decodedEmotionLabel.text = emotionLabel
         }
 	}
 }
