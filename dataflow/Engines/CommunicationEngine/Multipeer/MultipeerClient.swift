@@ -9,11 +9,13 @@
 import UIKit
 import MultipeerConnectivity
 
+/// Used to create a client for a multipeer connectivity server
 class MultipeerClient: MultipeerDevice {
 
 	// /////////////////
 	// MARK: Properties
 
+	/// The parent view controller to attache the service browser to
 	private var _parentViewController: UIViewController?
 
 }
@@ -45,10 +47,16 @@ extension MultipeerClient {
 
 // MARK: - Delegate methods for the BrowserViewController
 extension MultipeerClient: MCBrowserViewControllerDelegate {
+	/// Called whe the browser view controller ends with a connection (`Done` sbutton)
+	///
+	/// - Parameter browserViewController: The browser view controller
 	func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
 		_parentViewController?.dismiss(animated: true)
 	}
 
+	/// Called whe the browser view controller was cancelled
+	///
+	/// - Parameter browserViewController: The browser view controller
 	func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
 		_parentViewController?.dismiss(animated: true)
 	}
@@ -57,6 +65,7 @@ extension MultipeerClient: MCBrowserViewControllerDelegate {
 
 // MARK: - Convenient session methods
 extension MultipeerClient {
+	/// Gives the server peer ID if we are connected to a server
 	var serverPeer: MCPeerID? {
 		return _session.connectedPeers.last
 	}

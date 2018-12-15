@@ -10,13 +10,19 @@ import Foundation
 import UIKit
 import MultipeerConnectivity
 
+/// The view shown on the emitter end on the Stream tab
 class EmitterStreamController: UITableViewController {
 
+	/// The MultipeerServer
 	private var _multipeerServer: MultipeerServer!
+
+	/// Our clients streams
 	private var _clientStreams = [String:OutputStream]()
-    
+
+	/// Our stream reader for two way audio
     private var _audioStreamReader: AudioStreamReader?
 
+	/// Called when the view is loaded
 	override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +32,8 @@ class EmitterStreamController: UITableViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(onStartedPlaying), name: Notifications.startedPlaying.name, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(onStoppedPlaying), name: Notifications.stoppedPlaying.name, object: nil)
 	}
-    
+
+	/// Properly start the multipeer server
     func initMultipeer() {
 		if(_multipeerServer?.isRunning ?? false) {
 			return()
@@ -46,15 +53,21 @@ class EmitterStreamController: UITableViewController {
 		_multipeerServer?.close()
 	}
 
+	/// Called when the user started the audio
+	///
+	/// - Parameter obj: The notification object
 	@objc func onStartedPlaying(_ obj: Notification) {
 		_audioStreamReader?.unMute()
 	}
 
+	/// Called when the user stopped the audio
+	///
+	/// - Parameter obj: The notification object
 	@objc func onStoppedPlaying(_ obj: Notification) {
 		_audioStreamReader?.mute()
 	}
 
-	// Make sure to properly close the server
+	/// Make sure to properly close the server
 	deinit {
 		closeMultipeer()
 	}
@@ -63,6 +76,9 @@ class EmitterStreamController: UITableViewController {
 
 // MARK: Clients handling
 extension EmitterStreamController {
+	/// Called when a client just connected
+	///
+	/// - Parameter peerID: The peerID of the client
 	func clientConnected(peerID: MCPeerID) {
 		guard _clientStreams[peerID.displayName] == nil else {
 			print("[EmitterStreamController.clientConnected] A stream already exist for client \(peerID.displayName)")
@@ -86,6 +102,9 @@ extension EmitterStreamController {
 		_clientStreams[peerID.displayName] = outputStream
 	}
 
+	/// Called when a client just disconnected
+	///
+	/// - Parameter peerID: The peerID of the client
 	func clientDisconnected(peerID: MCPeerID) {
 		guard let outputStream = _clientStreams[peerID.displayName] else {
 			print("[EmitterStreamController.clientConnected] No stream to remove for \(peerID.displayName)")
@@ -104,9 +123,12 @@ extension EmitterStreamController {
 
 
 // MARK: Sending Data
-extension EmitterStreamController: streamEmitterDelegate {
+extension EmitterStreamController: StreamEmitterDelegate {
+	/// Sends the given data on all of the clients streams
+	///
+	/// - Parameter data: Data to send
 	func emit(data: Data) {
-//        print("[streamEmitterDelegate.emit] Emitting to \(_clientStreams.count) clients")
+		// For each stream
 		_clientStreams.forEach { (arg) in
 			let (_, outputStream) = arg
 
@@ -146,10 +168,10 @@ extension EmitterStreamController: MultipeerDelegate {
     
     /// Called when our client send us its audio stream
     func mpDevice(_ device: MultipeerDevice, receivedStream stream: InputStream, withName streamName: String, fromPeer peer: MCPeerID) {
-//         End the current stream if there is one
+		// End the current stream if there is one
         _audioStreamReader?.end()
-//
-//         Create and start the audio stream reader with the received stream
+
+		// Create and start the audio stream reader with the received stream
         _audioStreamReader = AudioStreamReader(stream: stream)
     }
 }

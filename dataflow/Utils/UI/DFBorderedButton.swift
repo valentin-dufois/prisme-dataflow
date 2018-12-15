@@ -11,6 +11,7 @@ import UIKit
 /// Represent a simple bordered button
 @IBDesignable class DFBorderedButton: UIButton {
 
+	/// Tint of the button
 	@IBInspectable var tint: UIColor = UIColor.darkGray {
 		didSet {
 			setupAppearance()
@@ -27,6 +28,7 @@ import UIKit
 		setupAppearance()
 	}
 
+	/// Sets the button's appearance
 	func setupAppearance() {
 		self.tintColor = tint
 
@@ -42,6 +44,7 @@ import UIKit
 		self.contentEdgeInsets = UIEdgeInsets(top: 5, left: 15, bottom: 6, right: 15)
 	}
 
+	/// update the button style when it gets highlighted
 	override var isHighlighted: Bool {
 		didSet {
 			if(isHighlighted) {
@@ -53,6 +56,7 @@ import UIKit
 		}
 	}
 
+	/// Prepare the button for Interface Builder
 	override func prepareForInterfaceBuilder() {
 		super.prepareForInterfaceBuilder()
 	}

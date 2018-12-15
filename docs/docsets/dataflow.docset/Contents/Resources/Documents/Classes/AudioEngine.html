@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AudioEngine Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/AudioEngine" class="dashAnchor"></a>
+    <a title="AudioEngine Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">dataflow Docs</a> (95% documented)</p>
+        <p class="header-right"><a href="https://github.com/boisier/prisme-dataflow"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">dataflow Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AudioEngine Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Core.html">Core</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/App.html">App</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../AudioEngine.html">AudioEngine</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AudioEngine.html">AudioEngine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AudioEngineDelegate.html">AudioEngineDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AudioStreamReader.html">AudioStreamReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DataHolder.html">DataHolder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingData.html">RecordingData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizer.html">SpeechRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizerTaskDelegate.html">SpeechRecognizerTaskDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifier.html">EmotionClassifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModel.html">EmotionClassifierModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelInput.html">EmotionClassifierModelInput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../CommunicationEngine.html">CommunicationEngine</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerDevice.html">MultipeerDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MultipeerDelegate.html">MultipeerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerServer.html">MultipeerServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerClient.html">MultipeerClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Socket.html">Socket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SocketDelegate.html">SocketDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Scenes.html">Scenes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarController.html">TabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterController.html">EmitterController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterStreamController.html">EmitterStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StreamEmitterDelegate.html">StreamEmitterDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverController.html">ReceiverController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverNotConnectedStreamController.html">ReceiverNotConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverConnectedStreamController.html">ReceiverConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Scenes.html#/c:@M@dataflow@objc(cs)SettingsController">SettingsController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SettingsTableController.html">SettingsTableController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Utils.html">Utils</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Notifications.html">Notifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DataFlowDefaults.html">DataFlowDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/AVAudioPCMBuffer.html">AVAudioPCMBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../UI.html">UI</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DFBorderedButton.html">DFBorderedButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DFExtractedDataView.html">DFExtractedDataView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AudioEngine</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AudioEngine</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>The AudioEngine handles audio input and output for the App.</p>
+
+<p>It allow for tapping on the input feed, as well as playing on the ouput feed.
+The AudioEngine split prevent audio input from the mic from playing on the speakers.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/AudioKit%20&amp;%20AVAudioEngine%20properties"></a>
+                <a name="//apple_ref/swift/Section/AudioKit &amp; AVAudioEngine properties" class="dashAnchor"></a>
+                <a href="#/AudioKit%20&amp;%20AVAudioEngine%20properties">
+                  <h3 class="section-name">AudioKit &amp; AVAudioEngine properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC4_mic0B3Kit12AKMicrophoneCvp"></a>
+                    <a name="//apple_ref/swift/Property/_mic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC4_mic0B3Kit12AKMicrophoneCvp">_mic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The microphone</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">let</span> <span class="nv">_mic</span><span class="p">:</span> <span class="kt">AKMicrophone</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC8_silence0B3Kit9AKBoosterCvp"></a>
+                    <a name="//apple_ref/swift/Property/_silence" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC8_silence0B3Kit9AKBoosterCvp">_silence</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Silence to prevent the mic from outputing to the speakers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">let</span> <span class="nv">_silence</span><span class="p">:</span> <span class="kt">AKBooster</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC17_frequencyTracker0B3Kit011AKFrequencyE0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/_frequencyTracker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC17_frequencyTracker0B3Kit011AKFrequencyE0Cvp">_frequencyTracker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Frequencty tracker for the mic</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">let</span> <span class="nv">_frequencyTracker</span><span class="p">:</span> <span class="kt">AKFrequencyTracker</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC9_inputTapSo06AKLazyE0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/_inputTap" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC9_inputTapSo06AKLazyE0Cvp">_inputTap</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Input tap attached to the mic</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">let</span> <span class="nv">_inputTap</span><span class="p">:</span> <span class="kt">AKLazyTap</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC7_engineSo07AVAudioC0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/_engine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC7_engineSo07AVAudioC0Cvp">_engine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reference to the audio engine — Managed by AudioKit</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">let</span> <span class="nv">_engine</span><span class="p">:</span> <span class="kt">AVAudioEngine</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC7_playerSo17AVAudioPlayerNodeCvp"></a>
+                    <a name="//apple_ref/swift/Property/_player" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC7_playerSo17AVAudioPlayerNodeCvp">_player</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The player node used to send audio data to the speakers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">let</span> <span class="nv">_player</span><span class="p">:</span> <span class="kt">AVAudioPlayerNode</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC11audioFormatSo07AVAudioE0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/audioFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC11audioFormatSo07AVAudioE0Cvp">audioFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The audio format used by the engine</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">audioFormat</span><span class="p">:</span> <span class="kt">AVAudioFormat</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/General%20porperties"></a>
+                <a name="//apple_ref/swift/Section/General porperties" class="dashAnchor"></a>
+                <a href="#/General%20porperties">
+                  <h3 class="section-name">General porperties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/_inputTapTimer" class="dashAnchor"></a>
+                    <a class="token" href="#/">_inputTapTimer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Timer used to trigger the input tap</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_inputTapTimer</span><span class="p">:</span> <span class="kt">Repeater</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/_autoRestartTimer" class="dashAnchor"></a>
+                    <a class="token" href="#/">_autoRestartTimer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used to automatically restart the engine periodically</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_autoRestartTimer</span><span class="p">:</span> <span class="kt">Repeater</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC9isRunningSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isRunning" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC9isRunningSbvp">isRunning</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tell if the engine is currently running</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isRunning</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC8_running33_DA2256600F3751855B5C5D318D621FEFLLSbvp"></a>
+                    <a name="//apple_ref/swift/Property/_running" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC8_running33_DA2256600F3751855B5C5D318D621FEFLLSbvp">_running</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tell if the engine is currently running</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_running</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC8delegateAA0bC8Delegate_pSgXwvp"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC8delegateAA0bC8Delegate_pSgXwvp">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The AudioEngine delegate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AudioEngineDelegate.html">AudioEngineDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)AudioEngine(im)init"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)AudioEngine(im)init">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create the Input and Output chain without starting it</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC14setAutoRestart5everyySd_tF"></a>
+                    <a name="//apple_ref/swift/Method/setAutoRestart(every:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC14setAutoRestart5everyySd_tF">setAutoRestart(every:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set up the auto restart timer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setAutoRestart</span><span class="p">(</span><span class="n">every</span> <span class="nv">seconds</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>seconds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Restart interval in seconds</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC5startyyF"></a>
+                    <a name="//apple_ref/swift/Method/start()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC5startyyF">start()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start the engine, effectively recording from the mic and playing on the speaker</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">start</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC4stopyyF"></a>
+                    <a name="//apple_ref/swift/Method/stop()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC4stopyyF">stop()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stop the engine</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">stop</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)AudioEngine(im)dealloc"></a>
+                    <a name="//apple_ref/swift/Method/deinit" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)AudioEngine(im)dealloc">deinit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Properly free used resources</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">deinit</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Informations%20and%20buffers%20inputs%20(from%20the%20mic)"></a>
+                <a name="//apple_ref/swift/Section/Informations and buffers inputs (from the mic)" class="dashAnchor"></a>
+                <a href="#/Informations%20and%20buffers%20inputs%20(from%20the%20mic)">
+                  <h3 class="section-name">Informations and buffers inputs (from the mic)</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC16inputTapObserveryyF"></a>
+                    <a name="//apple_ref/swift/Method/inputTapObserver()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC16inputTapObserveryyF">inputTapObserver()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called continuously while the engine is running.</p>
+
+<p>Gets the current buffer and send it to the delegate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">inputTapObserver</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC9frequencySdvp"></a>
+                    <a name="//apple_ref/swift/Property/frequency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC9frequencySdvp">frequency</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current input frequency</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">frequency</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC9amplitudeSdvp"></a>
+                    <a name="//apple_ref/swift/Property/amplitude" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC9amplitudeSdvp">amplitude</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current input amplitude</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">amplitude</span><span class="p">:</span> <span class="kt">Double</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Buffer%20input%20(to%20play)"></a>
+                <a name="//apple_ref/swift/Section/Buffer input (to play)" class="dashAnchor"></a>
+                <a href="#/Buffer%20input%20(to%20play)">
+                  <h3 class="section-name">Buffer input (to play)</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow11AudioEngineC4play6bufferySo16AVAudioPCMBufferC_tF"></a>
+                    <a name="//apple_ref/swift/Method/play(buffer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow11AudioEngineC4play6bufferySo16AVAudioPCMBufferC_tF">play(buffer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Schedule the given audio buffer to play</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">play</span><span class="p">(</span><span class="nv">buffer</span><span class="p">:</span> <span class="kt">AVAudioPCMBuffer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>buffer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Audio buffer to play</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="http://valentindufois.fr" target="_blank" rel="external">Valentin (Boisier) Dufois for PRISME</a>. All rights reserved. (Last updated: 2018-12-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

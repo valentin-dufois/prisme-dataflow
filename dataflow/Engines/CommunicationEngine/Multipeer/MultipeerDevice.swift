@@ -8,6 +8,10 @@
 
 import MultipeerConnectivity
 
+/// Parent class for the `MultipeerServer` and `MultipeerClient`
+///
+/// Handles redundant works for the two types of users. Holds most of the work
+/// directly related to MCSession handling
 class MultipeerDevice: NSObject {
 
 	// /////////////////
@@ -127,10 +131,25 @@ extension MultipeerDevice: MCSessionDelegate {
 	// ///////////////
 	// MARK: - UNUSED
 
+	/// Indicates that the local peer began receiving a resource from a nearby peer.
+	///
+	/// - Parameters:
+	///   - session: The session that started receiving the resource.
+	///   - resourceName: The name of the resource, as provided by the sender.
+	///   - peerID: The sender’s peer ID.
+	///   - progress: An NSProgress object that can be used to cancel the transfer or queried to determine how far the transfer has progressed.
 	func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
 		print("Starting receiving resource \(resourceName) from \(peerID.displayName)")
 	}
 
+	/// Indicates that the local peer finished receiving a resource from a nearby peer.
+	///
+	/// - Parameters:
+	///   - session: The session through which the data was received.
+	///   - resourceName: The name of the resource, as provided by the sender.
+	///   - peerID: The peer ID of the sender.
+	///   - localURL: An NSURL object that provides the location of a temporary file containing the received data.
+	///   - error: An error object indicating what went wrong if the file was not received successfully, or nil.
 	func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
 		print("Finished receiving resource \(resourceName) from \(peerID.displayName)")
 	}

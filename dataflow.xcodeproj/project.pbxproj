@@ -27,6 +27,8 @@
 		39929A7721AF3A1100CB306C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39929A7621AF3A1100CB306C /* AppDelegate.swift */; };
 		39929A7C21AF3A1100CB306C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7A21AF3A1100CB306C /* Main.storyboard */; };
 		39929A8121AF3A1200CB306C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39929A7F21AF3A1200CB306C /* LaunchScreen.storyboard */; };
+		39AF53D021C5A2FC008D57E0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 39AF53CF21C5A2FB008D57E0 /* README.md */; };
+		39AF53D221C5A52E008D57E0 /* .jazzy.json in Resources */ = {isa = PBXBuildFile; fileRef = 39AF53D121C5A52E008D57E0 /* .jazzy.json */; };
 		39C17DF221BD9311003730CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C17DF121BD9311003730CE /* Assets.xcassets */; };
 		39E3D15521B340C900E80D56 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E3D15421B340C900E80D56 /* Notifications.swift */; };
 		39E82A9F21AF5D630094E1E2 /* RecordingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E82A9E21AF5D630094E1E2 /* RecordingData.swift */; };
@@ -35,7 +37,7 @@
 		39F2527D21B8977500B065F6 /* MultipeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2527C21B8977500B065F6 /* MultipeerDelegate.swift */; };
 		39F2527F21B89EAD00B065F6 /* MultipeerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2527E21B89EAD00B065F6 /* MultipeerClient.swift */; };
 		39F2528121B89F4400B065F6 /* MultipeerDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528021B89F4400B065F6 /* MultipeerDevice.swift */; };
-		39F2528321B97DF500B065F6 /* streamEmitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528221B97DF500B065F6 /* streamEmitterDelegate.swift */; };
+		39F2528321B97DF500B065F6 /* StreamEmitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528221B97DF500B065F6 /* StreamEmitterDelegate.swift */; };
 		39F2528521B9D00900B065F6 /* AVAudioPCMBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2528421B9D00900B065F6 /* AVAudioPCMBuffer.swift */; };
 		6275D96ADB2CF51D999B6C93 /* Pods_dataflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FC48E3EC7444B50AED8356 /* Pods_dataflow.framework */; };
 		D73E9CAA21BCA9D500039B11 /* DFExtractedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E9CA921BCA9D500039B11 /* DFExtractedDataView.swift */; };
@@ -69,6 +71,8 @@
 		39929A7B21AF3A1100CB306C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39929A8021AF3A1200CB306C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39929A8221AF3A1200CB306C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39AF53CF21C5A2FB008D57E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		39AF53D121C5A52E008D57E0 /* .jazzy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = .jazzy.json; sourceTree = "<group>"; };
 		39C17DF121BD9311003730CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E3D15421B340C900E80D56 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		39E82A9E21AF5D630094E1E2 /* RecordingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingData.swift; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 		39F2527C21B8977500B065F6 /* MultipeerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDelegate.swift; sourceTree = "<group>"; };
 		39F2527E21B89EAD00B065F6 /* MultipeerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerClient.swift; sourceTree = "<group>"; };
 		39F2528021B89F4400B065F6 /* MultipeerDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDevice.swift; sourceTree = "<group>"; };
-		39F2528221B97DF500B065F6 /* streamEmitterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = streamEmitterDelegate.swift; sourceTree = "<group>"; };
+		39F2528221B97DF500B065F6 /* StreamEmitterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamEmitterDelegate.swift; sourceTree = "<group>"; };
 		39F2528421B9D00900B065F6 /* AVAudioPCMBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPCMBuffer.swift; sourceTree = "<group>"; };
 		96FC48E3EC7444B50AED8356 /* Pods_dataflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dataflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4DC7F9E183BE92969FF5BC /* Pods-dataflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dataflow.release.xcconfig"; path = "Pods/Target Support Files/Pods-dataflow/Pods-dataflow.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +169,7 @@
 			children = (
 				393F3B6621B5F4A2008025AA /* EmitterController.swift */,
 				390C106321B734FA007BB462 /* EmitterStreamController.swift */,
-				39F2528221B97DF500B065F6 /* streamEmitterDelegate.swift */,
+				39F2528221B97DF500B065F6 /* StreamEmitterDelegate.swift */,
 			);
 			path = Emiter;
 			sourceTree = "<group>";
@@ -183,6 +187,8 @@
 		39929A6A21AF3A1100CB306C = {
 			isa = PBXGroup;
 			children = (
+				39AF53D121C5A52E008D57E0 /* .jazzy.json */,
+				39AF53CF21C5A2FB008D57E0 /* README.md */,
 				39929A7521AF3A1100CB306C /* dataflow */,
 				39929A7421AF3A1100CB306C /* Products */,
 				39929A8921AF4AAF00CB306C /* Frameworks */,
@@ -350,7 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				39929A8121AF3A1200CB306C /* LaunchScreen.storyboard in Resources */,
+				39AF53D221C5A52E008D57E0 /* .jazzy.json in Resources */,
 				39C17DF221BD9311003730CE /* Assets.xcassets in Resources */,
+				39AF53D021C5A2FC008D57E0 /* README.md in Resources */,
 				39929A7C21AF3A1100CB306C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,7 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39F2528321B97DF500B065F6 /* streamEmitterDelegate.swift in Sources */,
+				39F2528321B97DF500B065F6 /* StreamEmitterDelegate.swift in Sources */,
 				D73E9CAA21BCA9D500039B11 /* DFExtractedDataView.swift in Sources */,
 				39F2527D21B8977500B065F6 /* MultipeerDelegate.swift in Sources */,
 				39F2527F21B89EAD00B065F6 /* MultipeerClient.swift in Sources */,

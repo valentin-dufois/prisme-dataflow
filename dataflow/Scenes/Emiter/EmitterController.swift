@@ -9,36 +9,50 @@
 import UIKit
 import AVFoundation
 
+/// The view shown on the emitter end on the Emitter tab
 class EmitterController: UIViewController {
 
 	// ///////////////
 	// MARK : OUTLETS
 
+	/// The audio start and stop button
 	@IBOutlet var startStopBtn: UIBarButtonItem!
 	
+	/// The socket connection state label
 	@IBOutlet var connectionStateLabel: UIBarButtonItem!
 	
-	@IBOutlet var decodedWordLabel: UITextView!
-	@IBOutlet var numberOfLetterLabel :UILabel!
+	/// The decoded phrase label
+	@IBOutlet var decodedPhraseLabel: UITextView!
+
+	/// The label showing the number of letters in the decoded phrase
+	@IBOutlet var numberOfLettersLabel :UILabel!
+
+	/// The label showing the frequency of the audio stream
 	@IBOutlet var audioFrequencyLabel: UILabel!
+
+	/// The label showing the decoded emotion of the audiostream
 	@IBOutlet var decodedEmotionLabel: UILabel!
+
+	/// The label showing the amplitude of the audio stream
 	@IBOutlet var audioAmplitudeLabel: UILabel!
 
 
 	// //////////////////
 	// MARK : PROPERTIES
 
-	// Data extractors
+	/// Data extractors
 	private var _speechRecognizer: SpeechRecognizer!
 
-	// The socket for sending data
+	/// The socket for sending data
 	private var _socket:Socket!
-	
+
+	/// Called when the view loads
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		// Configure our audio session
 		App.audioEngine.delegate = self
+		App.audioEngine.setAutoRestart(every: 240)
 
 		// Get a speech recognizer
 		_speechRecognizer = SpeechRecognizer()
@@ -50,6 +64,7 @@ class EmitterController: UIViewController {
 						port: Int32(DataFlowDefaults.serverPort.integer!))
 	}
 
+	/// Called every time the view is shown
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 
@@ -158,8 +173,8 @@ extension EmitterController: AudioEngineDelegate {
         DispatchQueue.main.async {
             self.audioFrequencyLabel.text = "\((App.dataHolder.audioData.frequency * 100).rounded() / 100) hz"
             self.audioAmplitudeLabel.text = "\((App.dataHolder.audioData.amplitude * 100).rounded() / 100)"
-            self.decodedWordLabel.text = App.dataHolder.audioData.phrase ?? ""
-            self.numberOfLetterLabel.text = "\(App.dataHolder.audioData.charactersCount)"
+            self.decodedPhraseLabel.text = App.dataHolder.audioData.phrase ?? ""
+            self.numberOfLettersLabel.text = "\(App.dataHolder.audioData.charactersCount)"
 
 			let emotionID = Int(App.dataHolder.audioData.emotion ?? "0")
 			let emotionLabel:String!

@@ -1,0 +1,73 @@
+{
+	"author": "Valentin (Boisier) Dufois for PRISME",
+	"author_url": "http://valentindufois.fr",
+	"module": "dataflow",
+	"docset_icon": "./dataflow/Assets.xcassets/AppIcon.appiconset/AppIcon-83.5@2x.png",
+	"github_url": "https://github.com/boisier/prisme-dataflow",
+	"min_acl": "private",
+	"undocumented_text": "Undocumented",
+	"custom_categories": [
+		{
+			"name": "Core",
+			"children": [
+				"AppDelegate",
+				"App"
+			]
+		}, {
+			"name": "AudioEngine",
+			"children": [
+				"AudioEngine",
+				"AudioEngineDelegate",
+				"AudioStreamReader",
+				"DataHolder",
+				"RecordingData",
+				"SpeechRecognizer",
+				"SpeechRecognizerDelegate",
+				"SpeechRecognizerTaskDelegate",
+				"EmotionClassifier",
+				"EmotionClassifierModel",
+				"EmotionClassifierModelInput",
+				"EmotionClassifierModelOutput"
+			]
+		}, {
+			"name": "CommunicationEngine",
+			"children": [
+				"MultipeerDevice",
+				"MultipeerDelegate",
+				"MultipeerServer",
+				"MultipeerClient",
+				"Socket",
+				"SocketDelegate"
+			]
+		}, {
+			"name": "Scenes",
+			"children": [
+				"TabBarController",
+				"EmitterController",
+				"EmitterStreamController",
+				"StreamEmitterController",
+				"StreamEmitterDelegate",
+				"ReceiverController",
+				"ReceiverNotConnectedStreamController",
+				"ReceiverConnectedStreamController",
+				"SettingsController",
+				"SettingsTableController"
+			]
+		}, {
+			"name": "Utils",
+			"children": [
+				"Notifications",
+				"DataFlowDefaults",
+				"Data",
+				"AVAudioPCMBuffer"
+			]
+		}, {
+			"name": "UI",
+			"children": [
+				"DFBorderedButton",
+				"DFExtractedDataView"
+			]
+		}
+	]
+}
+

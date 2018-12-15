@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SpeechRecognizerTaskDelegate Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SpeechRecognizerTaskDelegate" class="dashAnchor"></a>
+    <a title="SpeechRecognizerTaskDelegate Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (81% documented)</p>
+        <p class="header-right"><a href="https://github.com/boisier/prisme-dataflow"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SpeechRecognizerTaskDelegate Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AudioEngine.html">AudioEngine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AudioStreamReader.html">AudioStreamReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DFBorderedButton.html">DFBorderedButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DFExtractedDataView.html">DFExtractedDataView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DataHolder.html">DataHolder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterController.html">EmitterController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterStreamController.html">EmitterStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifier.html">EmotionClassifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModel.html">EmotionClassifierModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelInput.html">EmotionClassifierModelInput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerClient.html">MultipeerClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerDevice.html">MultipeerDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerServer.html">MultipeerServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverConnectedStreamController.html">ReceiverConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverController.html">ReceiverController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverNotConnectedStreamController.html">ReceiverNotConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:@M@dataflow@objc(cs)SettingsController">SettingsController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SettingsTableController.html">SettingsTableController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Socket.html">Socket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizer.html">SpeechRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizerTaskDelegate.html">SpeechRecognizerTaskDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarController.html">TabBarController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/DataFlowDefaults.html">DataFlowDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Notifications.html">Notifications</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/AVAudioPCMBuffer.html">AVAudioPCMBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AudioEngineDelegate.html">AudioEngineDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MultipeerDelegate.html">MultipeerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SocketDelegate.html">SocketDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/streamEmitterDelegate.html">streamEmitterDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/App.html">App</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingData.html">RecordingData</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SpeechRecognizerTaskDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">SpeechRecognizerTaskDelegate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">SFSpeechRecognitionTaskDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>The delegate for the <code><a href="../Classes/SpeechRecognizer.html">SpeechRecognizer</a></code></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow28SpeechRecognizerTaskDelegateC10recognizerAA0bC0CSgXwvp"></a>
+                    <a name="//apple_ref/swift/Property/recognizer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow28SpeechRecognizerTaskDelegateC10recognizerAA0bC0CSgXwvp">recognizer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reference to the SpeechRecognizer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">weak</span> <span class="k">var</span> <span class="nv">recognizer</span><span class="p">:</span> <span class="kt"><a href="../Classes/SpeechRecognizer.html">SpeechRecognizer</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow28SpeechRecognizerTaskDelegateC18_emotionClassifier33_1D9DAC62FEA74136A63B3AEAB7EA2F74LLAA07EmotionG0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/_emotionClassifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow28SpeechRecognizerTaskDelegateC18_emotionClassifier33_1D9DAC62FEA74136A63B3AEAB7EA2F74LLAA07EmotionG0Cvp">_emotionClassifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An Emotion classifier to get the emotion from the recognized text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_emotionClassifier</span><span class="p">:</span> <span class="kt"><a href="../Classes/EmotionClassifier.html">EmotionClassifier</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)SpeechRecognizerTaskDelegate(im)speechRecognitionTask:didHypothesizeTranscription:"></a>
+                    <a name="//apple_ref/swift/Method/speechRecognitionTask(_:didHypothesizeTranscription:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)SpeechRecognizerTaskDelegate(im)speechRecognitionTask:didHypothesizeTranscription:">speechRecognitionTask(_:didHypothesizeTranscription:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when a hypothesized transcription is available.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">speechRecognitionTask</span><span class="p">(</span><span class="n">_</span> <span class="nv">task</span><span class="p">:</span> <span class="kt">SFSpeechRecognitionTask</span><span class="p">,</span> <span class="n">didHypothesizeTranscription</span> <span class="nv">transcription</span><span class="p">:</span> <span class="kt">SFTranscription</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>task</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current task</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transcription</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The transcription inferred</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)SpeechRecognizerTaskDelegate(im)speechRecognitionTask:didFinishRecognition:"></a>
+                    <a name="//apple_ref/swift/Method/speechRecognitionTask(_:didFinishRecognition:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)SpeechRecognizerTaskDelegate(im)speechRecognitionTask:didFinishRecognition:">speechRecognitionTask(_:didFinishRecognition:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the final utterance is recognized.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">speechRecognitionTask</span><span class="p">(</span><span class="n">_</span> <span class="nv">task</span><span class="p">:</span> <span class="kt">SFSpeechRecognitionTask</span><span class="p">,</span> <span class="n">didFinishRecognition</span> <span class="nv">transcriptionResult</span><span class="p">:</span> <span class="kt">SFSpeechRecognitionResult</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)SpeechRecognizerTaskDelegate(im)speechRecognitionTaskWasCancelled:"></a>
+                    <a name="//apple_ref/swift/Method/speechRecognitionTaskWasCancelled(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)SpeechRecognizerTaskDelegate(im)speechRecognitionTaskWasCancelled:">speechRecognitionTaskWasCancelled(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called that the task has been canceled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">speechRecognitionTaskWasCancelled</span><span class="p">(</span><span class="n">_</span> <span class="nv">task</span><span class="p">:</span> <span class="kt">SFSpeechRecognitionTask</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>task</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current task</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="valentindufois.fr" target="_blank" rel="external">Valentin Dufois for PRISME</a>. All rights reserved. (Last updated: 2018-12-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

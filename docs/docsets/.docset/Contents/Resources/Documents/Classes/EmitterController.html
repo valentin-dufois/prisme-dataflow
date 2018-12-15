@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EmitterController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/EmitterController" class="dashAnchor"></a>
+    <a title="EmitterController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (81% documented)</p>
+        <p class="header-right"><a href="https://github.com/boisier/prisme-dataflow"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        EmitterController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AudioEngine.html">AudioEngine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AudioStreamReader.html">AudioStreamReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DFBorderedButton.html">DFBorderedButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DFExtractedDataView.html">DFExtractedDataView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DataHolder.html">DataHolder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterController.html">EmitterController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterStreamController.html">EmitterStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifier.html">EmotionClassifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModel.html">EmotionClassifierModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelInput.html">EmotionClassifierModelInput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerClient.html">MultipeerClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerDevice.html">MultipeerDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerServer.html">MultipeerServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverConnectedStreamController.html">ReceiverConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverController.html">ReceiverController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverNotConnectedStreamController.html">ReceiverNotConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:@M@dataflow@objc(cs)SettingsController">SettingsController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SettingsTableController.html">SettingsTableController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Socket.html">Socket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizer.html">SpeechRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizerTaskDelegate.html">SpeechRecognizerTaskDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarController.html">TabBarController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/DataFlowDefaults.html">DataFlowDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Notifications.html">Notifications</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/AVAudioPCMBuffer.html">AVAudioPCMBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AudioEngineDelegate.html">AudioEngineDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MultipeerDelegate.html">MultipeerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SocketDelegate.html">SocketDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/streamEmitterDelegate.html">streamEmitterDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/App.html">App</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingData.html">RecordingData</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>EmitterController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">EmitterController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+
+                </div>
+              </div>
+            <p>The view shown on the emitter end on the Emitter tab</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(py)startStopBtn"></a>
+                    <a name="//apple_ref/swift/Property/startStopBtn" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(py)startStopBtn">startStopBtn</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">startStopBtn</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(py)connectionStateLabel"></a>
+                    <a name="//apple_ref/swift/Property/connectionStateLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(py)connectionStateLabel">connectionStateLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">connectionStateLabel</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(py)decodedWordLabel"></a>
+                    <a name="//apple_ref/swift/Property/decodedWordLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(py)decodedWordLabel">decodedWordLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">decodedWordLabel</span><span class="p">:</span> <span class="kt">UITextView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(py)numberOfLetterLabel"></a>
+                    <a name="//apple_ref/swift/Property/numberOfLetterLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(py)numberOfLetterLabel">numberOfLetterLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">numberOfLetterLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(py)audioFrequencyLabel"></a>
+                    <a name="//apple_ref/swift/Property/audioFrequencyLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(py)audioFrequencyLabel">audioFrequencyLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">audioFrequencyLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(py)decodedEmotionLabel"></a>
+                    <a name="//apple_ref/swift/Property/decodedEmotionLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(py)decodedEmotionLabel">decodedEmotionLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">decodedEmotionLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(py)audioAmplitudeLabel"></a>
+                    <a name="//apple_ref/swift/Property/audioAmplitudeLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(py)audioAmplitudeLabel">audioAmplitudeLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">var</span> <span class="nv">audioAmplitudeLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow17EmitterControllerC17_speechRecognizer33_92641AFEC5D70F8B9B3824FB1BC3955ELLAA06SpeechE0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/_speechRecognizer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow17EmitterControllerC17_speechRecognizer33_92641AFEC5D70F8B9B3824FB1BC3955ELLAA06SpeechE0CSgvp">_speechRecognizer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_speechRecognizer</span><span class="p">:</span> <span class="kt"><a href="../Classes/SpeechRecognizer.html">SpeechRecognizer</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow17EmitterControllerC7_socket33_92641AFEC5D70F8B9B3824FB1BC3955ELLAA6SocketCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/_socket" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow17EmitterControllerC7_socket33_92641AFEC5D70F8B9B3824FB1BC3955ELLAA6SocketCSgvp">_socket</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_socket</span><span class="p">:</span> <span class="kt"><a href="../Classes/Socket.html">Socket</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(im)viewDidAppear:"></a>
+                    <a name="//apple_ref/swift/Method/viewDidAppear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(im)viewDidAppear:">viewDidAppear(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(im)toggleRecording:"></a>
+                    <a name="//apple_ref/swift/Method/toggleRecording(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(im)toggleRecording:">toggleRecording(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts or stop the recording</p>
+
+<p>Does not affect the socket nor the streams</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">toggleRecording</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The start/Stop button</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(im)reconnectToSocket:"></a>
+                    <a name="//apple_ref/swift/Method/reconnectToSocket(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(im)reconnectToSocket:">reconnectToSocket(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stop and restart the socket connection</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">reconnectToSocket</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ONLINE/OFFLINE button</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterController(im)dealloc"></a>
+                    <a name="//apple_ref/swift/Method/deinit" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterController(im)dealloc">deinit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Properly end any ongoing recording</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">deinit</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Recording%20lifecycle"></a>
+                <a name="//apple_ref/swift/Section/Recording lifecycle" class="dashAnchor"></a>
+                <a href="#/Recording%20lifecycle">
+                  <h3 class="section-name">Recording lifecycle</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow17EmitterControllerC14startRecording33_92641AFEC5D70F8B9B3824FB1BC3955ELLyyF"></a>
+                    <a name="//apple_ref/swift/Method/startRecording()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow17EmitterControllerC14startRecording33_92641AFEC5D70F8B9B3824FB1BC3955ELLyyF">startRecording()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start listening and start the speech recognizer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">startRecording</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow17EmitterControllerC12endRecording33_92641AFEC5D70F8B9B3824FB1BC3955ELLyyF"></a>
+                    <a name="//apple_ref/swift/Method/endRecording()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow17EmitterControllerC12endRecording33_92641AFEC5D70F8B9B3824FB1BC3955ELLyyF">endRecording()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Properly ends the recording and links systems</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">endRecording</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ListeningAudioEngineDelegate"></a>
+                <a name="//apple_ref/swift/Section/ListeningAudioEngineDelegate" class="dashAnchor"></a>
+                <a href="#/ListeningAudioEngineDelegate">
+                  <h3 class="section-name">ListeningAudioEngineDelegate</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow17EmitterControllerC11audioEngine_17hasRecordedBufferyAA05AudioE0C_So16AVAudioPCMBufferCtF"></a>
+                    <a name="//apple_ref/swift/Method/audioEngine(_:hasRecordedBuffer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow17EmitterControllerC11audioEngine_17hasRecordedBufferyAA05AudioE0C_So16AVAudioPCMBufferCtF">audioEngine(_:hasRecordedBuffer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called on every audio buffer, extract informations and emit data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">audioEngine</span><span class="p">(</span><span class="n">_</span> <span class="nv">engine</span><span class="p">:</span> <span class="kt"><a href="../Classes/AudioEngine.html">AudioEngine</a></span><span class="p">,</span> <span class="n">hasRecordedBuffer</span> <span class="nv">buffer</span><span class="p">:</span> <span class="kt">AVAudioPCMBuffer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>listeningAudioEngine</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The listening engine sending the event</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>buffer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The audio buffer</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/SocketDelegate"></a>
+                <a name="//apple_ref/swift/Section/SocketDelegate" class="dashAnchor"></a>
+                <a href="#/SocketDelegate">
+                  <h3 class="section-name">SocketDelegate</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow17EmitterControllerC16socketDidConnectyyAA6SocketCF"></a>
+                    <a name="//apple_ref/swift/Method/socketDidConnect(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow17EmitterControllerC16socketDidConnectyyAA6SocketCF">socketDidConnect(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the socket succesfully connect</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">socketDidConnect</span><span class="p">(</span><span class="n">_</span> <span class="nv">socket</span><span class="p">:</span> <span class="kt"><a href="../Classes/Socket.html">Socket</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow17EmitterControllerC19socketDidDisconnect_5erroryAA6SocketC_s5Error_pSgtF"></a>
+                    <a name="//apple_ref/swift/Method/socketDidDisconnect(_:error:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow17EmitterControllerC19socketDidDisconnect_5erroryAA6SocketC_s5Error_pSgtF">socketDidDisconnect(_:error:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the socked gets disconnected, either by a call to <code>Socket.disconnect</code>
+or &lsquo;Socket.reconnect()` or if the connection gets lost.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">socketDidDisconnect</span><span class="p">(</span><span class="n">_</span> <span class="nv">socket</span><span class="p">:</span> <span class="kt"><a href="../Classes/Socket.html">Socket</a></span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>socket</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current socket</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The error if any</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="valentindufois.fr" target="_blank" rel="external">Valentin Dufois for PRISME</a>. All rights reserved. (Last updated: 2018-12-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

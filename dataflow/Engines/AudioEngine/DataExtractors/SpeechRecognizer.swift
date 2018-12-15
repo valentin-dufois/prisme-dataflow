@@ -9,28 +9,44 @@
 import Foundation
 import Speech
 
+/// Performs speech recognition tasks
 class SpeechRecognizer: NSObject, SFSpeechRecognizerDelegate {
 
 	// //////////////////////////////
 	// SPEECH RECOGNITION PROPERTIES
 
+	/// The speech recognizer
 	private let _speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "fr-CA"))!
+
+	/// The current recognition request
 	private var _recognitionRequest: SFSpeechAudioBufferRecognitionRequest!
+
+	/// The current recognition task
 	private var _recognitionTask: SFSpeechRecognitionTask!
 
 	// /////////////////
 	// CLASS PROPERTIES
 
+	/// Tells if the speech recognition is available
 	private var _available:Bool = false
+
+	/// Tells if the speech recognition is available
 	var available: Bool { return _available }
 
+	/// Tell if the SpeechRecognizer is runngin
 	private var _running:Bool = false
 
+	/// Used to detect end of phrases
 	private var _silenceTimer:Timer!
+
+	/// The recognition timer prevent running the recognition task for more than
+	/// one minute, which is forbiden by the framework
 	private var _recognitionTimer:Timer!
 
+	/// The speechRecognizerDelegate
 	private var _recognitionTaskDelegate: SpeechRecognizerTaskDelegate!
 
+	/// Make sure weareauthorize to make speech recognition request, and init the delegate
 	override init () {
 		super.init()
 
@@ -53,6 +69,7 @@ extension SpeechRecognizer {
 		_recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
 		_recognitionRequest.shouldReportPartialResults = true
 
+		// Reset the audio data informations
 		App.dataHolder.audioData.phrase = nil
 		App.dataHolder.audioData.charactersCount = 0
 		App.dataHolder.audioData.emotion = nil
@@ -72,6 +89,7 @@ extension SpeechRecognizer {
 		_silenceTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: endRecognitionTask)
 	}
 
+	/// Called when the recognition task ends
 	func recognitionHasEnded() {
 		_recognitionTimer?.invalidate()
 		_silenceTimer?.invalidate()
@@ -125,6 +143,7 @@ extension SpeechRecognizer {
 
 // MARK: - User authorization
 extension SpeechRecognizer {
+	/// Request authorization from the user to make speech recognition tasks
 	func authorizeSpeechRecognition() {
 		// Set ourself as the speech recognizer delegate
 		_speechRecognizer.delegate = self

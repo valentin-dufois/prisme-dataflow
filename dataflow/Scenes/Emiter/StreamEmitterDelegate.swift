@@ -8,6 +8,11 @@
 
 import Foundation
 
-protocol streamEmitterDelegate: AnyObject {
+/// The stream Emitter delegate
+protocol StreamEmitterDelegate: AnyObject {
+
+	/// Sends the given data on all of the clients streams
+	///
+	/// - Parameter data: Data to send
 	func emit(data: Data)
 }

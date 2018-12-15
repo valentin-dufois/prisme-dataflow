@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EmitterStreamController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/EmitterStreamController" class="dashAnchor"></a>
+    <a title="EmitterStreamController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">dataflow Docs</a> (95% documented)</p>
+        <p class="header-right"><a href="https://github.com/boisier/prisme-dataflow"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">dataflow Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        EmitterStreamController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Core.html">Core</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/App.html">App</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../AudioEngine.html">AudioEngine</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AudioEngine.html">AudioEngine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AudioEngineDelegate.html">AudioEngineDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AudioStreamReader.html">AudioStreamReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DataHolder.html">DataHolder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingData.html">RecordingData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizer.html">SpeechRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizerTaskDelegate.html">SpeechRecognizerTaskDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifier.html">EmotionClassifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModel.html">EmotionClassifierModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelInput.html">EmotionClassifierModelInput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../CommunicationEngine.html">CommunicationEngine</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerDevice.html">MultipeerDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MultipeerDelegate.html">MultipeerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerServer.html">MultipeerServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerClient.html">MultipeerClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Socket.html">Socket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SocketDelegate.html">SocketDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Scenes.html">Scenes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarController.html">TabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterController.html">EmitterController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterStreamController.html">EmitterStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StreamEmitterDelegate.html">StreamEmitterDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverController.html">ReceiverController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverNotConnectedStreamController.html">ReceiverNotConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverConnectedStreamController.html">ReceiverConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Scenes.html#/c:@M@dataflow@objc(cs)SettingsController">SettingsController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SettingsTableController.html">SettingsTableController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Utils.html">Utils</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Notifications.html">Notifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DataFlowDefaults.html">DataFlowDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/AVAudioPCMBuffer.html">AVAudioPCMBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../UI.html">UI</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DFBorderedButton.html">DFBorderedButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DFExtractedDataView.html">DFExtractedDataView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>EmitterStreamController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">EmitterStreamController</span> <span class="p">:</span> <span class="kt">UITableViewController</span></code></pre>
+
+                </div>
+              </div>
+            <p>The view shown on the emitter end on the Stream tab</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC16_multipeerServer33_DF2B1634EC4FBC14E1C8E7EBC4D79CADLLAA09MultipeerF0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/_multipeerServer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC16_multipeerServer33_DF2B1634EC4FBC14E1C8E7EBC4D79CADLLAA09MultipeerF0CSgvp">_multipeerServer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The MultipeerServer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_multipeerServer</span><span class="p">:</span> <span class="kt"><a href="../Classes/MultipeerServer.html">MultipeerServer</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC14_clientStreams33_DF2B1634EC4FBC14E1C8E7EBC4D79CADLLSDySSSo08NSOutputC0CGvp"></a>
+                    <a name="//apple_ref/swift/Property/_clientStreams" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC14_clientStreams33_DF2B1634EC4FBC14E1C8E7EBC4D79CADLLSDySSSo08NSOutputC0CGvp">_clientStreams</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Our clients streams</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_clientStreams</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">OutputStream</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC06_audioC6Reader33_DF2B1634EC4FBC14E1C8E7EBC4D79CADLLAA05AudiocF0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/_audioStreamReader" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC06_audioC6Reader33_DF2B1634EC4FBC14E1C8E7EBC4D79CADLLAA05AudiocF0CSgvp">_audioStreamReader</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Our stream reader for two way audio</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_audioStreamReader</span><span class="p">:</span> <span class="kt"><a href="../Classes/AudioStreamReader.html">AudioStreamReader</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterStreamController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterStreamController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the view is loaded</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC13initMultipeeryyF"></a>
+                    <a name="//apple_ref/swift/Method/initMultipeer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC13initMultipeeryyF">initMultipeer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Properly start the multipeer server</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">initMultipeer</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC14closeMultipeeryyF"></a>
+                    <a name="//apple_ref/swift/Method/closeMultipeer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC14closeMultipeeryyF">closeMultipeer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Properly close the server</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">closeMultipeer</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterStreamController(im)onStartedPlaying:"></a>
+                    <a name="//apple_ref/swift/Method/onStartedPlaying(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterStreamController(im)onStartedPlaying:">onStartedPlaying(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the user started the audio</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">func</span> <span class="nf">onStartedPlaying</span><span class="p">(</span><span class="n">_</span> <span class="nv">obj</span><span class="p">:</span> <span class="kt">Notification</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>obj</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The notification object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterStreamController(im)onStoppedPlaying:"></a>
+                    <a name="//apple_ref/swift/Method/onStoppedPlaying(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterStreamController(im)onStoppedPlaying:">onStoppedPlaying(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the user stopped the audio</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">func</span> <span class="nf">onStoppedPlaying</span><span class="p">(</span><span class="n">_</span> <span class="nv">obj</span><span class="p">:</span> <span class="kt">Notification</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>obj</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The notification object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@dataflow@objc(cs)EmitterStreamController(im)dealloc"></a>
+                    <a name="//apple_ref/swift/Method/deinit" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@dataflow@objc(cs)EmitterStreamController(im)dealloc">deinit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make sure to properly close the server</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">deinit</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Clients%20handling"></a>
+                <a name="//apple_ref/swift/Section/Clients handling" class="dashAnchor"></a>
+                <a href="#/Clients%20handling">
+                  <h3 class="section-name">Clients handling</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC15clientConnected6peerIDySo06MCPeerH0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/clientConnected(peerID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC15clientConnected6peerIDySo06MCPeerH0C_tF">clientConnected(peerID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when a client just connected</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">clientConnected</span><span class="p">(</span><span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>peerID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The peerID of the client</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC18clientDisconnected6peerIDySo06MCPeerH0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/clientDisconnected(peerID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC18clientDisconnected6peerIDySo06MCPeerH0C_tF">clientDisconnected(peerID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when a client just disconnected</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">clientDisconnected</span><span class="p">(</span><span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>peerID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The peerID of the client</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Sending%20Data"></a>
+                <a name="//apple_ref/swift/Section/Sending Data" class="dashAnchor"></a>
+                <a href="#/Sending%20Data">
+                  <h3 class="section-name">Sending Data</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC4emit4datay10Foundation4DataV_tF"></a>
+                    <a name="//apple_ref/swift/Method/emit(data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC4emit4datay10Foundation4DataV_tF">emit(data:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends the given data on all of the clients streams</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">emit</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Data to send</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Sending%20Data2"></a>
+                <a name="//apple_ref/swift/Section/Sending Data" class="dashAnchor"></a>
+                <a href="#/Sending%20Data2">
+                  <h3 class="section-name">Sending Data</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC8mpDevice_16shouldAcceptPeer11withContextSbAA09MultipeerF0C_So8MCPeerIDC10Foundation4DataVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/mpDevice(_:shouldAcceptPeer:withContext:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC8mpDevice_16shouldAcceptPeer11withContextSbAA09MultipeerF0C_So8MCPeerIDC10Foundation4DataVSgtF">mpDevice(_:shouldAcceptPeer:withContext:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Automatically accept all incoming invitations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mpDevice</span><span class="p">(</span><span class="n">_</span> <span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/MultipeerDevice.html">MultipeerDevice</a></span><span class="p">,</span> <span class="n">shouldAcceptPeer</span> <span class="nv">peer</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">withContext</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC8mpDevice_11didNotStartyAA09MultipeerF0C_s5Error_ptF"></a>
+                    <a name="//apple_ref/swift/Method/mpDevice(_:didNotStart:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC8mpDevice_11didNotStartyAA09MultipeerF0C_s5Error_ptF">mpDevice(_:didNotStart:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stop the app if we cannot start the server</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mpDevice</span><span class="p">(</span><span class="n">_</span> <span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/MultipeerDevice.html">MultipeerDevice</a></span><span class="p">,</span> <span class="n">didNotStart</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC8mpDevice_16peerStateChanged2toyAA09MultipeerF0C_So8MCPeerIDCSo09MCSessionH0VtF"></a>
+                    <a name="//apple_ref/swift/Method/mpDevice(_:peerStateChanged:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC8mpDevice_16peerStateChanged2toyAA09MultipeerF0C_So8MCPeerIDCSo09MCSessionH0VtF">mpDevice(_:peerStateChanged:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Trigger a refresh of the table when a peer state changes</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mpDevice</span><span class="p">(</span><span class="n">_</span> <span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/MultipeerDevice.html">MultipeerDevice</a></span><span class="p">,</span> <span class="n">peerStateChanged</span> <span class="nv">peer</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">to</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">MCSessionState</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow23EmitterStreamControllerC8mpDevice_08receivedC08withName8fromPeeryAA09MultipeerF0C_So07NSInputC0CSSSo8MCPeerIDCtF"></a>
+                    <a name="//apple_ref/swift/Method/mpDevice(_:receivedStream:withName:fromPeer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow23EmitterStreamControllerC8mpDevice_08receivedC08withName8fromPeeryAA09MultipeerF0C_So07NSInputC0CSSSo8MCPeerIDCtF">mpDevice(_:receivedStream:withName:fromPeer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when our client send us its audio stream</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mpDevice</span><span class="p">(</span><span class="n">_</span> <span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/MultipeerDevice.html">MultipeerDevice</a></span><span class="p">,</span> <span class="n">receivedStream</span> <span class="nv">stream</span><span class="p">:</span> <span class="kt">InputStream</span><span class="p">,</span> <span class="n">withName</span> <span class="nv">streamName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">fromPeer</span> <span class="nv">peer</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UITableViewDelegate"></a>
+                <a name="//apple_ref/swift/Section/UITableViewDelegate" class="dashAnchor"></a>
+                <a href="#/UITableViewDelegate">
+                  <h3 class="section-name">UITableViewDelegate</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@dataflow@objc(cs)EmitterStreamController(im)numberOfSectionsInTableView:"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSections(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@dataflow@objc(cs)EmitterStreamController(im)numberOfSectionsInTableView:">numberOfSections(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the number of section in the table</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current tableView</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The number of sections in the tableView</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:numberOfRowsInSection:"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:numberOfRowsInSection:">tableView(_:numberOfRowsInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the number of rows in the given section</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current tableView</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current section</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The number of rows in the current section</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:cellForRowAtIndexPath:"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:cellForRowAtIndexPath:">tableView(_:cellForRowAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gives the View for the cell</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current tableView</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index of the row to get the view for</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The view for the row</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:titleForHeaderInSection:"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:titleForHeaderInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:titleForHeaderInSection:">tableView(_:titleForHeaderInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the title of the given section</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">titleForHeaderInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current tableView</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The section number</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The title of the section</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:viewForHeaderInSection:"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:viewForHeaderInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:viewForHeaderInSection:">tableView(_:viewForHeaderInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gives the view for the specified header</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">viewForHeaderInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIView</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current tableView</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The section to get the header for</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The View for the header</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:heightForHeaderInSection:"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:heightForHeaderInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@dataflow@objc(cs)EmitterStreamController(im)tableView:heightForHeaderInSection:">tableView(_:heightForHeaderInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the height of the specified header view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">heightForHeaderInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current tableView</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current section</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The height of the headers</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="http://valentindufois.fr" target="_blank" rel="external">Valentin (Boisier) Dufois for PRISME</a>. All rights reserved. (Last updated: 2018-12-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -8,19 +8,22 @@
 
 import MultipeerConnectivity
 
+/// The multipeer server is used to create a new multipeer master
 class MultipeerServer: MultipeerDevice {
 
 	// /////////////////
 	// MARK: Properties
 
+	/// Tells if the server is currently runnin
 	private var _running: Bool = false
 
-	/// Tells if the server is currently runngin
+	/// Tells if the server is currently runnin
 	var isRunning: Bool { return _running }
 
 	/// The advertiser used make ourself discoverable
 	private var _peerServiceAdvertiser: MCNearbyServiceAdvertiser!
 
+	/// Properly ends the server when free-ed
 	deinit {
 		close()
 	}
@@ -41,7 +44,7 @@ extension MultipeerServer {
 		_running = true
 	}
 
-	// Close the server, closing all available connection
+	/// Close the server, closing all available connection
 	func close() {
 		_peerServiceAdvertiser?.stopAdvertisingPeer()
 		_peerServiceAdvertiser = nil

@@ -10,6 +10,10 @@ import Foundation
 import AudioKit
 import Repeat
 
+/// The AudioEngine handles audio input and output for the App.
+///
+/// It allow for tapping on the input feed, as well as playing on the ouput feed.
+/// The AudioEngine split prevent audio input from the mic from playing on the speakers.
 class AudioEngine: NSObject {
 
 	// //////////////////////////
@@ -42,13 +46,17 @@ class AudioEngine: NSObject {
 	/// Timer used to trigger the input tap
 	private var _inputTapTimer: Repeater!
 
+	/// Used to automatically restart the engine periodically
+	private var _autoRestartTimer: Repeater!
+
 	/// Tell if the engine is currently running
 	var isRunning: Bool { return _running }
+
+	/// Tell if the engine is currently running
 	private var _running: Bool = false
 
 	/// The AudioEngine delegate
 	weak var delegate: AudioEngineDelegate?
-
 
 	/// Create the Input and Output chain without starting it
 	override init () {
@@ -74,6 +82,17 @@ class AudioEngine: NSObject {
 		AudioKit.output = AKMixer(AKNode(avAudioNode: _player), _silence)
 	}
 
+	/// Set up the auto restart timer
+	///
+	/// - Parameter seconds: Restart interval in seconds
+	func setAutoRestart(every seconds: Double) {
+		_autoRestartTimer = Repeater(interval: .seconds(seconds)) { [weak self] timer in
+			guard self?.isRunning ?? false else { return }
+			self?.stop()
+			self?.start()
+		}
+		_autoRestartTimer.start()
+	}
 
 	/// Start the engine, effectively recording from the mic and playing on the speaker
 	func start() {
@@ -131,6 +150,7 @@ class AudioEngine: NSObject {
 
 		// Clean the repeater
 		_inputTapTimer?.removeAllObservers()
+		_autoRestartTimer?.removeAllObservers()
 
 		// Detach audio chain components
 		_silence.detach()

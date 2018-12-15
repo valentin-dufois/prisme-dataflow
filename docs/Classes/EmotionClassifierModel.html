@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EmotionClassifierModel Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/EmotionClassifierModel" class="dashAnchor"></a>
+    <a title="EmotionClassifierModel Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">dataflow Docs</a> (95% documented)</p>
+        <p class="header-right"><a href="https://github.com/boisier/prisme-dataflow"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">dataflow Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        EmotionClassifierModel Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Core.html">Core</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/App.html">App</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../AudioEngine.html">AudioEngine</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AudioEngine.html">AudioEngine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AudioEngineDelegate.html">AudioEngineDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AudioStreamReader.html">AudioStreamReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DataHolder.html">DataHolder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingData.html">RecordingData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizer.html">SpeechRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SpeechRecognizerTaskDelegate.html">SpeechRecognizerTaskDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifier.html">EmotionClassifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModel.html">EmotionClassifierModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelInput.html">EmotionClassifierModelInput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../CommunicationEngine.html">CommunicationEngine</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerDevice.html">MultipeerDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MultipeerDelegate.html">MultipeerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerServer.html">MultipeerServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipeerClient.html">MultipeerClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Socket.html">Socket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SocketDelegate.html">SocketDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Scenes.html">Scenes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarController.html">TabBarController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterController.html">EmitterController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EmitterStreamController.html">EmitterStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StreamEmitterDelegate.html">StreamEmitterDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverController.html">ReceiverController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverNotConnectedStreamController.html">ReceiverNotConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReceiverConnectedStreamController.html">ReceiverConnectedStreamController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Scenes.html#/c:@M@dataflow@objc(cs)SettingsController">SettingsController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SettingsTableController.html">SettingsTableController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Utils.html">Utils</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Notifications.html">Notifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DataFlowDefaults.html">DataFlowDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/AVAudioPCMBuffer.html">AVAudioPCMBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../UI.html">UI</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DFBorderedButton.html">DFBorderedButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DFExtractedDataView.html">DFExtractedDataView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>EmotionClassifierModel</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">@available(OSX 10.14, iOS 12.0, tvOS 12.0, watchOS 5.0, *)</span>
+<span class="kd">class</span> <span class="kt">EmotionClassifierModel</span></code></pre>
+
+                </div>
+              </div>
+            <p>Class for model loading and prediction</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC5modelSo7MLModelCvp"></a>
+                    <a name="//apple_ref/swift/Property/model" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC5modelSo7MLModelCvp">model</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">model</span><span class="p">:</span> <span class="kt">MLModel</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC05urlOfD12InThisBundle10Foundation3URLVvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/urlOfModelInThisBundle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC05urlOfD12InThisBundle10Foundation3URLVvpZ">urlOfModelInThisBundle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>URL of model assuming it was installed in the same bundle as this class</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="k">var</span> <span class="nv">urlOfModelInThisBundle</span><span class="p">:</span> <span class="kt">URL</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC10contentsOfAC10Foundation3URLV_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(contentsOf:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC10contentsOfAC10Foundation3URLV_tKcfc">init(contentsOf:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Construct a model with explicit path to mlmodelc file</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">contentsOf</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the file url of the model</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>throws</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an NSError object that describes the problem</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Construct a model that automatically loads the model from the app&rsquo;s bundle</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC13configurationACSo20MLModelConfigurationC_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(configuration:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC13configurationACSo20MLModelConfigurationC_tKcfc">init(configuration:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Construct a model with configuration</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="kt">MLModelConfiguration</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>configuration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the desired model configuration</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>throws</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an NSError object that describes the problem</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC10contentsOf13configurationAC10Foundation3URLV_So20MLModelConfigurationCtKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(contentsOf:configuration:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC10contentsOf13configurationAC10Foundation3URLV_So20MLModelConfigurationCtKcfc">init(contentsOf:configuration:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Construct a model with explicit path to mlmodelc file and configuration</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">contentsOf</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">configuration</span><span class="p">:</span> <span class="kt">MLModelConfiguration</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the file url of the model</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>configuration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the desired model configuration</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>throws</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an NSError object that describes the problem</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC10prediction5inputAA0bcD6OutputCAA0bcD5InputC_tKF"></a>
+                    <a name="//apple_ref/swift/Method/prediction(input:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC10prediction5inputAA0bcD6OutputCAA0bcD5InputC_tKF">prediction(input:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make a prediction using the structured interface</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an NSError object that describes the problem
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">prediction</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt"><a href="../Classes/EmotionClassifierModelInput.html">EmotionClassifierModelInput</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>input</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the input to the prediction as EmotionClassifierModelInput</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the result of the prediction as EmotionClassifierModelOutput</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC10prediction5input7optionsAA0bcD6OutputCAA0bcD5InputC_So19MLPredictionOptionsCtKF"></a>
+                    <a name="//apple_ref/swift/Method/prediction(input:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC10prediction5input7optionsAA0bcD6OutputCAA0bcD5InputC_So19MLPredictionOptionsCtKF">prediction(input:options:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make a prediction using the structured interface</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an NSError object that describes the problem
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">prediction</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt"><a href="../Classes/EmotionClassifierModelInput.html">EmotionClassifierModelInput</a></span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">MLPredictionOptions</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>input</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the input to the prediction as EmotionClassifierModelInput</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>prediction options</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the result of the prediction as EmotionClassifierModelOutput</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC10prediction4textAA0bcD6OutputCSS_tKF"></a>
+                    <a name="//apple_ref/swift/Method/prediction(text:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC10prediction4textAA0bcD6OutputCSS_tKF">prediction(text:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make a prediction using the convenience interface</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an NSError object that describes the problem
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">prediction</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Input text as string value</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the result of the prediction as EmotionClassifierModelOutput</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8dataflow22EmotionClassifierModelC11predictions6inputs7optionsSayAA0bcD6OutputCGSayAA0bcD5InputCG_So19MLPredictionOptionsCtKF"></a>
+                    <a name="//apple_ref/swift/Method/predictions(inputs:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8dataflow22EmotionClassifierModelC11predictions6inputs7optionsSayAA0bcD6OutputCGSayAA0bcD5InputCG_So19MLPredictionOptionsCtKF">predictions(inputs:options:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make a batch prediction using the structured interface</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    an NSError object that describes the problem
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">predictions</span><span class="p">(</span><span class="nv">inputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/EmotionClassifierModelInput.html">EmotionClassifierModelInput</a></span><span class="p">],</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">MLPredictionOptions</span> <span class="o">=</span> <span class="kt">MLPredictionOptions</span><span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/EmotionClassifierModelOutput.html">EmotionClassifierModelOutput</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inputs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the inputs to the prediction as [EmotionClassifierModelInput]</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>prediction options</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the result of the prediction as [EmotionClassifierModelOutput]</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="http://valentindufois.fr" target="_blank" rel="external">Valentin (Boisier) Dufois for PRISME</a>. All rights reserved. (Last updated: 2018-12-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

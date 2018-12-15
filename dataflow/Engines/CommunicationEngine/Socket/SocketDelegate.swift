@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Used by a socjet to offer event handling
 protocol SocketDelegate: AnyObject {
 
 	/// Called when the socket succesfully connect
@@ -25,8 +26,10 @@ protocol SocketDelegate: AnyObject {
 
 	/// Called when the socket receives data
 	///
+	/// TODO: Implement this on `Socket`
+	///
 	/// - Parameters:
 	///   - socket: The socket
 	///   - receivedData: The received data
-//	func socket(_ socket:Socket, receivedData:Data)
+	// func socket(_ socket:Socket, receivedData:Data)
 }

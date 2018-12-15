@@ -8,7 +8,9 @@
 
 import UIKit
 
+/// The view shown on the receiver ends when we are not connected to a server
 class ReceiverNotConnectedStreamController: UIViewController {
+	/// Called when the user wants to connect to the server
 	@IBAction func openEmitterSelectionInterface() {
 		(self.parent! as! ReceiverController).connectToServer()
 	}

@@ -9,6 +9,7 @@
 import Foundation
 import AVFoundation
 
+/// The audioEngineDelegate, used for tapping on the input feed from the mic
 protocol AudioEngineDelegate: AnyObject {
 	/// Called continuously while the engine is running
 	///

@@ -1,0 +1,425 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 17,
+      "symbol": "EmotionClassifierModelInput.featureNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 23,
+      "symbol": "EmotionClassifierModelInput.featureValue(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 30,
+      "symbol": "EmotionClassifierModelInput.init(text:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 49,
+      "symbol": "EmotionClassifierModelOutput.featureNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 53,
+      "symbol": "EmotionClassifierModelOutput.featureValue(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 57,
+      "symbol": "EmotionClassifierModelOutput.init(label:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 61,
+      "symbol": "EmotionClassifierModelOutput.init(features:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 70,
+      "symbol": "EmotionClassifierModel.model",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Core/AppDelegate.swift",
+      "line": null,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Core/AppDelegate.swift",
+      "line": null,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Core/AppDelegate.swift",
+      "line": 13,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Core/AppDelegate.swift",
+      "line": 15,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Core/AppDelegate.swift",
+      "line": 20,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Engines/CommunicationEngine/Multipeer/MultipeerDevice.swift",
+      "line": 48,
+      "symbol": "MultipeerDevice.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Engines/CommunicationEngine/Multipeer/MultipeerServer.swift",
+      "line": 48,
+      "symbol": "MultipeerServer.close()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 18,
+      "symbol": "EmitterController.startStopBtn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 20,
+      "symbol": "EmitterController.connectionStateLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 22,
+      "symbol": "EmitterController.decodedWordLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 23,
+      "symbol": "EmitterController.numberOfLetterLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 24,
+      "symbol": "EmitterController.audioFrequencyLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 25,
+      "symbol": "EmitterController.decodedEmotionLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 26,
+      "symbol": "EmitterController.audioAmplitudeLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 33,
+      "symbol": "EmitterController._speechRecognizer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 36,
+      "symbol": "EmitterController._socket",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 38,
+      "symbol": "EmitterController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterController.swift",
+      "line": 55,
+      "symbol": "EmitterController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterStreamController.swift",
+      "line": 25,
+      "symbol": "EmitterStreamController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterStreamController.swift",
+      "line": 35,
+      "symbol": "EmitterStreamController.initMultipeer()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterStreamController.swift",
+      "line": 54,
+      "symbol": "EmitterStreamController.onStartedPlaying(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterStreamController.swift",
+      "line": 58,
+      "symbol": "EmitterStreamController.onStoppedPlaying(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Emiter/EmitterStreamController.swift",
+      "line": 63,
+      "symbol": "EmitterStreamController.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Receiver/ReceiverConnectedStreamController.swift",
+      "line": 17,
+      "symbol": "ReceiverConnectedStreamController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Receiver/ReceiverController.swift",
+      "line": 18,
+      "symbol": "ReceiverController.insetView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/Receiver/ReceiverController.swift",
+      "line": 54,
+      "symbol": "ReceiverController.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 13,
+      "symbol": "SettingsController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 18,
+      "symbol": "SettingsTableController.serverURLField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 19,
+      "symbol": "SettingsTableController.serverPortField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 20,
+      "symbol": "SettingsTableController.appTypeControl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 21,
+      "symbol": "SettingsTableController.audioGainLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 23,
+      "symbol": "SettingsTableController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 32,
+      "symbol": "SettingsTableController.viewDidDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/TabBarController.swift",
+      "line": 18,
+      "symbol": "TabBarController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/TabBarController.swift",
+      "line": 56,
+      "symbol": "TabBarController.emitterViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/TabBarController.swift",
+      "line": 61,
+      "symbol": "TabBarController.streamViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/TabBarController.swift",
+      "line": 66,
+      "symbol": "TabBarController.receiverViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/TabBarController.swift",
+      "line": 71,
+      "symbol": "TabBarController.settingsViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/TabBarController.swift",
+      "line": 76,
+      "symbol": "TabBarController.emitterControllersSet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/TabBarController.swift",
+      "line": 81,
+      "symbol": "TabBarController.receiverControllersSet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/Data.swift",
+      "line": 13,
+      "symbol": "Data.init(reading:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 45,
+      "symbol": "DataFlowDefaults.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 49,
+      "symbol": "DataFlowDefaults.integer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 53,
+      "symbol": "DataFlowDefaults.double",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 57,
+      "symbol": "DataFlowDefaults.string",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 61,
+      "symbol": "DataFlowDefaults.set(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 65,
+      "symbol": "DataFlowDefaults.set(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 69,
+      "symbol": "DataFlowDefaults.set(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 73,
+      "symbol": "DataFlowDefaults.set(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/DataFlowDefaults.swift",
+      "line": 77,
+      "symbol": "DataFlowDefaults.check()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/UI/DFBorderedButton.swift",
+      "line": 21,
+      "symbol": "DFBorderedButton.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/UI/DFBorderedButton.swift",
+      "line": 26,
+      "symbol": "DFBorderedButton.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/val/Projects/PRISME/dataflow"
+}

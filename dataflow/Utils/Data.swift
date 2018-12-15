@@ -8,7 +8,11 @@
 
 import Foundation
 
+// MARK: - Extension to proving a convenient init from an inputStream
 extension Data {
+	/// Init a Data objet with the content of the given InputStream
+	///
+	/// - Parameter input: An InputStream to get data from
 	init(reading input: InputStream) {
 		self.init()
 

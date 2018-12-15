@@ -8,6 +8,8 @@
 
 import MultipeerConnectivity
 
+/// The MultipeerDelegate is used by the `MultipeerServer` and `MultipeerClient` to
+/// Provide event handling
 protocol MultipeerDelegate {
 	/// Called when the server receives an invitation.
 	///
@@ -53,11 +55,9 @@ protocol MultipeerDelegate {
 
 // MARK: - Optional methods
 extension MultipeerDelegate {
-
 	func mpDevice(_ device: MultipeerDevice, shouldAcceptPeer peer: MCPeerID, withContext context: Data?) -> Bool {
 		return false
 	}
-
 	func mpDevice(_ device: MultipeerDevice, didNotStart error: Error) { }
 	func mpDevice(_ device: MultipeerDevice, peerStateChanged peer: MCPeerID, to state: MCSessionState) { }
 	func mpDevice(_ device: MultipeerDevice, receivedData data: Data, fromPeer peer: MCPeerID) { }

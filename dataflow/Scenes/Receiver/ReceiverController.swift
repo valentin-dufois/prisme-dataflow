@@ -11,9 +11,12 @@ import UIKit
 import MultipeerConnectivity
 import AVFoundation
 
+/// Display the receiving tab views
 class ReceiverController: UIViewController {
 	// //////////////
 	// MARK: Outlets
+
+	/// The currently shown view on this tab
 	@IBOutlet var insetView: UIView!
 
 	// /////////////////
@@ -37,18 +40,18 @@ class ReceiverController: UIViewController {
 	/// The output stream to the server
 	internal var _outputStream: OutputStream?
 
-
-
 	/// When the view is loaded, display the `not connected`view
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
         App.audioEngine.delegate = self
+		App.audioEngine.setAutoRestart(every: 240)
         App.audioEngine.start()
 
 		switchToDisconnected()
 	}
-    
+
+	/// Properly stops the audio engine
     deinit {
         App.audioEngine.stop()
 		App.audioEngine.delegate = nil
@@ -142,7 +145,7 @@ extension ReceiverController: MultipeerDelegate {
 		}
 	}
 
-	// Start reading any received stream
+	/// Start reading any received stream
 	func mpDevice(_ device: MultipeerDevice, receivedStream stream: InputStream, withName streamName: String, fromPeer peer: MCPeerID) {
         // End the current stream if there is one
         _audioStreamReader?.end()
@@ -162,6 +165,11 @@ extension ReceiverController: MultipeerDelegate {
 
 // MARK: - Audio Emission
 extension ReceiverController: AudioEngineDelegate {
+	/// Used to tap on, the input mic
+	///
+	/// - Parameters:
+	///   - engine: The audio engine
+	///   - buffer: The recorded buffer
 	func audioEngine(_ engine: AudioEngine, hasRecordedBuffer buffer: AVAudioPCMBuffer) {
 		guard let outputStream = _outputStream else { return }
 

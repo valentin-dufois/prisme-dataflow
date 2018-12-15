@@ -1,0 +1,110 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 17,
+      "symbol": "EmotionClassifierModelInput.featureNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 23,
+      "symbol": "EmotionClassifierModelInput.featureValue(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 30,
+      "symbol": "EmotionClassifierModelInput.init(text:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 49,
+      "symbol": "EmotionClassifierModelOutput.featureNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 53,
+      "symbol": "EmotionClassifierModelOutput.featureValue(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 57,
+      "symbol": "EmotionClassifierModelOutput.init(label:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 61,
+      "symbol": "EmotionClassifierModelOutput.init(features:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/build/dataflow.build/Release-iphoneos/dataflow.build/DerivedSources/CoreMLGenerated/EmotionClassifierModel/EmotionClassifierModel.swift",
+      "line": 70,
+      "symbol": "EmotionClassifierModel.model",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Engines/CommunicationEngine/Multipeer/MultipeerDevice.swift",
+      "line": 48,
+      "symbol": "MultipeerDevice.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 18,
+      "symbol": "SettingsTableController.serverURLField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 19,
+      "symbol": "SettingsTableController.serverPortField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 20,
+      "symbol": "SettingsTableController.appTypeControl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Scenes/SettingsController.swift",
+      "line": 21,
+      "symbol": "SettingsTableController.audioGainLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/UI/DFBorderedButton.swift",
+      "line": 21,
+      "symbol": "DFBorderedButton.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/val/Projects/PRISME/dataflow/dataflow/Utils/UI/DFBorderedButton.swift",
+      "line": 26,
+      "symbol": "DFBorderedButton.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/val/Projects/PRISME/dataflow"
+}

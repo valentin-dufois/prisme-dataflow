@@ -18,26 +18,37 @@ class AudioStreamReader: NSObject {
     // //////////////////////////////
     // MARK: Input stream properties
 
+    /// The input stream from which informations will be read
     internal var _inputStream: InputStream?
+
+	/// Interval in time between each read on the input buffer
     internal var _timerInterval: Repeater.Interval = .seconds(0.5)
+
+	/// Timer triggering reads on the input buffer
 	internal var _timer: Repeater?
 
-	internal var _audioFormat: AVAudioFormat!
-    internal var _tempTimer: Repeater?
-    
+	/// The temp timer used to delay the stream start
+	internal var _tempTimer: Repeater?
+
+	/// Buffer sizes allowed when playing from the input stream
 	internal var _allowedBufferSize:[UInt32] = [21504,
 												21638,
 												21639,
+												// 21757, // Seems good // Meh
 												22016,
 												22186,
 //												22305, bad
 												22528,
 												22579,
 												22580,
-												23040,
-												23520,]
+//												23040,
+//												23520,
+												]
 
+	/// Tells if the engine is currently muted
 	private var _muted: Bool = false
+
+	/// Tells if the engine is currently muted
 	var muted: Bool { return _muted }
 
 	/// Init the AudioStreamReader and directly start pmlaying the given stream
@@ -73,10 +84,12 @@ class AudioStreamReader: NSObject {
 		}
     }
 
+	/// Mute the engine
 	func mute() {
 		_muted = true
 	}
 
+	/// Unmute the engine
 	func unMute() {
 		_muted = false
 	}
@@ -100,6 +113,7 @@ class AudioStreamReader: NSObject {
 
 /// MARK: - Polling the stream
 extension AudioStreamReader {
+    /// Called by the timer interval to read on the input stream and play the received buffer
     func pollStream() {
 		// Make sure we have a stream in the first place
         guard let inputStream = _inputStream else {
@@ -109,7 +123,7 @@ extension AudioStreamReader {
 
 		// Does the stream holds informations ?
         guard inputStream.hasBytesAvailable else {
-//            print("[AudioStreamReader.pollStream] Stream has nothing to read")
+			// print("[AudioStreamReader.pollStream] Stream has nothing to read")
             return
         }
 
@@ -122,13 +136,12 @@ extension AudioStreamReader {
 			return
 		}
 
-        // If the buffer has an unknown size, skip it
-        guard _allowedBufferSize.contains(audioBuffer.frameLength) else {
-            print("Skipped buffer of size \(audioBuffer.frameLength)")
+		guard _allowedBufferSize.contains(audioBuffer.frameLength) else {
+		    print("Skipped buffer of size \(audioBuffer.frameLength)")
             return;
         }
         
-		// Play the buffer
+		// Play the buffer on the audioAnalysis queue for better performances
         App.audioAnalysisQueue.async {
             App.audioEngine.play(buffer: audioBuffer)
         }

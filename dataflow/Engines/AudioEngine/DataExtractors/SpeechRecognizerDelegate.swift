@@ -9,8 +9,12 @@
 import Foundation
 import Speech
 
+/// The delegate for the `SpeechRecognizer`
 class SpeechRecognizerTaskDelegate: NSObject, SFSpeechRecognitionTaskDelegate {
+	/// Reference to the SpeechRecognizer
 	weak var recognizer: SpeechRecognizer!
+
+	/// An Emotion classifier to get the emotion from the recognized text
 	private var _emotionClassifier = EmotionClassifier()
 
 	/// Called when a hypothesized transcription is available.
@@ -23,6 +27,7 @@ class SpeechRecognizerTaskDelegate: NSObject, SFSpeechRecognitionTaskDelegate {
 		App.dataHolder.audioData.charactersCount = transcription.formattedString.count
 		App.dataHolder.audioData.emotion = _emotionClassifier.analyze(phrase: App.dataHolder.audioData.phrase!)
 
+		// Reset the end of phrase timer
 		recognizer?.setWaitForEndOfPhrase()
 	}
 
@@ -34,6 +39,7 @@ class SpeechRecognizerTaskDelegate: NSObject, SFSpeechRecognitionTaskDelegate {
 	func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didFinishRecognition transcriptionResult: SFSpeechRecognitionResult) {
 		App.dataHolder.audioData.phrase = transcriptionResult.bestTranscription.formattedString
 
+		/// End the recognition task
 		recognizer?.recognitionHasEnded();
 	}
 
@@ -41,6 +47,7 @@ class SpeechRecognizerTaskDelegate: NSObject, SFSpeechRecognitionTaskDelegate {
 	///
 	/// - Parameter task: The current task
 	func speechRecognitionTaskWasCancelled(_ task: SFSpeechRecognitionTask) {
+		/// End the recognition task
 		recognizer?.recognitionHasEnded();
 	}
 }

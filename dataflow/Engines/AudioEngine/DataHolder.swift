@@ -8,12 +8,18 @@
 
 import Foundation
 
+/// Holds the audio Data.
+///
+/// Provides convenient methods to emit them
 class DataHolder {
 	// ////////////////////
 	// MARK: Singleton
 
 	/// Hold the singleton instance
 	private static var _instance:DataHolder?
+
+	/// Extracted audio data
+	var audioData = RecordingData()
 
 	/// Mark init as private to prevent oustide init
 	private init() { }
@@ -27,12 +33,13 @@ class DataHolder {
 			return _instance!
 		}
 	}
-
-	var audioData = RecordingData()
 }
 
 // MARK: - Sending Data
 extension DataHolder {
+	/// Encode as JSON the stored audio data
+	///
+	/// - Returns: A JSON representation of the audioData property
 	func asJSON() -> Data {
 		// Transform audio Data to JSON
 		let encoder = JSONEncoder()
