@@ -1,6 +1,6 @@
 PODS:
-  - AudioKit/Core (4.5.4)
-  - Repeat (0.5.7)
+  - AudioKit/Core (4.9.2)
+  - Repeat (0.6.0)
   - SwiftSocket (2.0.2)
 
 DEPENDENCIES:
@@ -9,16 +9,16 @@ DEPENDENCIES:
   - SwiftSocket
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AudioKit
     - Repeat
     - SwiftSocket
 
 SPEC CHECKSUMS:
-  AudioKit: af3f5b73e22f85f3cd03076fea8afbb9658f0938
-  Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
+  AudioKit: ee388f0c9ad4e90b6106c14caaf809cd7ca220da
+  Repeat: fd80848f4b3d6f133b18fdee04fd193aff6b31ff
   SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
 
-PODFILE CHECKSUM: b74b8d6f1b6531fd64998d22689e44775fbdd0da
+PODFILE CHECKSUM: 44c369239959fc61f8708cc7a74b89c252163e41
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

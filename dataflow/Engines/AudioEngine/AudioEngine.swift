@@ -67,7 +67,7 @@ class AudioEngine: NSObject {
 		AKSettings.bluetoothOptions = .allowBluetooth
 
 		// Create the chain
-		_mic = AKMicrophone()
+		_mic = AKMicrophone()!
 		_frequencyTracker = AKFrequencyTracker(_mic)
 		_silence = AKBooster(_frequencyTracker, gain: 0)
 
