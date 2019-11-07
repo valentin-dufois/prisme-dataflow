@@ -26,7 +26,7 @@ A device set as Emitter can transmit the calculated audio data as JSON to a serv
 The application supports connecting two devices together, simulating a classic phone call, through the use of Apple [MultipeerConnectivity Framework](https://developer.apple.com/documentation/multipeerconnectivity). This framework allows for interconnecting multiple devices using Bluetooth or Wi-Fi.
 To enable this, one device must be set as Emitter, and the other one as Receiver. In this scenario, only the Emitter data are sent to the server. 
 
-## Installations
+## Installation
 
 This app uses CocoaPods dependecies, make sure to `$ pod install`  before building.
 
